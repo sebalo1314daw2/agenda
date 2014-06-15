@@ -1,0 +1,17 @@
+/**
+ * Logo
+ * @author Sergio Baena López
+ * @version 1.0
+ */
+#logo
+{
+    font-size: 18px;
+    color: #0080ff;
+    font-family: "Lily Script One";
+}
+#logo img
+{
+    width: 59px;
+    height: 38px;
+    vertical-align: -40%;
+}
