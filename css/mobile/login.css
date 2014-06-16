@@ -1,17 +1,124 @@
 /**
+ * Web container
+ * @author Sergio Baena López
+ * @width 230px
+ */
+#webContainer
+{
+    width: 230px;
+    /*background-color: yellow;*/
+}
+/**
  * Logo
  * @author Sergio Baena López
- * @version 1.0
+ * @width 220px
+ * @margin-left 5px
+ * @margin-right 5px
+ * @margin-top 0
+ * @margin-buttom 20px
  */
 #logo
 {
     font-size: 18px;
-    color: #0080ff;
     font-family: "Lily Script One";
+    margin-left: 5px;
+    margin-right: 5px;
 }
 #logo img
 {
     width: 59px;
     height: 38px;
     vertical-align: -40%;
+}
+#logo a
+{
+    text-decoration: none;
+    color: #0080ff;
+    display: block;
+}
+/**
+ * Body
+ * The body of the web
+ * @author Sergio Baena López
+ * @width 220px
+ * @margin-left 5px
+ * @margin-right 5px
+ * @margin-top 20px
+ * @margin-buttom 20px
+ */
+#body
+{
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+/**
+ * Form
+ * The form of the login
+ * @author Sergio Baena López
+ * @width 220px
+ */
+#form input[type="text"], #form input[type="password"]
+{
+    width: 208px;
+}
+/**
+ * Vertical menu
+ * The menu of the web
+ * @author Sergio Baena López
+ * @width 220px
+ */
+#menu
+{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+}
+#menu ul
+{
+    margin: 0;
+    padding: 0;
+}
+#menu a
+{
+    display: block;
+    text-decoration: none;
+    background-color: #0080ff;
+    color: #fff;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+#menu a:active
+{
+    background-color: #C9E1FA;
+    color: #331F84;    
+}
+#menu li:last-child a
+{
+    margin-bottom: 0;
+}
+/**
+ * Footer
+ * The footer of the web
+ * @author Sergio Baena López
+ * @width 220px
+ * @margin-left 5px
+ * @margin-right 5px
+ * @margin-top 20px
+ */
+#footer
+{
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: Lobster;
+    font-size: 17px;
+}
+#footer p
+{
+    margin: 0;
 }
