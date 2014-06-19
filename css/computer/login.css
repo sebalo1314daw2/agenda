@@ -8,7 +8,7 @@
    #webContainer
    {
        position: relative;
-       width: 1024px;
+       width: 100%; /* 1024px */
        margin-left: auto;
        margin-right: auto;
    }
@@ -25,25 +25,33 @@
      * Horizontal menu
      * The menu of the web
      * @author Sergio Baena López
-     * @parent-width 1024px
      * @width 1024px
      */
     #menu
     {
         position: absolute;
-        top: -61px;
+        top: -61px; 
         margin-left: 0;
         margin-right: 0;
+        width: 99.90234375%; /* 1023px/1024px */
+    }
+    #menu ul
+    {
+        width: 100%; /* 1024px/1024px */
     }
     #menu li
     {
         float: left;
+        width: 25%; /* 256px/1024px */
     }
     #menu a
     {
-        width: 246px;
+        width: 96.09375%; /* 246/(246+2*5) */
         border-radius: 0;
-        padding: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 1.953125%; /* 5px/(246+2*5) */
+        padding-right: 1.953125%; /* 5px/(246+2*5) */
     }
     #menu a:hover
     {
@@ -73,7 +81,7 @@
     #noLogo
     {
         position: absolute;
-        width: 1024px;
+        width: 100%; /* 1024px/1024px */
         top: 105px; /* logo 38px + margin 20px + font-size 17px + padding 10px + 20px margin*/
     }
    /**
@@ -95,10 +103,10 @@
    {
        display: block;
        float: left;
-       font-size: 200px;
+       font-size: 12.5em; /* 200px/16px */
        color: #0080ff;
        height: 191px;
-       width: 506px;
+       width: 49.4140625%; /* 506px/1024px */
        text-align: center;
 /*       background-color: yellow;
        width: 300px;*/
@@ -110,23 +118,23 @@
     */
    #form
    {
-       width: 506px;
+       width: 49.4140625%; /* 506px/1024px */
        float: left;
-       margin-right: 6px;
+       margin-right: 0.5859375%; /* 6px/1024px */
        height: 191px;
    }
    #form input[type="text"], #form input[type="password"]
    {
-        width: 498px;
+        width: 98.418972332%; /* 498px/506px */
    }
    #form button
    {
-       width: 60px;
-       border-width: 1px;
+       width: 11.85770751%; /* 60px/506px */
+       border-width: 0.197628458%; /* 1px/506px */
    }
    label:before
    {
-       margin-right: 5px;
+       margin-right: 0.988142292%; /* 5px/506px */ 
    }
    /**
     * Footer

@@ -7,9 +7,8 @@
     /* checkboxes */
     label:before
     {
-        font-size: 17px;
+        font-size: 1.0625em; /* 17px/16px */
         vertical-align: baseline;
-        margin-right: 5px;
     }
     button
     {
