@@ -1,0 +1,142 @@
+@media (min-width: 768px)
+{
+   /**
+    * Web container
+    * @author Sergio Baena López
+    * @width 1024px
+    */
+   #webContainer
+   {
+       position: relative;
+       width: 1024px;
+       margin-left: auto;
+       margin-right: auto;
+   }
+   /**
+    * Logo
+    * @author Sergio Baena López
+    */
+   #logo
+   {
+       margin-left: 0;
+       margin-right: 0;
+   }
+    /**
+     * Horizontal menu
+     * The menu of the web
+     * @author Sergio Baena López
+     * @parent-width 1024px
+     * @width 1024px
+     */
+    #menu
+    {
+        position: absolute;
+        top: -61px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #menu li
+    {
+        float: left;
+    }
+    #menu a
+    {
+        width: 246px;
+        border-radius: 0;
+        padding: 5px;
+    }
+    #menu a:hover
+    {
+        background-color: #c9e1fa;
+        color: #331f84;
+    }
+    #menu a:active
+    {
+        color: #0080ff;
+    }
+    #menu li:first-child a
+    {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }
+    #menu li:last-child a
+    {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+   /**
+    * No logo
+    * @description The rest of the web (which is no logo)
+    * @author Sergio Baena López
+    * @width 1024px
+    */
+    #noLogo
+    {
+        position: absolute;
+        width: 1024px;
+        top: 105px; /* logo 38px + margin 20px + font-size 17px + padding 10px + 20px margin*/
+    }
+   /**
+    * Body
+    * The body of the web
+    * @author Sergio Baena López
+    */
+   #body
+   {
+       margin-left: 0;
+       margin-right: 0;
+   }
+   /**
+    * Img
+    * The image of the web
+    * @author Sergio Baena López
+    */
+   #img
+   {
+       display: block;
+       float: left;
+       font-size: 200px;
+       color: #0080ff;
+       height: 191px;
+       width: 506px;
+       text-align: center;
+/*       background-color: yellow;
+       width: 300px;*/
+   }
+   /**
+    * Form
+    * The form of the login
+    * @author Sergio Baena López
+    */
+   #form
+   {
+       width: 506px;
+       float: left;
+       margin-right: 6px;
+       height: 191px;
+   }
+   #form input[type="text"], #form input[type="password"]
+   {
+        width: 498px;
+   }
+   #form button
+   {
+       width: 60px;
+       border-width: 1px;
+   }
+   label:before
+   {
+       margin-right: 5px;
+   }
+   /**
+    * Footer
+    * The footer of the web
+    * @author Sergio Baena López
+    */
+   #footer
+   {
+       clear: both;
+       margin-left: 0;
+       margin-right: 0;
+   }
+}

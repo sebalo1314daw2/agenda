@@ -4,10 +4,13 @@
         <title>Agenda de butxaca</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="../img/logo.png" />
         <!-- CSS -->
         <link rel="stylesheet" href="../css/reset.css" type="text/css" />
         <link rel="stylesheet" href="../css/own_styles_of_the_web.css" type="text/css" />
         <link rel="stylesheet" href="../css/mobile/login.css" type="text/css" />
+        <link rel="stylesheet" href="../css/computer/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../css/computer/login.css" type="text/css" />
         <!-- Web fonts -->
         <link href='http://fonts.googleapis.com/css?family=Lily+Script+One' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
@@ -21,51 +24,55 @@
             <!-- Web container -->
             <div id="logo">
                 <!-- Logo -->
-                <a href="login.html">
+                <a href="login.html" title="Anar a la p&agrave;gina d'inici">
                     <img src="../img/logo.png" alt="Logotip" />
                     Agenda de butxaca
                 </a>
             </div>
-            <div id="body">
-                 <!-- Body-->
-                 <div>
-                     <h1>Acc&eacute;s</h1>
-                 </div>
-                <div id="form">
-                    <form action="javascript:void(0)">
-                        <input type="text" placeholder="&nbsp;Nom d'usuari" />
-                        <input type="password" placeholder="&nbsp;Contrasenya" />
-                        <input type="checkbox" id="cookieAccept" checked="checked" />
-                        <label for="cookieAccept">Accepto les cookies</label>
-                        <input type="checkbox" id="noCloseSession" checked="checked" />
-                        <label for="noCloseSession">No tancar la sessi&oacute;</label>
-                        <button>Entrar</button>
-                    </form>
+            <div id="noLogo">
+                <div id="body">
+                    <!-- Body-->
+                    <div>
+                        <h1>Acc&eacute;s</h1>
+                    </div>
+                    <div id="form">
+                       <form action="javascript:void(0)">
+                           <input type="text" placeholder="&nbsp;Nom d'usuari" />
+                           <input type="password" placeholder="&nbsp;Contrasenya" />
+                           <input type="checkbox" id="cookieAccept" checked="checked" />
+                           <label for="cookieAccept">Accepto les cookies</label>
+                           <input type="checkbox" id="noCloseSession" checked="checked" />
+                           <label for="noCloseSession">No tancar la sessi&oacute;</label>
+                           <button>Entrar</button>
+                       </form>
+                   </div>
+                   <div id="img" class="fa fa-key">
+                   </div>
                 </div>
-            </div>
-            <div id="menu">
-                <!-- Vertical menu -->
-                <ul>
-                    <li>
-                        <a class="currentOptionMenu" href="javascript:void(0)">Acc&eacute;s</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Registre</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Sobre la web</a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Contacte</a>
-                    </li>
-                </ul>
-            </div>
-            <div id="footer">
-                <!-- Footer -->
-                <p>
-                    Servei gratu&iuml;t que ofereix el Sergio Baena L&oacute;pez per a tothom 
-                    que hi vulgui.
-                </p>
+                <div id="menu">
+                    <!-- Vertical menu -->
+                    <ul>
+                        <li>
+                            <a class="currentOptionMenu" href="javascript:void(0)">Acc&eacute;s</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Registre</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Sobre la web</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">Contacte</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="footer">
+                    <!-- Footer -->
+                    <p>
+                        Servei gratu&iuml;t que ofereix el Sergio Baena L&oacute;pez per a tothom 
+                        que hi vulgui.
+                    </p>
+                </div>
             </div>
         </div>
     </body>

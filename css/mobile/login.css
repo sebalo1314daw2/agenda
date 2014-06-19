@@ -37,6 +37,15 @@
     display: block;
 }
 /**
+ * Img
+ * The image of the web
+ * @author Sergio Baena López
+ */
+#img
+{
+    display: none;
+}
+/**
  * Body
  * The body of the web
  * @author Sergio Baena López
