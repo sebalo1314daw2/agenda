@@ -4,12 +4,12 @@
  */
 *::selection 
 {
-    background-color: #331F84;
+    background-color: #0080ff;
     color: #fff;
 }
 *::-moz-selection
 {
-    background-color: #331F84;
+    background-color: #0080ff;
     color: #fff;
 }
 body
@@ -21,7 +21,7 @@ body
 h1
 {
     font-family: "Varela Round";
-    color: #331F84;
+    color: #0080ff;
     font-size: 40px;
     margin: 0;
     margin-bottom: 5px;
@@ -31,7 +31,7 @@ input[type="text"], input[type="password"]
      font-family: "Titillium Web";
      font-size: 17px;
      margin-bottom: 5px;
-     border: 5px double #331F84;
+     border: 5px double #0080ff;
      background: -moz-linear-gradient(#fff, #fff);
      background: -webkit-linear-gradient(#fff, #fff);
      background: -ms-linear-gradient(#fff, #fff);
@@ -53,17 +53,17 @@ button
     width: 220px;
     border: 1px solid #331F84;
     padding: 0;
-    background: -moz-linear-gradient(#5330DF, #7F64E8);
-    background: -webkit-linear-gradient(#5330DF, #7F64E8);
-    background: -ms-linear-gradient(#5330DF, #7F64E8);
-    background: -o-linear-gradient(#5330DF, #7F64E8);
+    background: -moz-linear-gradient(#0080ff, #0067CE);
+    background: -webkit-linear-gradient(#0080ff, #0067CE);
+    background: -ms-linear-gradient(#0080ff, #0067CE);
+    background: -o-linear-gradient(#0080ff, #0067CE);
 }
 button:active
 {
-    background: -moz-linear-gradient(#7F64E8, #5330DF);
-    background: -webkit-linear-gradient(#7F64E8, #5330DF);
-    background: -ms-linear-gradient(#7F64E8, #5330DF);
-    background: -o-linear-gradient(#7F64E8, #5330DF);
+    background: -moz-linear-gradient(#0067CE, #0080ff);
+    background: -webkit-linear-gradient(#0067CE, #0080ff);
+    background: -ms-linear-gradient(#0067CE, #0080ff);
+    background: -o-linear-gradient(#0067CE, #0080ff);
 }
 /* checkboxes */
 input[type="checkbox"]
@@ -75,7 +75,7 @@ label:before
     font-family: 'FontAwesome';
     width: 0.85em;
     display: inline-block;
-    color: #331F84;
+    color: #0080ff;
     font-size: 80px;
     vertical-align: -33%;
 }
