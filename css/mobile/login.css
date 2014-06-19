@@ -62,7 +62,7 @@
  */
 #form input[type="text"], #form input[type="password"]
 {
-    width: 94.545454545%; /* 208px/220px */
+    width: 95.454545455%; /* 210px/220px */
     border-width: 2.272727273%; /* 5px/220px */
     border: double #0080ff; 
 }
