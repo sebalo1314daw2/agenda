@@ -15,21 +15,21 @@
 body
 {
     font-family: "Titillium Web";
-    font-size: 17px;
+    font-size: 1.0625em; /* 17px/16px */
     color: #000;
 }
 h1
 {
     font-family: "Varela Round";
     color: #0080ff;
-    font-size: 40px;
+    font-size: 2.5em; /* 40px/16px */
     margin: 0;
     margin-bottom: 5px;
 }
 input[type="text"], input[type="password"]
 {
      font-family: "Titillium Web";
-     font-size: 17px;
+     font-size: 1.0625em; /* 17px/16px */
      margin-bottom: 5px;
      background: -moz-linear-gradient(#fff, #fff);
      background: -webkit-linear-gradient(#fff, #fff);
@@ -37,15 +37,16 @@ input[type="text"], input[type="password"]
      background: -o-linear-gradient(#fff, #fff);
      color: #000;
      height: 40px;
+     border-radius: 3px;
 }
 input[type="text"]:focus, input[type="password"]:focus
 {
-     border-style: solid;
+     border-style: solid !important;
 }
 button
 {
     font-family: "Titillium Web";
-    font-size: 17px;
+    font-size: 1.0625em; /* 17px/16px */
     color: #fff;
     display: block;
     height: 80px;
@@ -54,6 +55,7 @@ button
     background: -webkit-linear-gradient(#0080ff, #0067CE);
     background: -ms-linear-gradient(#0080ff, #0067CE);
     background: -o-linear-gradient(#0080ff, #0067CE);
+    border-radius: 3px;
 }
 button:active
 {
@@ -73,7 +75,7 @@ label:before
     width: 0.85em;
     display: inline-block;
     color: #0080ff;
-    font-size: 80px;
+    font-size: 5em; /* 80px/16px */
     vertical-align: -33%;
 }
 input[type="checkbox"] + label:before
