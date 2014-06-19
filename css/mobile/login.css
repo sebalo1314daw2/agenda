@@ -61,6 +61,12 @@
 #form input[type="text"], #form input[type="password"]
 {
     width: 208px;
+    border: 5px double #0080ff;
+}
+#form button
+{
+    width: 220px;
+    border: 1px solid #331F84;
 }
 /**
  * Vertical menu

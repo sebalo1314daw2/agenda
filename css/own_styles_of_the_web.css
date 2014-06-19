@@ -31,7 +31,6 @@ input[type="text"], input[type="password"]
      font-family: "Titillium Web";
      font-size: 17px;
      margin-bottom: 5px;
-     border: 5px double #0080ff;
      background: -moz-linear-gradient(#fff, #fff);
      background: -webkit-linear-gradient(#fff, #fff);
      background: -ms-linear-gradient(#fff, #fff);
@@ -50,8 +49,6 @@ button
     color: #fff;
     display: block;
     height: 80px;
-    width: 220px;
-    border: 1px solid #331F84;
     padding: 0;
     background: -moz-linear-gradient(#0080ff, #0067CE);
     background: -webkit-linear-gradient(#0080ff, #0067CE);
