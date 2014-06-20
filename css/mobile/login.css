@@ -6,6 +6,7 @@
 #webContainer
 {
     width: 100%; /* 230px */
+    min-width: 230px;
 }
 /**
  * Logo
