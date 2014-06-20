@@ -14,4 +14,12 @@
     {
         height: 35px;
     }
+    a.currentOptionMenu
+    {
+        background: none !important;
+    }
+    li.currentOptionMenu
+    {
+        background-color: #C9E1FA !important;
+    }
 }

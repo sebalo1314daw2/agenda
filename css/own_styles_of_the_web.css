@@ -90,12 +90,13 @@ label
 {
     margin-bottom: 5px;
     display: block;
+    cursor: pointer;
 }
 /**
  * Class
  * @author Sergio Baena López
  */
-.currentOptionMenu
+a.currentOptionMenu
 {
     background-color: #C9E1FA !important;
     color: #331F84 !important;    

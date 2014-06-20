@@ -44,6 +44,8 @@
     {
         float: left;
         width: 25%; /* 253px/1024px */
+        background-color: #0080ff;
+        height: 37px;
     }
     #menu a
     {
@@ -53,22 +55,26 @@
         padding-bottom: 5px;
         padding-left: 1.976284585%; /* 5px/253px */
         padding-right: 1.976284585%; /* 5px/253px */
+        background: none;
+    }
+    #menu li:hover
+    {
+        background-color: #c9e1fa;
     }
     #menu a:hover
     {
-        background-color: #c9e1fa;
         color: #331f84;
     }
     #menu a:active
     {
-        color: #0080ff;
+        color: #0080ff !important;
     }
-    #menu li:first-child a
+    #menu li:first-child
     {
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;
     }
-    #menu li:last-child a
+    #menu li:last-child
     {
         border-top-right-radius: 3px;
         border-bottom-right-radius: 3px;
@@ -130,8 +136,8 @@
    }
    #form button
    {
-       width: 11.85770751%; /* 60px/506px */
-       border-width: 0.197628458%; /* 1px/506px */
+       width: 60px; /*the width of button is fixed for computer */
+       border-width: 1px; /* 1px/506px */
    }
    label:before
    {

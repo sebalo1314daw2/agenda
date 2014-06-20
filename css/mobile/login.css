@@ -78,8 +78,8 @@
 #form button
 {
     width: 100%; /* 220px/220px */
-    border-width: 0.454545455%; /* 1px/220px */
-    border: solid #331F84;
+    /*border-width: 0.454545455%;  1px/220px */
+    border: 1px solid #331F84;
 }
 /**
  * Vertical menu
