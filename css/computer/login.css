@@ -34,25 +34,25 @@
         top: -61px; 
         margin-left: 0.48828125%; /* 5px/1024px */ 
         margin-right: 0.48828125%; /* 5px/1024px */
-        width: 99.90234375%; /* 1023px/1024px */
+        width: 99.0234375%; /* 1014px/1024px */
     }
     #menu ul
     {
-        width: 100%; /* 1024px/1024px */
+        width: 100%; /* 1014px/1014px */
     }
     #menu li
     {
         float: left;
-        width: 25%; /* 256px/1024px */
+        width: 25%; /* 253px/1024px */
     }
     #menu a
     {
-        width: 96.09375%; /* 246/(246+2*5) */
+        width: 96.04743083%; /* 243px/253px */
         border-radius: 0;
         padding-top: 5px;
         padding-bottom: 5px;
-        padding-left: 1.953125%; /* 5px/(246+2*5) */
-        padding-right: 1.953125%; /* 5px/(246+2*5) */
+        padding-left: 1.976284585%; /* 5px/253px */
+        padding-right: 1.976284585%; /* 5px/253px */
     }
     #menu a:hover
     {
