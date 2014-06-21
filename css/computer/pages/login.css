@@ -1,0 +1,12 @@
+@media (min-width: 768px)
+{
+   /**
+    * Form
+    * The form of the login
+    * @author Sergio Baena López
+    */
+    #form
+    {
+        height: 191px;
+    }
+}

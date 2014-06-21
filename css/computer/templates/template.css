@@ -119,31 +119,6 @@
        width: 300px;*/
    }
    /**
-    * Form
-    * The form of the login
-    * @author Sergio Baena López
-    */
-   #form
-   {
-       width: 49.4140625%; /* 506px/1024px */
-       float: left;
-       margin-right: 0.5859375%; /* 6px/1024px */
-       height: 191px;
-   }
-   #form input[type="text"], #form input[type="password"]
-   {
-        width: 98.418972332%; /* 498px/506px */
-   }
-   #form button
-   {
-       width: 60px; /*the width of button is fixed for computer */
-       border-width: 1px; /* 1px/506px */
-   }
-   label:before
-   {
-       margin-right: 0.988142292%; /* 5px/506px */ 
-   }
-   /**
     * Footer
     * The footer of the web
     * @author Sergio Baena López

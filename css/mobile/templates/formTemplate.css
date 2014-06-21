@@ -1,0 +1,19 @@
+/**
+ * Form
+ * The form of the login
+ * @author Sergio Baena López
+ * @parent-width 220px
+ * @width 220px
+ */
+#form input[type="text"], #form input[type="password"]
+{
+    width: 95.454545455%; /* 210px/220px */
+    border-width: 2.272727273%; /* 5px/220px */
+    border: double #0080ff; 
+}
+#form button
+{
+    width: 100%; /* 220px/220px */
+    /*border-width: 0.454545455%;  1px/220px */
+    border: 1px solid #331F84;
+}
