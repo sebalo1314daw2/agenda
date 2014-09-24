@@ -2,7 +2,7 @@
 {
    /**
     * Form
-    * The form of the login
+    * The form
     * @author Sergio Baena López
     */
    #form
@@ -17,8 +17,7 @@
    }
    #form button
    {
-       width: 60px; /*the width of button is fixed for computer */
-       border-width: 1px; /* 1px/506px */
+       border-width: 1px; /* Is fixed */ 
    }
    label:before
    {

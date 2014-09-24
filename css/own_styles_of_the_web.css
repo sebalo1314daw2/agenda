@@ -46,7 +46,8 @@ input[type="text"]:focus, input[type="password"]:focus
 }
 input[type="file"]
 {
-    visibility: hidden;
+    /*visibility: hidden;*/
+    display: none;
     position: absolute;
 }
 input[type="file"] + label span
