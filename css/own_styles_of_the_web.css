@@ -38,10 +38,26 @@ input[type="text"], input[type="password"]
      color: #000;
      height: 40px;
      border-radius: 3px;
+     border: double #0080ff; 
 }
 input[type="text"]:focus, input[type="password"]:focus
 {
      border-style: solid !important;
+}
+input[type="file"]
+{
+    visibility: hidden;
+    position: absolute;
+}
+input[type="file"] + label span
+{
+    color: #0080ff;
+    font-size: 5em; /* 80px/16px */
+    vertical-align: -33%;
+}
+input[type="file"] + label:active span
+{
+    color: #c9e1fa;
 }
 button
 {

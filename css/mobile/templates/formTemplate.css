@@ -1,6 +1,6 @@
 /**
  * Form
- * The form of the login
+ * The form of the web
  * @author Sergio Baena López
  * @parent-width 220px
  * @width 220px
@@ -9,7 +9,10 @@
 {
     width: 95.454545455%; /* 210px/220px */
     border-width: 2.272727273%; /* 5px/220px */
-    border: double #0080ff; 
+    padding-left: 5px; /* 5px/220px */
+}
+#form input[type="file"] + #form label span {
+    margin-right: 0.909090909%; /* 2px/220px */
 }
 #form button
 {

@@ -26,10 +26,10 @@ function generateMenu()
 {
     var menu =  "<ul>";
     menu     +=     '<li class="currentOptionMenu" >';
-    menu     +=         '<a class="currentOptionMenu" href="javascript:void(0)">Acc&eacute;s</a>';
+    menu     +=         '<a class="currentOptionMenu" href="login.html">Acc&eacute;s</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';
-    menu     +=         '<a href="javascript:void(0)">Registre</a>';
+    menu     +=         '<a href="registre.html">Registre</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';   
     menu     +=         '<a href="javascript:void(0)">Sobre la web</a>';  
