@@ -26,6 +26,12 @@ h1
     margin: 0;
     margin-bottom: 5px;
 }
+p:first-child {
+    margin-top: 0;
+}
+p:last-child {
+    margin-bottom: 0;
+}
 input[type="text"], input[type="password"]
 {
      font-family: "Titillium Web";
@@ -117,4 +123,10 @@ a.currentOptionMenu
 {
     background-color: #C9E1FA !important;
     color: #331F84 !important;    
+}
+.fastReading {
+    font-weight: bold;
+}
+.specialSense {
+    font-style: italic;
 }

@@ -32,7 +32,7 @@ function generateMenu()
     menu     +=         '<a href="registre.html">Registre</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';   
-    menu     +=         '<a href="javascript:void(0)">Sobre la web</a>';  
+    menu     +=         '<a href="sobre_la_web.html">Sobre la web</a>';  
     menu     +=     '</li>';  
     menu     +=     '<li>';                     
     menu     +=         '<a href="javascript:void(0)">Contacte</a>';                       
