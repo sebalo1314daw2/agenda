@@ -1,0 +1,21 @@
+@media (min-width: 768px)
+{
+   /**
+    * Text
+    * The text of the login
+    * @author Sergio Baena López
+    */
+    #text
+    {
+        /*height: 415px;*/
+    }
+   /**
+    * Img
+    * The image of the web
+    * @author Sergio Baena López
+    */
+    #img {
+        height: 415px;
+        font-size: 425px;  /*is fixed */ 
+    }
+}
