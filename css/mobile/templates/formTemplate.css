@@ -9,10 +9,15 @@
 {
     width: 95.454545455%; /* 210px/220px */
     border-width: 2.272727273%; /* 5px/220px */
-    padding-left: 5px; /* 5px/220px */
+    padding-left: 5px; 
 }
 #form input[type="file"] + #form label span {
     margin-right: 0.909090909%; /* 2px/220px */
+}
+#form textarea {
+    width: 95.454545455%; /* 210px/220px */
+    border-width: 2.272727273%; /* 5px/220px */
+    padding-left: 5px; 
 }
 #form button
 {

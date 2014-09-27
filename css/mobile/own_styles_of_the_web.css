@@ -32,7 +32,7 @@ p:first-child {
 p:last-child {
     margin-bottom: 0;
 }
-input[type="text"], input[type="password"]
+input[type="text"], input[type="password"], textarea
 {
      font-family: "Titillium Web";
      font-size: 1.0625em; /* 17px/16px */
@@ -46,7 +46,7 @@ input[type="text"], input[type="password"]
      border-radius: 3px;
      border: double #0080ff; 
 }
-input[type="text"]:focus, input[type="password"]:focus
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus
 {
      border-style: solid !important;
 }
@@ -65,6 +65,9 @@ input[type="file"] + label span
 input[type="file"] + label:active span
 {
     color: #c9e1fa;
+}
+textarea {
+    height: 240px;
 }
 button
 {

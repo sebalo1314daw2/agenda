@@ -35,7 +35,7 @@ function generateMenu()
     menu     +=         '<a href="sobre_la_web.html">Sobre la web</a>';  
     menu     +=     '</li>';  
     menu     +=     '<li>';                     
-    menu     +=         '<a href="javascript:void(0)">Contacte</a>';                       
+    menu     +=         '<a href="contacte.html">Contacte</a>';                       
     menu     +=     '</li>';                          
     menu     += '</ul>';                   
     $("#menu").append
