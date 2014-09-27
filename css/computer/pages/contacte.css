@@ -1,0 +1,24 @@
+@media (min-width: 768px)
+{
+   /**
+    * Form
+    * The form of the contact
+    * @author Sergio Baena López
+    */
+    #form
+    {
+        /*height: 380px;*/
+    }
+    #form button {
+        width: 64px; /*the width of button is fixed for computer */
+    }
+   /**
+    * Img
+    * The image of the web
+    * @author Sergio Baena López
+    */
+    #img {
+        height: 380px;
+        font-size: 360px;   /* is fixed */
+    }
+}

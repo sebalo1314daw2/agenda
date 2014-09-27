@@ -11,9 +11,19 @@
        float: left;
        margin-right: 0.5859375%; /* 6px/1024px */
    }
-   #form input[type="text"], #form input[type="password"]
+   #form input[type="text"], #form input[type="password"], #form textarea
    {
         width: 98.418972332%; /* 498px/506px */
+   }
+   #form textarea {
+       -bracket-:hack (;  /* Hack of Chrome */
+            width: 97.826086957%;  /* 495px/506px */ 
+        );
+   }
+   @media screen and (-webkit-min-device-pixel-ratio:0) /* Hack of Chrome */ {
+        #form textarea {
+             width: 97.826086957%;  /* 495px/506px */
+        }
    }
    #form button
    {
