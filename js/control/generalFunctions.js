@@ -8,7 +8,7 @@ $("document").ready(function(){atTheStartOfPage();});
 function generateLogo()
 {
     var logo = '<a href="login.html" title="Anar a la p&agrave;gina d\'inici">';
-    logo +=         '<img src="../img/logo.png" alt="Logotip" />';      
+    logo +=         '<img src="../../../img/logo.png" alt="Logotip" />';      
     logo +=         'Agenda de butxaca';
     logo +=    '</a>';                 
     $("#logo").append
