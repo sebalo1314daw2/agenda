@@ -6,7 +6,7 @@
  */
 function atTheStartOfPage()
 {
-    generateLogo("login.html");
-    generateMenu();
+    generateLogo("agenda.html");
+    generateRegisteredUserMenu();
     generateFooter();
 }

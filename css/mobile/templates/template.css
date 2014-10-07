@@ -31,11 +31,9 @@
     height: 38px;
     vertical-align: -40%;
 }
-#logo a
-{
-    text-decoration: none;
+#logo a {
     color: #0080ff;
-    display: block;
+    font-style: normal;
 }
 /**
  * Img
@@ -97,6 +95,7 @@
     padding-bottom: 20px;
     border-radius: 3px; 
     margin-bottom: 5px;
+    font-style: normal;
 }
 #menu a:active
 {

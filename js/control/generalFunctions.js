@@ -4,10 +4,11 @@ $("document").ready(function(){atTheStartOfPage();});
  * @description Procedure that is intended to generate the logo of the web.
  * @author Sergio Baena López
  * @version 1.0
+ * @param {String} url the URL where the user will be redirected when he clicks
  */
-function generateLogo()
+function generateLogo(url)
 {
-    var logo = '<a href="login.html" title="Anar a la p&agrave;gina d\'inici">';
+    var logo = '<a href="' + url + '" title="Anar a la p&agrave;gina d\'inici">';
     logo +=         '<img src="../../../img/logo.png" alt="Logotip" />';      
     logo +=         'Agenda de butxaca';
     logo +=    '</a>';                 
@@ -58,5 +59,39 @@ function generateFooter()
     $("#footer").append
     (
             $(footer)
+    );              
+}
+/**
+ * generateRegisteredUserMenu()
+ * @description Procedure that is intended to generate the registered user's menu
+ * @author Sergio Baena López
+ * @version 1.0
+ */
+function generateRegisteredUserMenu() {
+    var menu =  "<ul>";
+    menu     +=     '<li class="currentOptionMenu" >';
+    menu     +=         '<a class="currentOptionMenu" href="javascript:void(0)">Agenda</a>';
+    menu     +=     '</li>';
+    menu     +=     '<li>';
+    menu     +=         '<a href="javascript:void(0)">Usuari</a>';
+    menu     +=     '</li>';
+    menu     +=     '<li>';   
+    menu     +=         '<a href="javascript:void(0)">Amics</a>';  
+    menu     +=     '</li>';  
+    menu     +=     '<li>';                     
+    menu     +=         '<a href="javascript:void(0)">Grups</a>';                       
+    menu     +=     '</li>';
+    menu     +=     '<li>';                     
+    menu     +=         '<a href="../usuari_no_registrat/sobre_la_web.html">Sobre la web</a>';                       
+    menu     +=     '</li>';
+    menu     +=     '<li>';                     
+    menu     +=         '<a href="../usuari_no_registrat/contacte.html">Contacte</a>';                       
+    menu     +=     '</li>';
+    menu     +=     '<li>';                     
+    menu     +=         '<a href="javascript:void(0)">Tancar la sessi&oacute;</a>';                       
+    menu     +=     '</li>';
+    menu     += '</ul>';                   
+    $("#menu").append (
+            $(menu)
     );              
 }

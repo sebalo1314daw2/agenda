@@ -118,6 +118,34 @@ label
     display: block;
     cursor: pointer;
 }
+.day h2 {
+    font-family: "Playfair Display";
+    font-weight: normal;
+    font-size:  2.5em; /* 40px/16px */
+    margin: 0;
+}
+.day ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+}
+.day li h3 {
+    margin: 0;
+    display: inline;
+}
+.day li h3:after {
+    content: ": ";
+}
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-style: italic; 
+}
+a:active {
+    font-style: normal;
+    background-color: #fff;
+}
 /**
  * Class
  * @author Sergio Baena López
@@ -132,4 +160,15 @@ a.currentOptionMenu
 }
 .specialSense {
     font-style: italic;
+}
+.timeRemaining {
+    font-size: 0.2em; /* 10px/16px */
+    display: block;
+    color: #D0D3D6;
+}
+.day {
+    margin-bottom: 5px; 
+}
+.moreInfoTask {
+    color: #E0F0F5;
 }
