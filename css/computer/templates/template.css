@@ -22,6 +22,14 @@
        margin-left: 0.48828125%; /* 5px/1024px */
        margin-right: 0.48828125%; /* 5px/1024px */ 
    }
+   /**
+    * menuLooper
+    * The menu's looper
+    * @author Sergio Baena López
+    */
+   #menuLooper {
+       display: none;
+   }
     /**
      * Horizontal menu
      * The menu of the web
@@ -69,7 +77,10 @@
     {
         color: #0080ff !important;
     }
-    #menu li:first-child
+    #menu li:first-child {
+        display: none;
+    }
+    #menu li:first-child + li
     {
         border-top-left-radius: 3px;
         border-bottom-left-radius: 3px;

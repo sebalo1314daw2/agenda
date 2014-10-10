@@ -26,6 +26,9 @@ function generateLogo(url)
 function generateMenu()
 {
     var menu =  "<ul>";
+    menu     +=     '<li>';
+    menu     +=         '<a href="#webContainer">Pujar</a>';
+    menu     +=     '</li>';
     menu     +=     '<li class="currentOptionMenu" >';
     menu     +=         '<a class="currentOptionMenu" href="login.html">Acc&eacute;s</a>';
     menu     +=     '</li>';
@@ -69,6 +72,9 @@ function generateFooter()
  */
 function generateRegisteredUserMenu() {
     var menu =  "<ul>";
+    menu     +=     '<li>';
+    menu     +=         '<a href="#webContainer">Pujar</a>';
+    menu     +=     '</li>';
     menu     +=     '<li class="currentOptionMenu" >';
     menu     +=         '<a class="currentOptionMenu" href="javascript:void(0)">Agenda</a>';
     menu     +=     '</li>';

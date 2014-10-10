@@ -36,6 +36,16 @@
     font-style: normal;
 }
 /**
+ * menuLooper
+ * The menu's looper
+ * @author Sergio Baena López
+ */
+#menuLooper {
+    margin-top: 20px;
+    margin-left: 2.173913043%; /* 5px/230px */
+    margin-right: 2.173913043%; /* 5px/230px */
+}
+/**
  * Img
  * The image of the web
  * @author Sergio Baena López
