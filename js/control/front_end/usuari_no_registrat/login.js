@@ -7,6 +7,7 @@
 function atTheStartOfPage()
 {
     generateLogo("login.html");
+    generateMenuLooper();
     generateMenu();
     generateFooter();
 }

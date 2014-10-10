@@ -7,6 +7,7 @@
 function atTheStartOfPage()
 {
     generateLogo("agenda.html");
+    generateMenuLooper();
     generateRegisteredUserMenu();
     generateFooter();
 }

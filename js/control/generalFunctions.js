@@ -18,6 +18,16 @@ function generateLogo(url)
     );
 }
 /**
+ * generateMenuLooper()
+ * @description Procedure that is intended to generate the menu's looper of the web.
+ * @author Sergio Baena López
+ * @version 1.0
+ */
+function generateMenuLooper() {
+    var menuLooper = '<a href="#menu">Anar al men&uacute;</a>';
+    $("#menuLooper").append( $(menuLooper) );
+}
+/**
  * generateMenu()
  * @description Procedure that is intended to generate the menu of the web.
  * @author Sergio Baena López
