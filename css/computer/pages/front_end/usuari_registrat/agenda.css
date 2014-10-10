@@ -1,0 +1,23 @@
+@media (min-width: 768px) {
+   /**
+    * Form
+    * The form of the agenda
+    * @author Sergio Baena López
+    */
+    #form
+    {
+        /*height: 191px;*/
+    }
+    #form button {
+        width: 94px; /*the width of button is fixed for computer */
+    }
+   /**
+    * Img
+    * The image of the web
+    * @author Sergio Baena López
+    */
+/*    #img {
+        height: 191px;
+        font-size: 185px;  is fixed 
+    }*/
+}

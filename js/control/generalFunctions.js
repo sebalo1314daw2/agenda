@@ -33,7 +33,7 @@ function generateMenu()
     menu     +=         '<a href="registre.html">Registre</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';   
-    menu     +=         '<a href="sobre_la_web.html">Sobre la web</a>';  
+    menu     +=         '<a href="sobre_la_web.html">Info</a>';  
     menu     +=     '</li>';  
     menu     +=     '<li>';                     
     menu     +=         '<a href="contacte.html">Contacte</a>';                       
@@ -82,13 +82,13 @@ function generateRegisteredUserMenu() {
     menu     +=         '<a href="javascript:void(0)">Grups</a>';                       
     menu     +=     '</li>';
     menu     +=     '<li>';                     
-    menu     +=         '<a href="../usuari_no_registrat/sobre_la_web.html">Sobre la web</a>';                       
+    menu     +=         '<a href="../usuari_no_registrat/sobre_la_web.html">Info</a>';                       
     menu     +=     '</li>';
     menu     +=     '<li>';                     
     menu     +=         '<a href="../usuari_no_registrat/contacte.html">Contacte</a>';                       
     menu     +=     '</li>';
     menu     +=     '<li>';                     
-    menu     +=         '<a href="javascript:void(0)">Tancar la sessi&oacute;</a>';                       
+    menu     +=         '<a href="javascript:void(0)">Tancar</a>';                       
     menu     +=     '</li>';
     menu     += '</ul>';                   
     $("#menu").append (
