@@ -1,0 +1,10 @@
+select multiple
+
+clase select multiple
+------------------------
+sin atributos
+------------------------
+static generateMultipleSelect(optionsArray)
+static addNewClickStyles(optionObj)
+static removeClickStyles()
+

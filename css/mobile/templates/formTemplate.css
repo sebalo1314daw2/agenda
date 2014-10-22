@@ -19,9 +19,27 @@
 #form input[type="file"] + #form label span { 
     margin-right: 0.909090909%; /* 2px/220px */
 }
+#form a.clickableImg {
+    width: 48.636363636%;  /* 107px/220px */
+}
+#form a.clickableImg {
+    margin-right: 2.727272727%; /* 6px/220px */
+}
+#form a.clickableImg + a.clickableImg {
+     margin-right: 0;
+}
 #form button
 {
     width: 100%; /* 220px/220px */
     /*border-width: 0.454545455%;  1px/220px */
     border: 1px solid #331F84;
+}
+#form #buttonPanel button {
+    margin-bottom: 5px;
+}
+#form #buttonPanel button:first-child {
+    clear: both;
+}
+#form #buttonPanel button:last-child {
+    margin-bottom: 0;
 }

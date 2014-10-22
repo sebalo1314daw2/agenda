@@ -50,6 +50,19 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus
 {
      border-style: solid !important;
 }
+select {
+    display: none;
+}
+select + a {
+    font-style: normal;
+}
+select + a:before {
+    content: "\f03a";
+    width: 1.05em; /* We've to put the width in this file */
+}
+select + a:active:before {
+    color: #c9e1fa;
+}
 input[type="file"]
 {
     /*visibility: hidden;*/
@@ -95,7 +108,7 @@ input[type="checkbox"]
 {
     display: none;
 }
-label:before
+label:before, a:before
 {
     font-family: 'FontAwesome';
     width: 0.85em;
@@ -112,7 +125,7 @@ input[type="checkbox"]:checked + label:before
 {
     content: "\f046";
 }
-label
+label, select + a
 {
     margin-bottom: 5px;
     display: block;
@@ -149,6 +162,22 @@ a:active {
     font-style: normal;
     background-color: #fff;
 }
+a.clickableImg {
+    display: block;
+    float: left;
+    margin-bottom: 5px;
+    background-color: #0080ff;
+    color: #fff;
+    font-size: 2.5em;    /* 40px/16px */
+    border-radius: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+a.clickableImg:active {
+    background-color: #fff;
+    color: #0080ff;
+}
 /**
  * Class
  * @author Sergio Baena López
@@ -174,4 +203,15 @@ a.currentOptionMenu
 }
 .moreInfoTask {
     color: #E0F0F5;
+}
+.comment {
+    margin-bottom: 5px;
+}
+.comment h2.user {
+    margin: 0;
+    display: inline;
+    font-size: 1.17em;
+}
+.comment h2.user:after {
+    content: ":";
 }

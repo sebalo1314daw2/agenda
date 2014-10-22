@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+    <head>
+        <title>Agenda de butxaca</title>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="application-name" content="Agenda de butxaca" />
+        <meta name="author" content="Sergio Baena L&oacute;pez" />
+        <meta name="description" content="Una agenda on podr&agrave;s enmagatzemar totes les tasques que
+        tinguis per fer. I tot d'una manera m&eacute;s c&ograve;moda... des del teu dispositiu
+        m&ograve;bil!" />
+        <meta name="keywords" content="agenda, butxaca, tasca, m&ograve;bil" />
+        <!-- Web icon -->
+        <link rel="shortcut icon" href="../../../img/logo.png" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/formTemplate.css" type="text/css" />
+<!--        <link rel="stylesheet" href="../../../css/computer/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/formTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/pages/front_end/usuari_no_registrat/login.css" type="text/css" />-->
+        <!-- Google fonts -->
+        <link rel="stylesheet" href="../../../css/googleFonts/lilyScriptOne/liliScriptOne.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Varela+Round/Varela+Round.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Titillium+Web/Titillium+Web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Lobster/Lobster.css" type="text/css" />
+        <!-- Font Awasome -->
+        <link rel="stylesheet" href="../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
+        <!-- JavaScript -->
+        <script type="text/javascript" src="../../../js/jQuery/jQuery.js"></script>
+        <script type="text/javascript" src="../../../js/control/generalFunctions.js"></script>
+        <script type="text/javascript" src="../../../js/control/front_end/usuari_registrat/tasca.js"></script>   
+    </head>
+    <body>
+        <div id="webContainer">
+            <!-- Web container -->
+            <!-- Logo -->
+            <div id="logo"></div>
+            <div id="noLogo">
+                <!-- <div id="menuLooper"></div> -->
+                <div id="bottonPanelLooper"></div>
+                <div id="body">
+                    <!-- Body-->
+                    <div id="title">
+                        <h1>Tasca</h1>
+                    </div>
+                    <div id="form">
+                        <form action="javascript:void(0)">
+                            <input type="text" placeholder="Assumpte" value="FOL" />
+                            <textarea placeholder="Cos">Lee el estatuto de los trabajadores y haz los ejercicios 1, 4, 6 y 7.</textarea>
+                            <select multiple="multiple" id="users">
+                                    <option>Pepe Rodrigo Villalba</option>
+                                    <option>Marta Manzanar Peral</option>
+                                    <option>Juan Letra Media</option>
+                                    <option>Sergio Baena L&oacute;pez</option>
+                                    <option>Ana Teclado Letra</option>
+                                    <option>Francisco N&uacute;mero Pi</option>
+                            </select>
+                            <a href="javascript:void(0)">Compartir amb usuaris</a>
+                            <select multiple="multiple" id="groups">
+                                    <option>Grupo A</option>
+                                    <option>Los mejores del mundial mundial</option>
+                                    <option>Familia</option>
+                                    <option>Clase</option>
+                                    <option>Grupo B</option>
+                                    <option>Las zanahorias</option>
+                            </select>
+                            <a href="javascript:void(0)">Compartir amb grups</a>
+                            <div class="comment" id="firstComment">
+                                <h2 class="user">Marta</h2>
+                                <span class="content">Hola!</span>
+                            </div>
+                            <div class="comment">
+                                <h2 class="user">Pepe</h2>
+                                <span class="content">&iquest;Qu&eacute; tal?</span>
+                            </div>
+                            <div class="comment">
+                                <h2 class="user">Marta</h2>
+                                <span class="content">Bien, y tu?</span>
+                            </div>
+                            <textarea placeholder="Nou comentari"></textarea>
+                            <a href="javascript:void(0)" class="clickableImg">
+                                <span class="fa fa-share-alt"></span>
+                            </a>
+                            <a href="#firstComment" class="clickableImg">
+                                <span class="fa fa-comment"></span>
+                            </a>
+                            <div id="buttonPanel">
+                                <button onclick="window.location.href = '#webContainer';">Pujar</button>
+                                <button>Eliminar tasca</button>
+                                <button>Sortir sense guardar</button>
+                                <button>Guardar i sortir</button>
+                            </div>
+                        </form>
+                    </div>
+                   <!--<div id="img" class="fa fa-key"></div>-->
+                </div>
+                <!-- <div id="menu"></div> -->
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>

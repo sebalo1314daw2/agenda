@@ -28,6 +28,16 @@ function generateMenuLooper() {
     $("#menuLooper").append( $(menuLooper) );
 }
 /**
+ * generateBottonPanelLooper()
+ * @description Procedure that is intended to generate the botton panel's looper of the web.
+ * @author Sergio Baena López
+ * @version 1.0
+ */
+function generateBottonPanelLooper() {
+    var buttonPanelLooper = '<a href="#buttonPanel">Anar a la botonera</a>';
+    $("#bottonPanelLooper").append( $(buttonPanelLooper) );
+}
+/**
  * generateMenu()
  * @description Procedure that is intended to generate the menu of the web.
  * @author Sergio Baena López
