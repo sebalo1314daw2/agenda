@@ -1,0 +1,30 @@
+@media (min-width: 768px) {
+   /**
+    * No logo
+    * @description The rest of the web (which is no logo)
+    * @author Sergio Baena López
+    * @width 1024px
+    */
+   #noLogo {
+       position: static;
+   }
+   /**
+    * #bottonPanelLooper
+    * The button panel's looper
+    * @author Sergio Baena López
+    */
+   #bottonPanelLooper {
+       margin-left: 0.48828125%; /* 5px/1024px */
+       margin-right: 0.48828125%; /* 5px/1024px */
+   }
+   /**
+    * Footer
+    * The footer of the web
+    * @author Sergio Baena López
+    */
+   #footer {
+       margin-top: 0;
+       position: relative;
+       top: 20px;
+   }
+}

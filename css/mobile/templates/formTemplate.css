@@ -5,11 +5,17 @@
  * @parent-width 220px
  * @width 220px
  */
-#form input[type="text"], #form input[type="password"], #form textarea
-{
+#form input[type="text"]        ,
+#form input[type="password"]    ,
+#form textarea                  ,
+#form .chosen-container         ,
+#form a.clickableImg {
     width: 95.454545455%; /* 210px/220px */
-    border-width: 2.272727273%; /* 5px/220px */
+    border-width: 3px; /* is fixed */
     padding-left: 5px; 
+}
+#form .chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+    padding-left: 0;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) /* Hack of Chrome */ {
     #form textarea {
@@ -18,12 +24,6 @@
 }
 #form input[type="file"] + #form label span { 
     margin-right: 0.909090909%; /* 2px/220px */
-}
-#form a.clickableImg {
-    width: 48.636363636%;  /* 107px/220px */
-}
-#form a.clickableImg {
-    margin-right: 2.727272727%; /* 6px/220px */
 }
 #form a.clickableImg + a.clickableImg {
      margin-right: 0;
@@ -39,7 +39,4 @@
 }
 #form #buttonPanel button:first-child {
     clear: both;
-}
-#form #buttonPanel button:last-child {
-    margin-bottom: 0;
 }

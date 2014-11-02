@@ -10,4 +10,9 @@ function atTheStartOfPage() {
 //    generateMenuLooper();
 //    generateRegisteredUserMenu();
     generateFooter();
+    // LUEGO MEJORARLO
+    $("select").chosen({
+        search_contains : true,
+        no_results_text : "No hi ha resultats que concideixen amb "
+    });
 }

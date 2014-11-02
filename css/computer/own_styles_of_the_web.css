@@ -1,9 +1,12 @@
 @media (min-width: 768px)
 {
     /* Tags */
-    input[type="text"], input[type="password"]
+    input[type="text"], input[type="password"] 
     {
         height: 27px;
+    }
+    .chosen-container-multi .chosen-choices, .chosen-container {
+        height: auto;
     }
     /* checkboxes */
     label:before
@@ -15,11 +18,20 @@
     {
         height: 35px;
     }
+    button.longFormat {
+        display: none;
+    }
+    button.shortFormat {
+        display: block;
+    }
     .day h2.shortFormatOfDate {
         display: none;
     }
     .day h2.longFormatOfDate {
         display: block;
+    }
+    select + div + a {
+        display: none;
     }
     /* Classes */
     a.currentOptionMenu
@@ -29,5 +41,8 @@
     li.currentOptionMenu
     {
         background-color: #C9E1FA !important;
+    }
+    .chosen-container {
+        display: block;
     }
 }

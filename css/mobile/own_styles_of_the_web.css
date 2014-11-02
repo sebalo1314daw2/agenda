@@ -2,7 +2,7 @@
  * Tags
  * @author Sergio Baena López
  */
-*::selection 
+*::selection
 {
     background-color: #0080ff;
     color: #fff;
@@ -32,8 +32,10 @@ p:first-child {
 p:last-child {
     margin-bottom: 0;
 }
-input[type="text"], input[type="password"], textarea
-{
+input[type="text"]              ,
+input[type="password"]          , 
+textarea, .chosen-container     , 
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
      font-family: "Titillium Web";
      font-size: 1.0625em; /* 17px/16px */
      margin-bottom: 5px;
@@ -44,23 +46,32 @@ input[type="text"], input[type="password"], textarea
      color: #000;
      height: 40px;
      border-radius: 3px;
-     border: double #0080ff; 
+     border: double #0080ff;
 }
-input[type="text"]:focus, input[type="password"]:focus, textarea:focus
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+    margin-bottom: 0;
+    height: auto;
+    color: #757575;
+    margin-top: 0;
+}
+.chosen-container .chosen-results li.highlighted {
+    background: -moz-linear-gradient(#0080ff, #0080ff);
+    background: -webkit-linear-gradient(#0080ff, #0080ff);
+    background: -ms-linear-gradient(#0080ff, #0080ff);
+    background: -o-linear-gradient(#0080ff, #0080ff);
+}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus, .chosen-container-active
 {
      border-style: solid !important;
 }
-select {
-    display: none;
-}
-select + a {
+select + div + a {
     font-style: normal;
 }
-select + a:before {
+select + div + a:before {
     content: "\f03a";
     width: 1.05em; /* We've to put the width in this file */
 }
-select + a:active:before {
+select + div + a:active:before {
     color: #c9e1fa;
 }
 input[type="file"]
@@ -102,6 +113,9 @@ button:active
     background: -webkit-linear-gradient(#0067CE, #0080ff);
     background: -ms-linear-gradient(#0067CE, #0080ff);
     background: -o-linear-gradient(#0067CE, #0080ff);
+}
+button.shortFormat {
+    display: none;
 }
 /* checkboxes */
 input[type="checkbox"]
@@ -164,19 +178,17 @@ a:active {
 }
 a.clickableImg {
     display: block;
-    float: left;
     margin-bottom: 5px;
-    background-color: #0080ff;
-    color: #fff;
-    font-size: 2.5em;    /* 40px/16px */
-    border-radius: 3px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-}
-a.clickableImg:active {
     background-color: #fff;
     color: #0080ff;
+    font-size: 2.5em;    /* 40px/16px */
+    border-radius: 3px;
+    padding-bottom: 5px;
+    text-align: center;
+    border: double #0080ff;
+}
+a.clickableImg:active {
+    border-style: solid;
 }
 /**
  * Class
@@ -214,4 +226,14 @@ a.currentOptionMenu
 }
 .comment h2.user:after {
     content: ":";
+}
+.chosen-container {
+    display: none;
+}
+.chosen-container-multi .chosen-choices {
+    border: none;
+    padding: 0;
+}
+.chosen-container .chosen-results {
+    color: #000;
 }

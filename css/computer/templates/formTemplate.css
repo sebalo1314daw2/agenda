@@ -11,9 +11,15 @@
        float: left;
        margin-right: 0.5859375%; /* 6px/1024px */
    }
-   #form input[type="text"], #form input[type="password"], #form textarea
-   {
-        width: 98.418972332%; /* 498px/506px */
+   #form input[type="text"]         ,
+   #form input[type="password"]     ,
+   #form textarea                   ,
+   #form .chosen-container          ,
+   #form a.clickableImg {
+        width: 98.418972332% !important; /* 498px/506px */
+   }
+   #form .chosen-container {
+        width: 98.616600791% !important; /* 499px/506px */
    }
    #form textarea {
        -bracket-:hack (;  /* Hack of Chrome */
@@ -28,6 +34,10 @@
    #form button
    {
        border-width: 1px; /* Is fixed */ 
+   }
+   #form #buttonPanel * {
+        float: left;
+        margin-right: 5px; /* is fixed */ 
    }
    label:before
    {
