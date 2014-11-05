@@ -15,6 +15,9 @@
         <link rel="shortcut icon" href="../../../img/logo.png" />
         <!-- Chosen styles -->
         <link rel="stylesheet" href="../../../js/jQuery/pluginJqueryChosen/chosen.css" type="text/css" />
+        <!-- Datepicker styles -->
+        <link rel="stylesheet" href="../../../js/jQuery/pluginJqueryPickadate/lib/themes/default.css" type="text/css" />
+        <link rel="stylesheet" href="../../../js/jQuery/pluginJqueryPickadate/lib/themes/default.date.css" type="text/css" />
         <!-- CSS -->
         <link rel="stylesheet" href="../../../css/reset.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
@@ -35,6 +38,9 @@
         <!-- JavaScript -->
         <script type="text/javascript" src="../../../js/jQuery/jQuery.js"></script>
         <script type="text/javascript" src="../../../js/jQuery/pluginJqueryChosen/chosen.jquery.js"></script>
+        <script type="text/javascript" src="../../../js/jQuery/pluginJqueryPickadate/lib/picker.js"></script>
+        <script type="text/javascript" src="../../../js/jQuery/pluginJqueryPickadate/lib/picker.date.js"></script>
+        <script type="text/javascript" src="../../../js/jQuery/pluginJqueryPickadate/lib/translations/ca_ES.js"></script>
         <script type="text/javascript" src="../../../js/control/generalFunctions.js"></script>
         <script type="text/javascript" src="../../../js/control/front_end/usuari_registrat/tasca.js"></script>   
     </head>
@@ -53,6 +59,7 @@
                     </div>
                     <div id="form">
                         <form action="javascript:void(0)">
+                            <input class="calendar" type="text" placeholder="Data" data-value="2014/11/02" />
                             <input type="text" placeholder="Assumpte" value="FOL" />
                             <textarea placeholder="Cos">Lee el estatuto de los trabajadores y haz los ejercicios 1, 4, 6 y 7.</textarea>
                             <select data-placeholder="Compartir amb usuaris" multiple="multiple" id="users">
@@ -95,15 +102,15 @@
                             <div id="buttonPanel">
                                 <!-- The long format's buttons  -->
                                 <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>
-                                <button class="deleteButton longFormat">Eliminar tasca</button>
-                                <button class="exitWithoutSalveButton longFormat">Sortir sense guardar</button>
-                                <button class="salveAndExitButton longFormat">Guardar i sortir</button>
+                                <button class="deleteButton longFormat" onclick="window.close()">Eliminar tasca</button>
+                                <button class="exitWithoutSalveButton longFormat" onclick="window.close()">Sortir sense guardar</button>
+                                <button class="salveAndExitButton longFormat" onclick="window.close()">Guardar i sortir</button>
                                 <!-- The short format's buttons  -->
                                 <button class="upButton shortFormat fa fa-arrow-up" 
                                 onclick="window.location.href = '#webContainer';" title="Pujar"></button>
-                                <button class="deleteButton shortFormat fa fa-trash-o" title="Eliminar tasca"></button>
-                                <button class="exitWithoutSalveButton shortFormat fa fa-times" title="Sortir sense guardar"></button>
-                                <button class="salveAndExitButton shortFormat fa fa-floppy-o" title="Guardar i sortir"></button>
+                                <button class="deleteButton shortFormat fa fa-trash-o" title="Eliminar tasca" onclick="window.close()"></button>
+                                <button class="exitWithoutSalveButton shortFormat fa fa-times" title="Sortir sense guardar" onclick="window.close()"></button>
+                                <button class="salveAndExitButton shortFormat fa fa-floppy-o" title="Guardar i sortir" onclick="window.close()"></button>
                             </div>
                         </form>
                     </div>

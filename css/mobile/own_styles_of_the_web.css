@@ -237,3 +237,19 @@ a.currentOptionMenu
 .chosen-container .chosen-results {
     color: #000;
 }
+.picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+    background-color: #0080ff !important;
+    border-radius: 3px !important;
+}
+.picker__year {
+    font-style: normal !important;
+}
+.picker__box                    , 
+.picker__day--infocus:hover     ,
+.picker__day--outfocus:hover    ,
+.picker__day--outfocus:hover    ,
+.picker__nav--prev              ,
+.picker__nav--next              ,
+.picker__day--highlighted {
+    border-radius: 3px !important;
+}
