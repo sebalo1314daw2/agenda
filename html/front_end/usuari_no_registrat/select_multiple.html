@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+    <head>
+        <title>Agenda de butxaca</title>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="application-name" content="Agenda de butxaca" />
+        <meta name="author" content="Sergio Baena L&oacute;pez" />
+        <meta name="description" content="Una agenda on podr&agrave;s enmagatzemar totes les tasques que
+        tinguis per fer. I tot d'una manera m&eacute;s c&ograve;moda... des del teu dispositiu
+        m&ograve;bil!" />
+        <meta name="keywords" content="agenda, butxaca, tasca, m&ograve;bil" />
+        <!-- Web icon -->
+        <link rel="shortcut icon" href="../../../img/logo.png" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/formTemplate.css" type="text/css" />
+        <!-- Google fonts -->
+        <link rel="stylesheet" href="../../../css/googleFonts/lilyScriptOne/liliScriptOne.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Varela+Round/Varela+Round.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Titillium+Web/Titillium+Web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Lobster/Lobster.css" type="text/css" />
+        <!-- Font Awasome -->
+        <link rel="stylesheet" href="../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
+        <!-- JavaScript -->
+        <script type="text/javascript" src="../../../js/jQuery/jQuery.js"></script>
+        <script type="text/javascript" src="../../../js/control/generalFunctions.js"></script>
+        <script type="text/javascript" src="../../../js/control/front_end/usuari_no_registrat/select_multiple.js"></script>   
+    </head>
+    <body>
+        <div id="webContainer">
+            <!-- Web container -->
+            <!-- Logo -->
+            <div id="logo"></div>
+            <div id="noLogo"> 
+                <div id="bottonPanelLooper"></div>
+                <div id="body">
+                    <!-- Body-->
+                    <div id="title">
+                        <h1>Compartir amb usuaris</h1>
+                    </div>
+                    <div id="form">
+                        <form action="javascript:void(0)">
+                            <input type="text" placeholder="Cercar opcions" />
+                            <!-- Checboxes' list -->
+                            <input type="checkbox" id="option0" checked="checked" />
+                            <label for="option0">Pepe Rodrigo Villalba</label>
+                            <input type="checkbox" id="option1" checked="checked"/>
+                            <label for="option1">Marta Manzanar Peral</label>
+                            <input type="checkbox" id="option2" checked="checked" />
+                            <label for="option2">Juan Letra Media</label>
+                            <input type="checkbox" id="option3" />
+                            <label for="option3">Sergio Baena L&oacute;pez</label>
+                            <input type="checkbox" id="option4" />
+                            <label for="option4">Ana Teclado Letra</label>
+                            <input type="checkbox" id="option5" />
+                            <label for="option5">Francisco N&uacute;mero Pi</label>
+                            <div id="buttonPanel">
+                                <!-- The long format's buttons  -->
+                                <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>
+                                <button class="sortOptionsButton longFormat">Ordenar opcions</button>
+                                <button class="exitWithoutSalveButton longFormat" onclick="window.close()">Sortir sense guardar</button>
+                                <button class="salveAndExitButton longFormat" onclick="window.close()">Guardar i sortir</button>
+                            </div>
+                        </form>
+                    </div>
+                   <!--<div id="img" class="fa fa-book"></div>-->
+                </div>
+                <!-- <div id="menu"></div> -->
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>
