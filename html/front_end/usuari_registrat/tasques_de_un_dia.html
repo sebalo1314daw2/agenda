@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+    <head>
+        <title>Agenda de butxaca</title>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="application-name" content="Agenda de butxaca" />
+        <meta name="author" content="Sergio Baena L&oacute;pez" />
+        <meta name="description" content="Una agenda on podr&agrave;s enmagatzemar totes les tasques que
+        tinguis per fer. I tot d'una manera m&eacute;s c&ograve;moda... des del teu dispositiu
+        m&ograve;bil!" />
+        <meta name="keywords" content="agenda, butxaca, tasca, m&ograve;bil" />
+        <!-- Web icon -->
+        <link rel="shortcut icon" href="../../../img/logo.png" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/formTemplate.css" type="text/css" />
+<!--        <link rel="stylesheet" href="../../../css/computer/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/popupTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/formTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/pages/front_end/usuari_registrat/tasca.css" type="text/css" />-->
+        <!-- Google fonts -->
+        <link rel="stylesheet" href="../../../css/googleFonts/lilyScriptOne/liliScriptOne.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Varela+Round/Varela+Round.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Titillium+Web/Titillium+Web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Lobster/Lobster.css" type="text/css" />
+        <!-- Font Awasome -->
+        <link rel="stylesheet" href="../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
+        <!-- JavaScript -->
+        <script type="text/javascript" src="../../../js/jQuery/jQuery.js"></script>
+        <script type="text/javascript" src="../../../js/control/generalFunctions.js"></script>
+        <script type="text/javascript" src="../../../js/control/front_end/usuari_registrat/tasques_de_un_dia.js"></script>   
+        <script type="text/javascript" src="../../../js/model/Utilities.js"></script>
+    </head>
+    <body>
+        <div id="webContainer">
+            <!-- Web container -->
+            <!-- Logo -->
+            <div id="logo"></div>
+            <div id="noLogo">
+                <div id="bottonPanelLooper"></div>
+                <div id="body">
+                    <!-- Body-->
+                    <div id="title">
+                        <h1 class="shortFormatOfDate">22-04-14</h1>
+                        <h1 class="longFormatOfDate">Dilluns 22 d'abril de l'any 2014</h1>
+                    </div>
+                    <div id="form">
+                        <form action="javascript:void(0)">
+                            <input type="checkbox" id="task0" />
+                            <label for="task0" id="shortFormatOfTask0">                      
+                                <div class="task">
+                                        <a href="#longFormatOfTask0">
+                                            <h2>1. FOL</h2>
+                                            <!-- Task content-->
+                                            <span>
+                                                Lee el estatuto de los trabajadores y haz los ejercicios 
+                                                1, 4, 6 y 7.
+                                            </span>
+                                        </a>
+                                </div>         
+                            </label>
+                            <input type="checkbox" id="task1" />
+                            <label for="task1" id="shortFormatOfTask1">                      
+                                    <div class="task">
+                                        <a href="#longFormatOfTask1">
+                                            <h2>2. Despliegue</h2>
+                                            <!-- Task content-->
+                                            <span>
+                                                Acaba la practica 2
+                                            </span>
+                                        </a>
+                                    </div>         
+                            </label>
+                            <div class="taskList">
+                                <div class="task" id="longFormatOfTask0">
+                                    <a href="#shortFormatOfTask0">
+                                        <h2>1. FOL</h2>
+                                        <!-- Task content-->
+                                        <span>
+                                            Lee el estatuto de los trabajadores y haz los ejercicios 1, 4, 6 y 7.
+                                        </span>
+                                    </a>
+                                </div> 
+                                <div class="task" id="longFormatOfTask1">
+                                    <a href="#shortFormatOfTask1">
+                                        <h2>2. Despliegue</h2>
+                                        <!-- Task content-->
+                                        <span>
+                                            Acaba la practica 2
+                                        </span>
+                                    </a>
+                                </div> 
+                            </div>
+                            <div id="buttonPanel">
+                                <!-- The long format's buttons  -->
+                                <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>
+                                <button class="selectAllButton longFormat">Seleccionar tot</button>
+                                <button class="deselectAllButton longFormat">Deseleccionar tot</button>
+                                <button class="deleteButton longFormat">Eliminar tasca/ques</button>
+                                <button class="addButton longFormat">Afegir nova tasca</button>
+                                <button class="exitButton longFormat" onclick="window.close()">Sortir</button>
+                                <!-- The short format's buttons  -->
+<!--                                <button class="upButton shortFormat fa fa-arrow-up" 
+                                onclick="window.location.href = '#webContainer';" title="Pujar"></button>
+                                <button class="deleteButton shortFormat fa fa-trash-o" title="Eliminar tasca" onclick="window.close()"></button>
+                                <button class="exitWithoutSalveButton shortFormat fa fa-times" title="Sortir sense guardar" onclick="window.close()"></button>
+                                <button class="salveAndExitButton shortFormat fa fa-floppy-o" title="Guardar i sortir" onclick="window.close()"></button>-->
+                            </div>
+                        </form>
+                    </div>
+                   <!--<div id="img" class="fa fa-book"></div>-->
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>

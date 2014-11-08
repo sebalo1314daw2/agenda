@@ -24,12 +24,6 @@
     button.shortFormat {
         display: block;
     }
-    .day h2.shortFormatOfDate {
-        display: none;
-    }
-    .day h2.longFormatOfDate {
-        display: block;
-    }
     select + div + a {
         display: none;
     }
@@ -41,6 +35,12 @@
     li.currentOptionMenu
     {
         background-color: #C9E1FA !important;
+    }
+    .shortFormatOfDate {
+        display: none;
+    }
+    .longFormatOfDate {
+        display: block;
     }
     .chosen-container {
         display: block;

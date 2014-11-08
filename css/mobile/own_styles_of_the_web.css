@@ -122,6 +122,10 @@ input[type="checkbox"]
 {
     display: none;
 }
+input[type="checkbox"] + label {
+    overflow: hidden;
+    height: 5em;
+}
 label:before, a:before
 {
     font-family: 'FontAwesome';
@@ -150,9 +154,6 @@ label, select + a
     font-weight: normal;
     font-size:  2.5em; /* 40px/16px */
     margin: 0;
-}
-.day h2.longFormatOfDate {
-    display: none;
 }
 .day ul {
     margin: 0;
@@ -216,6 +217,9 @@ a.currentOptionMenu
 .moreInfoTask {
     color: #E0F0F5;
 }
+.longFormatOfDate {
+    display: none;
+}
 .comment {
     margin-bottom: 5px;
 }
@@ -252,4 +256,22 @@ a.currentOptionMenu
 .picker__nav--next              ,
 .picker__day--highlighted {
     border-radius: 3px !important;
+}
+.task {
+    display: inline;
+}
+.task a {
+    display: inline;
+}
+.task h2 {
+    margin: 0;
+    display: inline;
+    font-size: 1.17em;
+}
+.task h2:after {
+    content: ":";
+}
+.taskList .task {
+    display: block;
+    margin-bottom: 5px;
 }
