@@ -39,6 +39,9 @@
         float: left;
         margin-right: 5px; /* is fixed */ 
    }
+   #form button.shortFormat {
+        width: 38px; /* the width of button is fixed for computer */
+   }
    label:before
    {
        margin-right: 0.988142292%; /* 5px/506px */ 

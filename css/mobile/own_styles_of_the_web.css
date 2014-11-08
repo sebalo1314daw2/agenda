@@ -271,6 +271,9 @@ a.currentOptionMenu
 .task h2:after {
     content: ":";
 }
+.task .textFormat {
+    display: none;
+}
 .taskList .task {
     display: block;
     margin-bottom: 5px;

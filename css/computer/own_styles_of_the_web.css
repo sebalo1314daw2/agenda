@@ -9,6 +9,9 @@
         height: auto;
     }
     /* checkboxes */
+    input[type="checkbox"] + label {
+        height: auto;
+    }
     label:before
     {
         font-size: 1.0625em; /* 17px/16px */
@@ -44,5 +47,14 @@
     }
     .chosen-container {
         display: block;
+    }
+    .task .linkFormat {
+        display: none;
+    }
+    .task .textFormat {
+        display: inline;
+    }
+    .taskList {
+        display: none;
     }
 }

@@ -5,7 +5,8 @@
     * @author Sergio Baena López
     */
     #form {
-        /*height: 191px;*/
+        /*height: 50px;*/
+        min-height: 362px;
     }
    /**
     * Img
