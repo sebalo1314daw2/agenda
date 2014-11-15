@@ -26,6 +26,12 @@ h1
     margin: 0;
     margin-bottom: 5px;
 }
+h2 {
+    font-family: "Playfair Display";
+    font-weight: normal;
+    font-size:  1.75em; /* 28px/16px */
+    margin: 0;
+}
 p:first-child {
     margin-top: 0;
 }
@@ -149,12 +155,6 @@ label, select + a
     display: block;
     cursor: pointer;
 }
-.day h2 {
-    font-family: "Playfair Display";
-    font-weight: normal;
-    font-size:  2.5em; /* 40px/16px */
-    margin: 0;
-}
 .day ul {
     margin: 0;
     list-style: none;
@@ -206,10 +206,16 @@ a.currentOptionMenu
 .specialSense {
     font-style: italic;
 }
-.timeRemaining {
-    font-size: 0.2em; /* 10px/16px */
+.timeRemaining, .extraData {
     display: block;
-    color: #D0D3D6;
+    color: #A1A7AE;
+    
+}
+.timeRemaining {
+    font-size: 0.3125em;  /* 5px/16px */
+}
+.extraData {
+    font-size: 0.5625em; /* 9px/16px */
 }
 .day {
     margin-bottom: 5px; 
@@ -227,6 +233,8 @@ a.currentOptionMenu
     margin: 0;
     display: inline;
     font-size: 1.17em;
+    font-family: "Titillium Web";
+    font-weight: bold;
 }
 .comment h2.user:after {
     content: ":";
@@ -267,6 +275,8 @@ a.currentOptionMenu
     margin: 0;
     display: inline;
     font-size: 1.17em;
+    font-family: "Titillium Web";
+    font-weight: bold;
 }
 .task h2:after {
     content: ":";
@@ -277,4 +287,12 @@ a.currentOptionMenu
 .taskList .task {
     display: block;
     margin-bottom: 5px;
+}
+.userList, .groupBList {
+    margin-bottom: 5px;
+}
+.user img, .groupB img {
+    vertical-align: middle;
+    width: 60px; /* is fixed */
+    border-radius: 3px;
 }
