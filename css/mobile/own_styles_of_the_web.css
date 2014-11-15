@@ -2,6 +2,7 @@
  * Tags
  * @author Sergio Baena López
  */
+/* Web's selection */
 *::selection
 {
     background-color: #0080ff;
@@ -12,12 +13,14 @@
     background-color: #0080ff;
     color: #fff;
 }
+/* body tag */
 body
 {
     font-family: "Titillium Web";
     font-size: 1.0625em; /* 17px/16px */
     color: #000;
 }
+/* h1 tag */
 h1
 {
     font-family: "Varela Round";
@@ -26,18 +29,21 @@ h1
     margin: 0;
     margin-bottom: 5px;
 }
+/* h2 tag */
 h2 {
     font-family: "Playfair Display";
     font-weight: normal;
     font-size:  1.75em; /* 28px/16px */
     margin: 0;
 }
+/* p tag */
 p:first-child {
     margin-top: 0;
 }
 p:last-child {
     margin-bottom: 0;
 }
+/* Textbox, password's box, textarea, chosen's container and chosen's textbox */
 input[type="text"]              ,
 input[type="password"]          , 
 textarea, .chosen-container     , 
@@ -70,6 +76,7 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, .chosen-
 {
      border-style: solid !important;
 }
+/* select */
 select + div + a {
     font-style: normal;
 }
@@ -80,6 +87,7 @@ select + div + a:before {
 select + div + a:active:before {
     color: #c9e1fa;
 }
+/* input type file */
 input[type="file"]
 {
     /*visibility: hidden;*/
@@ -96,9 +104,11 @@ input[type="file"] + label:active span
 {
     color: #c9e1fa;
 }
+/* textarea tag */
 textarea {
     height: 240px;
 }
+/* button */
 button
 {
     font-family: "Titillium Web";
@@ -155,6 +165,7 @@ label, select + a
     display: block;
     cursor: pointer;
 }
+/* day class */
 .day ul {
     margin: 0;
     list-style: none;
@@ -167,6 +178,7 @@ label, select + a
 .day li h3:after {
     content: ": ";
 }
+/* a */
 a {
     display: block;
     text-decoration: none;
@@ -195,17 +207,21 @@ a.clickableImg:active {
  * Class
  * @author Sergio Baena López
  */
+/* currentOptionMenu class */
 a.currentOptionMenu
 {
     background-color: #C9E1FA !important;
     color: #331F84 !important;    
 }
+/*fastReading class */
 .fastReading {
     font-weight: bold;
 }
+/* .specialSense */
 .specialSense {
     font-style: italic;
 }
+/* .timeRemaining and .extraData */
 .timeRemaining, .extraData {
     display: block;
     color: #A1A7AE;
@@ -217,6 +233,7 @@ a.currentOptionMenu
 .extraData {
     font-size: 0.5625em; /* 9px/16px */
 }
+/*.day */
 .day {
     margin-bottom: 5px; 
 }
@@ -226,6 +243,7 @@ a.currentOptionMenu
 .longFormatOfDate {
     display: none;
 }
+/* .comment */
 .comment {
     margin-bottom: 5px;
 }
@@ -239,6 +257,7 @@ a.currentOptionMenu
 .comment h2.user:after {
     content: ":";
 }
+/* chosen's classes */
 .chosen-container {
     display: none;
 }
@@ -249,6 +268,7 @@ a.currentOptionMenu
 .chosen-container .chosen-results {
     color: #000;
 }
+/* calendar's classes */
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
     background-color: #0080ff !important;
     border-radius: 3px !important;
@@ -265,6 +285,7 @@ a.currentOptionMenu
 .picker__day--highlighted {
     border-radius: 3px !important;
 }
+/* .task */
 .task {
     display: inline;
 }
@@ -284,13 +305,16 @@ a.currentOptionMenu
 .task .textFormat {
     display: none;
 }
+/* .taskList */
 .taskList .task {
     display: block;
     margin-bottom: 5px;
 }
+/* .userList and .groupBList */
 .userList, .groupBList {
     margin-bottom: 5px;
 }
+/* .user and .groupB */
 .user img, .groupB img {
     vertical-align: middle;
     width: 60px; /* is fixed */

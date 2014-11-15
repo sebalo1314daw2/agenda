@@ -1,10 +1,12 @@
 @media (min-width: 768px)
 {
     /* Tags */
+    /* input[type="text"] and input[type="password"] */
     input[type="text"], input[type="password"] 
     {
         height: 27px;
     }
+    /* .chosen-container */
     .chosen-container-multi .chosen-choices, .chosen-container {
         height: auto;
     }
@@ -17,6 +19,7 @@
         font-size: 1.0625em; /* 17px/16px */
         vertical-align: baseline;
     }
+    /* button */
     button
     {
         height: 35px;
@@ -27,10 +30,12 @@
     button.shortFormat {
         display: block;
     }
+    /* select */
     select + div + a {
         display: none;
     }
     /* Classes */
+    /* .currentOptionMenu */
     a.currentOptionMenu
     {
         background: none !important;
@@ -39,21 +44,25 @@
     {
         background-color: #C9E1FA !important;
     }
+    /* .shortFormatOfDate and .longFormatOfDate */
     .shortFormatOfDate {
         display: none;
     }
     .longFormatOfDate {
         display: block;
     }
+    /* .chosen-container */
     .chosen-container {
         display: block;
     }
+    /* .task */
     .task .linkFormat {
         display: none;
     }
     .task .textFormat {
         display: inline;
     }
+    /* .taskList */
     .taskList {
         display: none;
     }
