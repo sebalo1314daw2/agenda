@@ -8,7 +8,7 @@ jQuery.extend( jQuery.fn.pickadate.defaults, {
     today: 'Avui',
     clear: 'Esborrar',
     firstDay: 1,
-    format: 'dd-mm-yyyy',
+    format: 'dd-mm-yy',
     formatSubmit: 'yyyy/mm/dd',
     close: 'Sortir',
     labelMonthNext: 'Seg&uuml;ent',
