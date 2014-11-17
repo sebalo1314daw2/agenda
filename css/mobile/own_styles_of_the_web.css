@@ -90,9 +90,9 @@ select + div + a:active:before {
 /* input type file */
 input[type="file"]
 {
-    /*visibility: hidden;*/
-    display: none;
+    visibility: hidden;
     position: absolute;
+    width: 1px; /* is fixed */
 }
 input[type="file"] + label span
 {
@@ -102,7 +102,15 @@ input[type="file"] + label span
 }
 input[type="file"] + label:active span
 {
-    color: #c9e1fa;
+    color: #0080ff;
+}
+input[type="file"] + label img {
+    width: 80px; /* is fixed */
+    border-radius: 3px;
+    vertical-align: middle;
+}
+input[type="file"] + label:active img {
+   opacity: 0.5;
 }
 /* textarea tag */
 textarea {
