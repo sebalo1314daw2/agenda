@@ -96,10 +96,10 @@ function generateRegisteredUserMenu() {
     menu     +=         '<a href="#webContainer">Pujar</a>';
     menu     +=     '</li>';
     menu     +=     '<li class="currentOptionMenu" >';
-    menu     +=         '<a class="currentOptionMenu" href="javascript:void(0)">Agenda</a>';
+    menu     +=         '<a class="currentOptionMenu" href="agenda.html">Agenda</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';
-    menu     +=         '<a href="javascript:void(0)">Usuari</a>';
+    menu     +=         '<a href="usuari.html">Usuari</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';   
     menu     +=         '<a href="javascript:void(0)">Amics</a>';  

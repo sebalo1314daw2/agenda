@@ -102,7 +102,7 @@ input[type="file"] + label span
 }
 input[type="file"] + label:active span
 {
-    color: #0080ff;
+    color: #c9e1fa;
 }
 input[type="file"] + label img {
     width: 80px; /* is fixed */
