@@ -79,6 +79,7 @@ input[type="text"]:focus, input[type="password"]:focus, textarea:focus, .chosen-
 /* select */
 select + div + a {
     font-style: normal;
+    margin-bottom: 5px;
 }
 select + div + a:before {
     content: "\f03a";
