@@ -21,6 +21,9 @@
    #form .chosen-container {
         width: 98.616600791% !important; /* 499px/506px */
    }
+   #form .chosen-container-single .chosen-search input[type="text"] {
+       width: 100% !important; 
+   }
    #form textarea {
        -bracket-:hack (;  /* Hack of Chrome */
             width: 97.826086957%;  /* 495px/506px */ 

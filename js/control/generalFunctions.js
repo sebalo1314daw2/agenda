@@ -102,7 +102,7 @@ function generateRegisteredUserMenu() {
     menu     +=         '<a href="usuari.html">Usuari</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';   
-    menu     +=         '<a href="javascript:void(0)">Amics</a>';  
+    menu     +=         '<a href="amics.html">Amics</a>';  
     menu     +=     '</li>';  
     menu     +=     '<li>';                     
     menu     +=         '<a href="javascript:void(0)">Grups</a>';                       

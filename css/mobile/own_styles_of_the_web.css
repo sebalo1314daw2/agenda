@@ -44,10 +44,11 @@ p:last-child {
     margin-bottom: 0;
 }
 /* Textbox, password's box, textarea, chosen's container and chosen's textbox */
-input[type="text"]              ,
-input[type="password"]          , 
-textarea, .chosen-container     , 
-.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+input[type="text"]                                                              ,
+input[type="password"]                                                          , 
+textarea, .chosen-container                                                     , 
+.chosen-container-multi .chosen-choices li.search-field input[type="text"]      ,
+.chosen-container-single .chosen-search input[type="text"] {
      font-family: "Titillium Web";
      font-size: 1.0625em; /* 17px/16px */
      margin-bottom: 5px;
@@ -55,12 +56,14 @@ textarea, .chosen-container     ,
      background: -webkit-linear-gradient(#fff, #fff);
      background: -ms-linear-gradient(#fff, #fff);
      background: -o-linear-gradient(#fff, #fff);
+     background-image: none !important;
      color: #000;
      height: 40px;
      border-radius: 3px;
      border: double #0080ff;
 }
-.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+.chosen-container-multi .chosen-choices li.search-field input[type="text"],
+.chosen-container-single .chosen-single.chosen-default {
     margin-bottom: 0;
     height: auto;
     color: #757575;
@@ -270,12 +273,32 @@ a.currentOptionMenu
 .chosen-container {
     display: none;
 }
+.chosen-container-single .chosen-single {
+    border: none;
+    background: none;
+    box-shadow: none;
+    padding-left: 0;
+    font-style: normal;
+    color: inherit;
+}
+.chosen-container-active.chosen-with-drop .chosen-single {
+    background: none;
+    border: none;
+}
+.chosen-container-single .chosen-drop {
+    border-radius: 0 0 3px 3px;
+}
 .chosen-container-multi .chosen-choices {
     border: none;
     padding: 0;
 }
 .chosen-container .chosen-results {
     color: #000;
+}
+.chosen-container-single .chosen-search input[type="text"] {
+    border-color: #aaa;
+    margin-bottom: 0;
+    padding: 0; 
 }
 /* calendar's classes */
 .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {

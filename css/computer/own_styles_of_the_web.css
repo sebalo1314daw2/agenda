@@ -2,9 +2,15 @@
 {
     /* Tags */
     /* input[type="text"] and input[type="password"] */
-    input[type="text"], input[type="password"] 
-    {
-        height: 27px;
+    input[type="text"]                                              ,
+    input[type="password"]                                          ,
+    .chosen-container-single                                        ,
+    .chosen-container-single .chosen-single                         ,
+    .chosen-container-single .chosen-search input[type="text"] {
+        height: 27px !important;
+    }
+    .chosen-container-single .chosen-search input[type="text"] {
+        height: 33px !important;
     }
     /* .chosen-container */
     .chosen-container-multi .chosen-choices, .chosen-container {
@@ -51,7 +57,7 @@
     .longFormatOfDate {
         display: block;
     }
-    /* .chosen-container */
+    /* .chosen class */
     .chosen-container {
         display: block;
     }
