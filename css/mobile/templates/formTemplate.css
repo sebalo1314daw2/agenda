@@ -25,6 +25,15 @@
 #form input[type="file"] + #form label span { 
     margin-right: 0.909090909%; /* 2px/220px */
 }
+#form .listControls > a {
+    width: 50%; /* 110px/220px */
+}
+#form .listControls > a:last-child {
+    text-align: right;
+}
+#form .pagesOfTheList > a {
+    width: 25%; /* 55px/220px */
+}
 #form a.clickableImg + a.clickableImg {
      margin-right: 0;
 }
@@ -33,6 +42,9 @@
     width: 100%; /* 220px/220px */
     /*border-width: 0.454545455%;  1px/220px */
     border: 1px solid #331F84;
+}
+#form #buttonPanel {
+    clear: both;
 }
 #form #buttonPanel button {
     margin-bottom: 5px;

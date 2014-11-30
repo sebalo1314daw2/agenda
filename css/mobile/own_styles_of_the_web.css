@@ -352,3 +352,12 @@ a.currentOptionMenu
     width: 60px; /* is fixed */
     border-radius: 3px;
 }
+/* listControls and pagesOfTheList*/
+.listControls > a, .pagesOfTheList > a {
+    float: left; 
+    margin-bottom: 5px;
+}
+/* pagesOfTheList */
+.pagesOfTheList > .currentPage {
+    color: #0080ff;
+}
