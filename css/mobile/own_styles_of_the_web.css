@@ -145,12 +145,12 @@ button:active
 button.shortFormat {
     display: none;
 }
-/* checkboxes */
-input[type="checkbox"]
+/* checkboxes and radiobuttons */
+input[type="checkbox"], input[type="radio"]
 {
     display: none;
 }
-input[type="checkbox"] + label {
+input[type="checkbox"] + label, input[type="radio"] + label {
     overflow: hidden;
     height: 5em;
 }
@@ -163,13 +163,23 @@ label:before, a:before
     font-size: 5em; /* 80px/16px */
     vertical-align: -33%;
 }
+input[type="radio"] + label:before {
+    width: 0.9em;
+    vertical-align: middle;
+}
 input[type="checkbox"] + label:before
 {
     content: "\f096";
 }
+input[type="radio"] + label:before {
+    content: "\f10c";
+}
 input[type="checkbox"]:checked + label:before
 {
     content: "\f046";
+}
+input[type="radio"]:checked + label:before {
+    content: "\f192";
 }
 label, select + a
 {
