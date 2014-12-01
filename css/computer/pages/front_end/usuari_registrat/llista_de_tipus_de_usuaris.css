@@ -1,0 +1,31 @@
+@media (min-width: 768px) {
+   /**
+    * Form
+    * The form of the agenda
+    * @author Sergio Baena López
+    */
+    #form {
+        /*height: 191px;*/
+    }
+   /**
+    * Img
+    * The image of the web
+    * @author Sergio Baena López
+    */
+    #img {
+        height: 426px;
+        font-size: 400px;  /* is fixed */
+        position: fixed;
+        left: 50.0000005%; /* 506px/1024px */
+        z-index: 0;
+    }
+   /**
+    * Footer
+    * The footer of the web
+    * @author Sergio Baena López
+    */
+   #footer {
+       z-index: 1;
+       background-color: #fff;
+   }
+}

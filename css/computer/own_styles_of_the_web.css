@@ -72,4 +72,8 @@
     .taskList {
         display: none;
     }
+    /* .listControls */
+    .listControls > a:first-child {
+        clear: both;
+   }
 }

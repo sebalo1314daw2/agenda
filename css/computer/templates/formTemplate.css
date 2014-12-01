@@ -34,6 +34,12 @@
              width: 97.826086957%;  /* 495px/506px */
         }
    }
+   #form .listControls > a {
+        width: 140px; /* is fixed */
+   }
+   #form .pagesOfTheList > a {
+        width: 70px; /* is fixed */
+   }
    #form button
    {
        border-width: 1px; /* Is fixed */ 
