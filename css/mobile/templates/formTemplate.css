@@ -48,6 +48,7 @@
 }
 #form #buttonPanel button {
     margin-bottom: 5px;
+    clear: none;
 }
 #form #buttonPanel button:first-child {
     clear: both;

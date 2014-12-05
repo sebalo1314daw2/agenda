@@ -6,9 +6,9 @@
     * @width 1024px
     */
    #menu li {
-       width: 14.16015625%; /* 145px/1024px */
+       width: 14.285714286%; /* 145px/1014px */
    }
-   #menu li:first-child {
-       width: 14.0625%; /* 144px/1024px */
-   }
+/*   #menu li:first-child {
+       width: 14.0625%;  144px/1014px 
+   }*/
 }

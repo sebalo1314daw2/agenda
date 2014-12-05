@@ -51,7 +51,7 @@
     #menu li
     {
         float: left;
-        width: 25%; /* 253px/1024px */
+        width: 25%; /* 253px/1014px */
         background-color: #0080ff;
         height: 37px;
     }

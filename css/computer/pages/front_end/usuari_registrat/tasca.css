@@ -7,6 +7,12 @@
     #form {
         /*height: 191px;*/
     }
+    #form .pagesOfTheList > a {
+        width: 25%;   /* 126px/506px */ 
+    }
+    #form .listControls > a {
+        width: 50%; /* 253px/506px */
+    }
    /**
     * Img
     * The image of the web

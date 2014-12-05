@@ -3,21 +3,22 @@
     * Form
     * The form of the agenda
     * @author Sergio Baena López
+    * @parent-width 1014px
+    * @width 1014px
     */
     #form
     {
         /*height: 191px;*/
+        width: 100%; /* 1014px/1014px */
+        margin-right: 0;
     }
     #form button {
         width: 98px; /* the width of button is fixed for computer */
     }
-   /**
-    * Img
-    * The image of the web
-    * @author Sergio Baena López
-    */
-/*    #img {
-        height: 191px;
-        font-size: 185px;  is fixed 
-    }*/
+    #form .pagesOfTheList > a {
+        width: 25%;   /* 253px/1014px */ 
+    }
+    #form .listControls > a {
+        width: 50%; /* 507px/1014px */
+    }
 }
