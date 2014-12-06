@@ -373,3 +373,12 @@ a.currentOptionMenu
 .pagesOfTheList > .currentPage {
     color: #0080ff;
 }
+/* .clickableText */
+.clickableText {
+    font-family: Nunito;
+    font-weight: bold;
+    cursor: pointer;
+}
+.clickableText:active {
+    font-weight: normal;
+}
