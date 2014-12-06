@@ -292,6 +292,7 @@ a.currentOptionMenu
     padding-left: 0;
     font-style: normal;
     color: inherit;
+    overflow: visible;
 }
 .chosen-container-active.chosen-with-drop .chosen-single {
     background: none;
