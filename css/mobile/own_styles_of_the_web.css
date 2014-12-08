@@ -383,3 +383,10 @@ a.currentOptionMenu
 .clickableText:active {
     font-weight: normal;
 }
+/* .textBlock */
+.textBlock {
+    margin-bottom: 5px;
+}
+.textBlock > p {
+    margin: 0;
+}
