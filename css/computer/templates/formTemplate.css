@@ -11,6 +11,9 @@
        float: left;
        margin-right: 0.5859375%; /* 6px/1024px */
    }
+   #text + #form {
+       clear: left;
+   }
    #form input[type="text"]         ,
    #form input[type="password"]     ,
    #form textarea                   ,

@@ -105,7 +105,7 @@ function generateRegisteredUserMenu() {
     menu     +=         '<a href="amics.html">Amics</a>';  
     menu     +=     '</li>';  
     menu     +=     '<li>';                     
-    menu     +=         '<a href="javascript:void(0)">Grups</a>';                       
+    menu     +=         '<a href="grups.html">Grups</a>';                       
     menu     +=     '</li>';
     menu     +=     '<li>';                     
     menu     +=         '<a href="../usuari_no_registrat/sobre_la_web.html">Info</a>';                       
