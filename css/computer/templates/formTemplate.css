@@ -11,7 +11,7 @@
        float: left;
        margin-right: 0.5859375%; /* 6px/1024px */
    }
-   #text + #form {
+   #text + #form, #text + #img + #form {
        clear: left;
    }
    #form input[type="text"]         ,
