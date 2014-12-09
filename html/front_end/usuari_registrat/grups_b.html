@@ -18,12 +18,11 @@
         <link rel="stylesheet" href="../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/mobile/templates/template.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/mobile/templates/formTemplate.css" type="text/css" />
-        <link rel="stylesheet" href="../../../css/computer/own_styles_of_the_web.css" type="text/css" />
-        <link rel="stylesheet" href="../../../css/computer/templates/template.css" type="text/css" />   
-        <link rel="stylesheet" href="../../../css/computer/templates/registeredUserMenuTemplate.css" type="text/css" />
+<!--        <link rel="stylesheet" href="../../../css/computer/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/popupTemplate.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/computer/templates/formTemplate.css" type="text/css" />
-        <link rel="stylesheet" href="../../../css/computer/templates/textTemplate.css" type="text/css" />
-        <link rel="stylesheet" href="../../../css/computer/pages/front_end/usuari_registrat/grups.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/pages/front_end/usuari_registrat/comparticio.css" type="text/css" />-->
         <!-- Google fonts -->
         <link rel="stylesheet" href="../../../css/googleFonts/lilyScriptOne/liliScriptOne.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/googleFonts/Varela+Round/Varela+Round.css" type="text/css" />
@@ -35,8 +34,7 @@
         <!-- JavaScript -->
         <script type="text/javascript" src="../../../js/jQuery/jQuery.js"></script>
         <script type="text/javascript" src="../../../js/control/generalFunctions.js"></script>
-        <script type="text/javascript" src="../../../js/control/front_end/usuari_registrat/grups.js"></script>   
-        <script type="text/javascript" src="../../../js/model/Utilities.js"></script>
+        <script type="text/javascript" src="../../../js/control/front_end/usuari_registrat/grups_b.js"></script>   
     </head>
     <body>
         <div id="webContainer">
@@ -44,37 +42,14 @@
             <!-- Logo -->
             <div id="logo"></div>
             <div id="noLogo">
-                <div id="menuLooper"></div>
+                <div id="bottonPanelLooper"></div>
                 <div id="body">
                     <!-- Body-->
                     <div id="title">
-                        <h1>Grups</h1>
+                        <h1>Grups B</h1>
                     </div>
                     <div id="text">
                         <div class="textBlock">
-                            <h2>Un grup</h2>
-                            <p>
-                                <span class="fastReading">Un grup</span> en "Agenda de butxaca" <span class="fastReading">&eacute;s</span> <span class="fastReading">una agrupaci&oacute; d'usuaris</span> que se'n
-                                realitza segons un criteri (classe, fam&iacute;lia, amics, etc) amb la <span class="fastReading">finalitat</span>
-                                de poder <span class="fastReading">compartir-li a tots ells certes tasques o esdeveniments</span>. D'aquesta forma,
-                                podem evitar a vegades tenir que compartir una tasca u a u.
-                            </p>
-                        </div>
-                        <div class="textBlock">
-                            <h2>Grup A</h2>
-                            <p>
-                                <span class="fastReading">Un grup A</span> &eacute;s un tipus de grup en qu&egrave; els <span class="fastReading">seus membres</span> han de ser
-                                obligat&ograve;riament <span class="fastReading">usuaris</span> que tens <span class="fastReading">agregats</span>. La <span class="fastReading">finalitat</span> d'aix&ograve;,
-                                &eacute;s permitir-te que puguis <span class="fastReading">agrupar certs usuaris agregats</span>, evitant 
-                                aix&iacute;, com s'ha dit abans, fer-ho u a u cada vegada que sigui necessari.
-                                Per &uacute;ltim, s'ha de comentar que tots <span class="fastReading">els grups</span> creats de tipus <span class="fastReading">A</span>, 
-                                <span class="fastReading">solament existeixen en l'&agrave;mbit de l'usuari</span> en concret, per a la resta, 
-                                passa desapercebut, els quals, els percebeixen com si l'hagu&eacute;s compartit
-                                u a u.
-                            </p>
-                        </div>
-                        <div class="textBlock">
-                            <h2>Grup B</h2>
                             <p>
                                 <span class="fastReading">Un grup B</span> &eacute;s un tipus de grup en qu&egrave; els <span class="fastReading">seus membres no
                                 necess&agrave;riament han d'estar agregats</span> entre ells <span class="fastReading">individualment</span>. 
@@ -96,17 +71,22 @@
                         <form action="javascript:void(0)">
                             <div id="buttonPanel">
                                 <!-- The long format's buttons  -->
-                                <button class="adminGroupsA longFormat">Gestiona grups A</button>
-                                <button class="adminGroupsB longFormat">Gestiona grups B</button>
+                                <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>
+                                <button class="addButton longFormat">Afegir</button>
+                                <button class="modifyButton longFormat">Editar</button>
+                                <button class="aggregateDisaggregateButton longFormat">Agregar/Desagregar</button>
+                                <button class="exitButton longFormat" onclick="window.close()">Sortir</button>
                                 <!-- The short format's buttons  -->
-                                <button class="adminGroupsA shortFormat" title="Gestiona grups A">A</button>
-                                <button class="adminGroupsB shortFormat" title="Gestiona grups B">B</button>
+                                <button class="upButton shortFormat fa fa-arrow-up" title="Pujar" onclick="window.location.href = '#webContainer';"></button>
+                                <button class="addButton shortFormat fa fa-plus" title="Afegir"></button>
+                                <button class="modifyButton shortFormat fa fa-pencil-square-o" title="Editar"></button>
+                                <button class="aggregateDisaggregateButton shortFormat fa fa-heart" title="Agregar/Desagregar"></button>
+                                <button class="exitButton shortFormat fa fa-times" title="Sortir" onclick="window.close()"></button>
                             </div>
                         </form>
                     </div>
-                   <div id="img" class="fa fa-users"></div>
+                   <!--<div id="img" class="fa fa-book"></div>-->
                 </div>
-                <div id="menu"></div>
                 <div id="footer"></div>
             </div>
         </div>
