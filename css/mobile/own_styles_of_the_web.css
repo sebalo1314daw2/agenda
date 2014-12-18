@@ -390,3 +390,8 @@ a.currentOptionMenu
 .textBlock > p {
     margin: 0;
 }
+/* .photo */
+.photo {
+    margin-bottom: 5px;
+    border-radius: 3px;
+}

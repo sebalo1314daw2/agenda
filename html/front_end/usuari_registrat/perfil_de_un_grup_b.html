@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+    <head>
+        <title>Agenda de butxaca</title>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="application-name" content="Agenda de butxaca" />
+        <meta name="author" content="Sergio Baena L&oacute;pez" />
+        <meta name="description" content="Una agenda on podr&agrave;s enmagatzemar totes les tasques que
+        tinguis per fer. I tot d'una manera m&eacute;s c&ograve;moda... des del teu dispositiu
+        m&ograve;bil!" />
+        <meta name="keywords" content="agenda, butxaca, tasca, m&ograve;bil" />
+        <!-- Web icon -->
+        <link rel="shortcut icon" href="../../../img/logo.png" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/formTemplate.css" type="text/css" />
+<!--        <link rel="stylesheet" href="../../../css/computer/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/popupTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/formTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/pages/front_end/usuari_registrat/llista_de_tipus_de_usuaris.css" type="text/css" />-->
+        <!-- Google fonts -->
+        <link rel="stylesheet" href="../../../css/googleFonts/lilyScriptOne/liliScriptOne.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Varela+Round/Varela+Round.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Titillium+Web/Titillium+Web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Lobster/Lobster.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Playfair+Display/Playfair+Display.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Nunito/Nunito.css" type="text/css" />
+        <!-- Font Awasome -->
+        <link rel="stylesheet" href="../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
+        <!-- JavaScript -->
+        <script type="text/javascript" src="../../../js/jQuery/jQuery.js"></script>
+        <script type="text/javascript" src="../../../js/control/generalFunctions.js"></script>
+        <script type="text/javascript" src="../../../js/control/front_end/usuari_registrat/perfil_de_un_grup_b.js"></script>
+    </head>
+    <body>
+        <div id="webContainer">
+            <!-- Web container -->
+            <!-- Logo -->
+            <div id="logo"></div>
+            <div id="noLogo">
+                <div id="bottonPanelLooper"></div>
+                <div id="body">
+                    <!-- Body-->
+                    <div id="title">
+                        <h1>Los mejores</h1>
+                    </div>
+                    <div id="form">
+                        <form action="javascript:void(0)">
+                            <img class="photo" src="../../../img/profiles/groups/11.jpg" alt="Ha fallat la c&agrave;rrega de la imatge" />
+                            <div class="userList">
+                                <h2>Cap</h2>
+                                <div class="user"> 
+                                    <img src="../../../img/profiles/users/72.jpg" alt="Ha fallat la c&agrave;rrega de la imatge" />
+                                    <span class="fullNameOfTheUser">Sergio Baena L&oacute;pez</span>
+                                    <div class="extraData">Es va fer membre el 12-02-14 a la/es 12:02</div>
+                                </div>
+                            </div>
+                            <div class="userList">
+                                <h2>Membres</h2>
+                                <div class="user">
+                                    <img src="../../../img/profiles/users/32.jpg" alt="Ha fallat la c&agrave;rrega de la imatge" />
+                                    <span class="fullNameOfTheUser">Pepe Gonz&aacute;lez Villalba</span>
+                                    <div class="extraData">Es va fer membre el 12-02-14 a la/es 12:02</div>
+                                </div>
+                                <div class="user">
+                                    <img src="../../../img/profiles/users/22.jpg" alt="Ha fallat la c&agrave;rrega de la imatge" />
+                                    <span class="fullNameOfTheUser">Marta Villalba Teclado</span>
+                                    <div class="extraData">Es va fer membre el 19-08-14 a la/es 13:02</div>
+                                </div>
+                            </div> 
+                            <div class="pagesOfTheList">
+                                <a href="javascript:void(0)">1</a>
+                                <a href="javascript:void(0)" class="currentPage">2</a>
+                                <a href="javascript:void(0)">3</a>
+                                <a href="javascript:void(0)">...</a>
+                            </div>
+                            <div class="listControls">
+                                <a href="javascript:void(0)">Anterior</a>
+                                <a href="javascript:void(0)">Seg&uuml;ent</a>
+                            </div>
+                            <div id="buttonPanel">
+                                <!-- The long format's buttons  -->
+                                <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>
+                                <button class="aggregateButton longFormat">Agregar</button>
+<!--                                <button class="disaggregateButton longFormat">Desagregar</button>
+                                <button class="acceptSolicitudeButton longFormat">Aceptar sol&middot;licitut</button>
+                                <button class="retireSolicitudeButton longFormat">Retirar sol&middot;licitut</button>-->
+                                <button class="exitButton longFormat" onclick="window.close()">Sortir</button>
+                                <!-- The short format's buttons  -->
+                                <button class="upButton shortFormat fa fa-arrow-up" title="Pujar" onclick="window.location.href = '#webContainer';"></button>
+                                <button class="exitButton shortFormat fa fa-times" title="Sortir" onclick="window.close()"></button>
+                            </div>
+                        </form>
+                    </div>
+                   <!--<div id="img" class="fa fa-child"></div>-->
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>
