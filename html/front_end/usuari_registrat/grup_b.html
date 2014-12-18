@@ -70,7 +70,7 @@
                             <div id="buttonPanel">
                                 <!-- The long format's buttons  -->
                                 <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>   
-                                <button class="adminUsersButton longFormat">Gestiona membres</button>
+                                <button class="adminUsersButton longFormat" onclick="Utilities.openPopup('gestio_de_membres.html', 937, 581)">Gestiona membres</button>
                                 <button class="seeProfileButton longFormat">Veure perfil</button>
                                 <button class="salveAndExitButton longFormat" onclick="window.close()">Guardar i sortir</button>
                                 <button class="exitWithoutSalveButton longFormat" onclick="window.close()">Sortir sense guardar</button>          
@@ -78,7 +78,7 @@
                                 <button class="upButton shortFormat fa fa-arrow-up" 
                                 onclick="window.location.href = '#webContainer';" title="Pujar"></button>
                                 <!-- Falta añadir el boton de gestionar usuarios y ver perfil -->
-                                <button class="adminUsersButton shortFormat fa fa-child" title="Gestiona membres"></button>
+                                <button class="adminUsersButton shortFormat fa fa-child" title="Gestiona membres" onclick="Utilities.openPopup('gestio_de_membres.html', 937, 581)"></button>
                                 <button class="seeProfileButton shortFormat fa fa-eye" title="Veure perfil"></button>
                                 <button class="salveAndExitButton shortFormat fa fa-floppy-o" title="Guardar i sortir" onclick="window.close()"></button>
                                 <button class="exitWithoutSalveButton shortFormat fa fa-times" title="Sortir sense guardar" onclick="window.close()"></button>
