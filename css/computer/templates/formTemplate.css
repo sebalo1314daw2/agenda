@@ -37,6 +37,9 @@
              width: 97.826086957%;  /* 495px/506px */
         }
    }
+   #form .photo {
+        width: 280px; /* 220px/220px */
+   }
    #form .listControls > a {
         width: 140px; /* is fixed */
    }
