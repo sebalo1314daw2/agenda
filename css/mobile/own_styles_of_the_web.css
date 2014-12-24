@@ -355,12 +355,12 @@ a.currentOptionMenu
     display: block;
     margin-bottom: 5px;
 }
-/* .userList and .groupBList */
-.userList, .groupBList {
+/* .userList, .groupBList and  .groupAList*/
+.userList, .groupBList, .groupAList {
     margin-bottom: 5px;
 }
-/* .user and .groupB */
-.user img, .groupB img {
+/* .user, .groupB and .groupA */
+.user img, .groupB img, .groupA img {
     vertical-align: middle;
     width: 60px; /* is fixed */
     border-radius: 3px;
