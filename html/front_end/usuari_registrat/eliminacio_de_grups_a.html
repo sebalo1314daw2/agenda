@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+    <head>
+        <title>Agenda de butxaca</title>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="application-name" content="Agenda de butxaca" />
+        <meta name="author" content="Sergio Baena L&oacute;pez" />
+        <meta name="description" content="Una agenda on podr&agrave;s enmagatzemar totes les tasques que
+        tinguis per fer. I tot d'una manera m&eacute;s c&ograve;moda... des del teu dispositiu
+        m&ograve;bil!" />
+        <meta name="keywords" content="agenda, butxaca, tasca, m&ograve;bil" />
+        <!-- Web icon -->
+        <link rel="shortcut icon" href="../../../img/logo.png" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/formTemplate.css" type="text/css" />
+<!--        <link rel="stylesheet" href="../../../css/computer/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/popupTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/formTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/pages/front_end/usuari_registrat/edicio_de_grups_a.css" type="text/css" />-->
+        <!-- Google fonts -->
+        <link rel="stylesheet" href="../../../css/googleFonts/lilyScriptOne/liliScriptOne.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Varela+Round/Varela+Round.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Titillium+Web/Titillium+Web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Lobster/Lobster.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/googleFonts/Playfair+Display/Playfair+Display.css" type="text/css" />
+        <!-- Font Awasome -->
+        <link rel="stylesheet" href="../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
+        <!-- JavaScript -->
+        <script type="text/javascript" src="../../../js/jQuery/jQuery.js"></script>
+        <script type="text/javascript" src="../../../js/control/generalFunctions.js"></script>
+        <script type="text/javascript" src="../../../js/control/front_end/usuari_registrat/eliminacio_de_grups_a.js"></script>   
+        <script type="text/javascript" src="../../../js/model/Utilities.js"></script>
+    </head>
+    <body>
+        <div id="webContainer">
+            <!-- Web container -->
+            <!-- Logo -->
+            <div id="logo"></div>
+            <div id="noLogo">
+                <div id="bottonPanelLooper"></div>
+                <div id="body">
+                    <!-- Body-->
+                    <div id="title">
+                        <h1>Borra gr. A</h1>
+                    </div>
+                    <div id="form">
+                        <form action="javascript:void(0)">
+                            <input type="text" placeholder="Cerca per nom" />
+                            <div class="groupAList"> 
+                                <h2>Has creat aquests</h2>
+                                <div class="groupA">
+                                    <a href="javascript:void(0)" onclick="Utilities.openPopup('perfil_de_un_grup_a.html', 937, 581)">
+                                        <img src="../../../img/profiles/groups/11.jpg" alt="Ha fallat la c&agrave;rrega de la imatge" />
+                                        <span class="nameOfTheGroup">Los mejores del mundo</span>
+                                        <div class="extraData">Ho vas crear el 20-04-15 a la/es 13:10</div>
+                                    </a>
+                                </div>
+                                <div class="groupA">
+                                    <a href="javascript:void(0)" onclick="Utilities.openPopup('perfil_de_un_grup_a.html', 937, 581)">
+                                        <img src="../../../img/profiles/groups/12.jpg" alt="Ha fallat la c&agrave;rrega de la imatge" />
+                                        <span class="nameOfTheGroup">Familia</span>
+                                        <div class="extraData">Ho vas crear el 11-04-15 a la/es 13:10</div>
+                                    </a>
+                                </div>
+                                <div class="groupA">
+                                    <a href="javascript:void(0)" onclick="Utilities.openPopup('perfil_de_un_grup_a.html', 937, 581)">
+                                        <img src="../../../img/profiles/groups/14.jpg" alt="Ha fallat la c&agrave;rrega de la imatge" />
+                                        <span class="nameOfTheGroup">Clase</span>
+                                        <div class="extraData">Ho vas crear el 10-04-15 a la/es 20:10</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="pagesOfTheList">
+                                <a href="javascript:void(0)">1</a>
+                                <a href="javascript:void(0)" class="currentPage">2</a>
+                                <a href="javascript:void(0)">3</a>
+                                <a href="javascript:void(0)">...</a>
+                            </div>
+                            <div class="listControls">
+                                <a href="javascript:void(0)">Anterior</a>
+                                <a href="javascript:void(0)">Seg&uuml;ent</a>
+                            </div>
+                            <div id="buttonPanel">
+                                <!-- The long format's buttons -->
+                                <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>
+                                <button class="exitButton longFormat" onclick="window.close()">Sortir</button>
+                                <!-- The short format's buttons --> 
+                                <button class="upButton shortFormat fa fa-arrow-up" title="Pujar" onclick="window.location.href = '#webContainer';"></button>
+                                <button class="exitButton shortFormat fa fa-times" title="Sortir" onclick="window.close()"></button>
+                            </div>
+                        </form>
+                    </div>
+                   <div id="img" class="fa fa-users"></div>
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>
