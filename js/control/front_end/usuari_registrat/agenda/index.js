@@ -4,8 +4,10 @@
  * @author Sergio Baena López
  * @version 1.0
  */
-function atTheStartOfPage() {
-    generateLogo("../usuari_registrat/agenda.html", "../../../img/logo.png");
-    generateBottonPanelLooper();
+function atTheStartOfPage()
+{
+    generateLogo("index.html", "../../../../img/logo.png");
+    generateMenuLooper();
+    generateRegisteredUserMenu();
     generateFooter();
 }

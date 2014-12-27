@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ca" xml:lang="ca">
+    <head>
+        <title>Agenda de butxaca</title>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="application-name" content="Agenda de butxaca" />
+        <meta name="author" content="Sergio Baena L&oacute;pez" />
+        <meta name="description" content="Una agenda on podr&agrave;s enmagatzemar totes les tasques que
+        tinguis per fer. I tot d'una manera m&eacute;s c&ograve;moda... des del teu dispositiu
+        m&ograve;bil!" />
+        <meta name="keywords" content="agenda, butxaca, tasca, m&ograve;bil" />
+        <!-- Web icon -->
+        <link rel="shortcut icon" href="../../../../../img/logo.png" />
+        <!-- Chosen styles -->
+        <link rel="stylesheet" href="../../../../../js/jQuery/pluginJqueryChosen/chosen.css" type="text/css" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../../../../css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/mobile/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/mobile/templates/formTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/computer/own_styles_of_the_web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/computer/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/computer/templates/popupTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/computer/templates/formTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/computer/pages/front_end/usuari_registrat/grups/b/grup.css" type="text/css" />
+        <!-- Google fonts -->
+        <link rel="stylesheet" href="../../../../../css/googleFonts/lilyScriptOne/liliScriptOne.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/googleFonts/Varela+Round/Varela+Round.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/googleFonts/Titillium+Web/Titillium+Web.css" type="text/css" />
+        <link rel="stylesheet" href="../../../../../css/googleFonts/Lobster/Lobster.css" type="text/css" />
+        <!-- Font Awasome -->
+        <link rel="stylesheet" href="../../../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
+        <!-- JavaScript -->
+        <script type="text/javascript" src="../../../../../js/jQuery/jQuery.js"></script>
+        <script type="text/javascript" src="../../../../../js/jQuery/pluginJqueryChosen/chosen.jquery.js"></script>
+        <script type="text/javascript" src="../../../../../js/control/generalFunctions.js"></script>
+        <script type="text/javascript" src="../../../../../js/control/front_end/usuari_registrat/grups/b/grup.js"></script>   
+        <script type="text/javascript" src="../../../../../js/model/Utilities.js"></script>
+    </head>
+    <body>
+        <div id="webContainer">
+            <!-- Web container -->
+            <!-- Logo -->
+            <div id="logo"></div>
+            <div id="noLogo">
+                <div id="bottonPanelLooper"></div>
+                <div id="body">
+                    <!-- Body-->
+                    <div id="title">
+                        <h1>Grup B</h1>
+                    </div>
+                    <div id="form">
+                        <form action="javascript:void(0)">
+                           <input type="file" id="imageProfile" />
+                           <label for="imageProfile">
+                               <span class="fa fa-upload"></span>
+                               Una foto del grup
+                           </label>
+                           <input type="text" placeholder="Nom" />
+                           <select data-placeholder="Cap">
+                                    <option></option>
+                                    <option>Tu</option>
+                                    <option>Juan Rodr&iacute;guez Villalba</option>
+                                    <option>Marta Manzanar del Prado</option>
+                                    <option>Frederico Garc&iacute;a Lorca</option>
+                            </select>
+                            <a href="javascript:void(0)" onclick="Utilities.openPopup('../../../usuari_no_registrat/select.html', 300, 500)">Cap</a>
+                            <div id="buttonPanel">
+                                <!-- The long format's buttons  -->
+                                <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>   
+                                <button class="adminUsersButton longFormat" onclick="Utilities.openPopup('gestio_de_membres.html', 937, 581)">Gestiona membres</button>
+                                <button class="seeProfileButton longFormat" onclick="Utilities.openPopup('perfil.html', 937, 581)">Veure perfil</button>
+                                <button class="salveAndExitButton longFormat" onclick="window.close()">Guardar i sortir</button>
+                                <button class="exitWithoutSalveButton longFormat" onclick="window.close()">Sortir sense guardar</button>          
+                                <!-- The short format's buttons  -->
+                                <button class="upButton shortFormat fa fa-arrow-up" 
+                                onclick="window.location.href = '#webContainer';" title="Pujar"></button>
+                                <!-- Falta añadir el boton de gestionar usuarios y ver perfil -->
+                                <button class="adminUsersButton shortFormat fa fa-child" title="Gestiona membres" onclick="Utilities.openPopup('gestio_de_membres.html', 937, 581)"></button>
+                                <button class="seeProfileButton shortFormat fa fa-eye" title="Veure perfil" onclick="Utilities.openPopup('perfil.html', 937, 581)"></button>
+                                <button class="salveAndExitButton shortFormat fa fa-floppy-o" title="Guardar i sortir" onclick="window.close()"></button>
+                                <button class="exitWithoutSalveButton shortFormat fa fa-times" title="Sortir sense guardar" onclick="window.close()"></button>
+                            </div>
+                        </form>
+                    </div>
+                   <div id="img" class="fa fa-users"></div>
+                </div>
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>

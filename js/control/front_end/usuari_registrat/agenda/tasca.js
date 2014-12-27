@@ -5,7 +5,9 @@
  * @version 1.0
  */
 function atTheStartOfPage() {
-    generateLogo("../usuari_registrat/agenda.html", "../../../img/logo.png");
+    generateLogo("index.html", "../../../../img/logo.png");
     generateBottonPanelLooper();
     generateFooter();
+    activateChosen();
+    activateCalendar();
 }

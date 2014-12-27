@@ -4,12 +4,13 @@ $("document").ready(function(){atTheStartOfPage();});
  * @description Procedure that is intended to generate the logo of the web.
  * @author Sergio Baena López
  * @version 1.0
- * @param {String} url the URL where the user will be redirected when he clicks
+ * @param {String} urlWhereTheLogoRedirects the URL where the user will be redirected when he clicks
+ * @param {String} urlWhereTheImageOfTheLogoIs the URL where the image of the logo is in the server
  */
-function generateLogo(url)
+function generateLogo(urlWhereTheLogoRedirects, urlWhereTheImageOfTheLogoIs)
 {
-    var logo = '<a href="' + url + '" title="Anar a la p&agrave;gina d\'inici">';
-    logo +=         '<img src="../../../img/logo.png" alt="Logotip" />';      
+    var logo = '<a href="' + urlWhereTheLogoRedirects + '" title="Anar a la p&agrave;gina d\'inici">';
+        logo +=         '<img src="' + urlWhereTheImageOfTheLogoIs + '" alt="Logotip" />';   
     logo +=         'Agenda de butxaca';
     logo +=    '</a>';                 
     $("#logo").append
@@ -96,22 +97,22 @@ function generateRegisteredUserMenu() {
     menu     +=         '<a href="#webContainer">Pujar</a>';
     menu     +=     '</li>';
     menu     +=     '<li class="currentOptionMenu" >';
-    menu     +=         '<a class="currentOptionMenu" href="agenda.html">Agenda</a>';
+    menu     +=         '<a class="currentOptionMenu" href="../agenda/">Agenda</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';
-    menu     +=         '<a href="usuari.html">Usuari</a>';
+    menu     +=         '<a href="../usuari/">Usuari</a>';
     menu     +=     '</li>';
     menu     +=     '<li>';   
-    menu     +=         '<a href="amics.html">Amics</a>';  
+    menu     +=         '<a href="../amics/">Amics</a>';  
     menu     +=     '</li>';  
     menu     +=     '<li>';                     
-    menu     +=         '<a href="grups.html">Grups</a>';                       
+    menu     +=         '<a href="../grups/">Grups</a>';                       
     menu     +=     '</li>';
     menu     +=     '<li>';                     
-    menu     +=         '<a href="../usuari_no_registrat/sobre_la_web.html">Info</a>';                       
+    menu     +=         '<a href="../../usuari_no_registrat/sobre_la_web.html">Info</a>';                       
     menu     +=     '</li>';
     menu     +=     '<li>';                     
-    menu     +=         '<a href="../usuari_no_registrat/contacte.html">Contacte</a>';                       
+    menu     +=         '<a href="../../usuari_no_registrat/contacte.html">Contacte</a>';                       
     menu     +=     '</li>';
     menu     +=     '<li>';                     
     menu     +=         '<a href="javascript:void(0)">Tancar</a>';                       

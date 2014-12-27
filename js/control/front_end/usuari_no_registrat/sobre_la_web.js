@@ -6,7 +6,7 @@
  */
 function atTheStartOfPage()
 {
-    generateLogo("login.html");
+    generateLogo("login.html", "../../../img/logo.png");
     generateMenuLooper();
     generateMenu();
     generateFooter();
