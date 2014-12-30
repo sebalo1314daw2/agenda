@@ -395,3 +395,10 @@ a.currentOptionMenu
     margin-bottom: 5px;
     border-radius: 3px;
 }
+/* .notAccess */
+.notAccess {
+    color: #A1A7AE;
+}
+.notAccess > img {
+    opacity: 0.2;
+}
