@@ -8,12 +8,12 @@ function Utilities(){}
  * @author Sergio Baena Lopez
  * @version 1.0
  * @param {String} url the popup's URL
- * @param {Number} width the popup's width
- * @param {Number} height the popup's height
  */
-Utilities.openPopup = function(url, width, height) {
-    var positionY = screen.height/2 - height/2;
-    var positionX = screen.width/2 - width/2;
+Utilities.openPopup = function(url) {
+    var WIDTH = 937;
+    var HEIGHT = 581;
+    var positionY = screen.height/2 - HEIGHT/2;
+    var positionX = screen.width/2 - WIDTH/2;
     window.open(
         url                     ,
         ""                      ,
@@ -22,9 +22,9 @@ Utilities.openPopup = function(url, width, height) {
         ", top="            +
         positionY           +
         ", width="          +
-        width               +
+        WIDTH               +
         ", height="         + 
-        height              +
+        HEIGHT              +
         ", scrollbars=yes"
     );
 }
