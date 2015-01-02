@@ -6,7 +6,7 @@
  */
 function atTheStartOfPage()
 {
-    generateLogo("../agenda/", "../../../../img/logo.png");
+    generateLogo("../agenda/", "../../../../img/logo/logo.png");
     generateMenuLooper();
     generateRegisteredUserMenu();
     generateFooter();

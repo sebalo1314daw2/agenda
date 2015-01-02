@@ -5,7 +5,7 @@
  * @version 1.0
  */
 function atTheStartOfPage() {
-    generateLogo("index.html",  "../../../../img/logo.png");
+    generateLogo("index.html",  "../../../../img/logo/logo.png");
     generateBottonPanelLooper();
     generateFooter();
 }

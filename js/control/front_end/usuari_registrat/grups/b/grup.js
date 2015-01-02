@@ -5,7 +5,7 @@
  * @version 1.0
  */
 function atTheStartOfPage() {
-    generateLogo("../../agenda/", "../../../../../img/logo.png");
+    generateLogo("../../agenda/", "../../../../../img/logo/logo.png");
     generateBottonPanelLooper();
     generateFooter();
     activateChosen();
