@@ -20,7 +20,7 @@ CREATE TABLE adb_image (
 	id                      INT(6)                              PRIMARY KEY         AUTO_INCREMENT  ,
         extension               VARCHAR(4)          NOT NULL                                            ,
         is_valid                INT(1)              NOT NULL                                            ,
-        deadline_validation     DATE                NOT NULL                                            
+        deadline_validation     DATETIME            NOT NULL                                            
 ) ENGINE = MyISAM;
 
 CREATE TABLE adb_user (
@@ -28,8 +28,8 @@ CREATE TABLE adb_user (
         id_image                INT(6)              NOT NULL                    UNIQUE                  ,
         name                    VARCHAR(40)         NOT NULL                                            ,
         surnames                VARCHAR(40)         NOT NULL                                            ,
-        password                VARCHAR(50)         NOT NULL                                            ,
-        register_date           DATE                NOT NULL                                            ,
+        password                VARCHAR(300)        NOT NULL                                            ,
+        register_date           DATETIME            NOT NULL                                            ,
         FOREIGN KEY(id_image) REFERENCES adb_image(id)
 ) ENGINE = MyISAM;
 
@@ -38,7 +38,7 @@ CREATE TABLE adb_email_user (
         id_user                 INT(6)              NOT NULL                     UNIQUE                 ,
         value                   VARCHAR(320)        NOT NULL                     UNIQUE                 ,
         is_valid                INT(1)              NOT NULL                                            ,
-        deadline_validation     DATE                NOT NULL                                            ,
+        deadline_validation     DATETIME            NOT NULL                                            ,
         FOREIGN KEY(id_user) REFERENCES adb_user(id)
 ) ENGINE = MyISAM;
 
@@ -53,14 +53,14 @@ CREATE TABLE adb_admin_user (
 CREATE TABLE adb_group (
         id                      INT(6)                              PRIMARY KEY         AUTO_INCREMENT  ,
         id_image                INT(6)              NOT NULL                    UNIQUE                  ,
-        name                    VARCHAR(40)         NOT NULL                    UNIQUE                  ,
+        name                    VARCHAR(40)         NOT NULL                                            ,
         FOREIGN KEY(id_image) REFERENCES adb_image(id)  
 ) ENGINE = MyISAM;
 
 CREATE TABLE adb_group_a (
         id_group                INT(6)                              PRIMARY KEY                         ,
         id_creator              INT(6)              NOT NULL                                            ,
-        creation_date           DATE                NOT NULL                                            ,
+        creation_date           DATETIME            NOT NULL                                            ,
         FOREIGN KEY(id_group) REFERENCES adb_group(id)                                                  ,
         FOREIGN KEY(id_creator) REFERENCES adb_user(id)
 ) ENGINE = MyISAM;
@@ -68,7 +68,7 @@ CREATE TABLE adb_group_a (
 CREATE TABLE adb_groups_composition (
        id_group                INT(6)                                                                    ,
        id_user                 INT(6)                                                                    ,
-       did_member_date         DATE                 NOT NULL                                             ,
+       did_member_date         DATETIME             NOT NULL                                             ,
        PRIMARY KEY(id_group, id_user)                                                                    ,
        FOREIGN KEY(id_group) REFERENCES adb_group(id)                                                    ,
        FOREIGN KEY(id_user) REFERENCES adb_user(id)
@@ -81,7 +81,7 @@ CREATE TABLE adb_task (
        day                      DATE                NOT NULL                                            ,       
        issue                    VARCHAR(68)         NOT NULL                                            ,
        body                     VARCHAR(432)        NOT NULL                                            ,
-       did_owner_date           DATE                NOT NULL                                            ,                     
+       did_owner_date           DATETIME            NOT NULL                                            ,                     
        FOREIGN KEY(id_owner_user) REFERENCES adb_user(id)                                               ,
        FOREIGN KEY(id_owner_group) REFERENCES adb_group(id) 
 ) ENGINE = MyISAM;
@@ -89,7 +89,7 @@ CREATE TABLE adb_task (
 CREATE TABLE adb_groups_access (
        id_group                 INT(6)                                                                  ,
        id_task                  INT(6)                                                                  ,
-       had_access_date          DATE                 NOT NULL                                           ,
+       had_access_date          DATETIME            NOT NULL                                            ,
        PRIMARY KEY(id_group, id_task)                                                                   ,
        FOREIGN KEY(id_group) REFERENCES adb_group(id)                                                   ,
        FOREIGN KEY(id_task) REFERENCES adb_task(id)   
@@ -108,7 +108,7 @@ CREATE TABLE adb_groups_sharing (
 CREATE TABLE adb_users_access ( 
        id_user                  INT(6)                                                                  ,
        id_task                  INT(6)                                                                  ,
-       had_access_date          DATE                 NOT NULL                                           ,
+       had_access_date          DATETIME            NOT NULL                                            ,
        PRIMARY KEY(id_user, id_task)                                                                    ,
        FOREIGN KEY(id_user) REFERENCES adb_user(id)                                                     ,
        FOREIGN KEY(id_task) REFERENCES adb_task(id) 
@@ -132,6 +132,16 @@ CREATE TABLE adb_realization (
         FOREIGN KEY(id_task) REFERENCES adb_task(id)
 ) ENGINE = MyISAM;
 
+CREATE TABLE adb_loss_of_access_of_members ( 
+       id_user                  INT(6),
+       id_group                 INT(6),
+       id_task                  INT(6),
+       PRIMARY KEY(id_user, id_group, id_task),
+       FOREIGN KEY(id_user) REFERENCES adb_user(id),
+       FOREIGN KEY(id_group) REFERENCES adb_group(id),
+       FOREIGN KEY(id_task) REFERENCES adb_task(id)
+) ENGINE = MyISAM;
+
 CREATE TABLE adb_comment ( 
         id                      INT(6)                              PRIMARY KEY         AUTO_INCREMENT  ,
         id_task                 INT(6)              NOT NULL                                            ,
@@ -153,7 +163,7 @@ CREATE TABLE adb_reading (
 CREATE TABLE adb_group_b ( 
         id_group                 INT(6)                             PRIMARY KEY                        ,
         id_manager               INT(6)             NOT NULL                                           ,
-        did_manager_date         DATE               NOT NULL                                           ,
+        did_manager_date         DATETIME           NOT NULL                                           ,
         FOREIGN KEY(id_group) REFERENCES adb_group(id)                                                 ,
         FOREIGN KEY(id_manager) REFERENCES adb_user(id)
 ) ENGINE = MyISAM;
@@ -161,7 +171,7 @@ CREATE TABLE adb_group_b (
 CREATE TABLE adb_friendship_solicitude_from_user ( 
        id_group                 INT(6)                                                                 ,
        id_user                  INT(6)                                                                 ,
-       solicitude_date          DATE                NOT NULL                                           ,
+       solicitude_date          DATETIME            NOT NULL                                           ,
        PRIMARY KEY(id_group, id_user)                                                                  ,
        FOREIGN KEY(id_group) REFERENCES adb_group(id)                                                  ,
        FOREIGN KEY(id_user) REFERENCES adb_user(id)
@@ -170,7 +180,7 @@ CREATE TABLE adb_friendship_solicitude_from_user (
 CREATE TABLE adb_friendship_solicitude_from_group ( 
        id_group                 INT(6)                                                                 ,
        id_user                  INT(6)                                                                 ,
-       solicitude_date          DATE                NOT NULL                                           ,
+       solicitude_date          DATETIME            NOT NULL                                           ,
        PRIMARY KEY(id_group, id_user)                                                                  ,
        FOREIGN KEY(id_group) REFERENCES adb_group(id)                                                  ,
        FOREIGN KEY(id_user) REFERENCES adb_user(id)
@@ -185,7 +195,7 @@ CREATE TABLE adb_normal_user (
 CREATE TABLE adb_aggregation ( 
        id_user_0                INT(6),
        id_user_1                INT(6),
-       aggregation_date         DATE                NOT NULL                                            ,
+       aggregation_date         DATETIME             NOT NULL                                            ,
        PRIMARY KEY(id_user_0, id_user_1)                                                                ,
        FOREIGN KEY(id_user_0) REFERENCES adb_user(id)                                                   ,
        FOREIGN KEY(id_user_1) REFERENCES adb_user(id)
@@ -194,7 +204,7 @@ CREATE TABLE adb_aggregation (
 CREATE TABLE adb_friendship_solicitude ( 
        id_transmitter           INT(6)                                                                  ,
        id_receiver              INT(6)                                                                  ,
-       solicitude_date          DATE                NOT NULL                                            ,
+       solicitude_date          DATETIME             NOT NULL                                            ,
        PRIMARY KEY(id_transmitter, id_receiver)                                                         ,
        FOREIGN KEY(id_transmitter) REFERENCES adb_user(id)                                              ,
        FOREIGN KEY(id_receiver) REFERENCES adb_user(id) 
