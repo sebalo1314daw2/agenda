@@ -1,0 +1,45 @@
+-- This SQL script is going to delete all the triggers of the application
+
+
+
+
+-- Procedure which throws exceptions
+
+DROP PROCEDURE THROW_EXCEPTION;
+
+
+
+-- Conversion's functions
+
+DROP FUNCTION HTML_ENTITIES;
+
+
+
+
+-- Validate's functions
+
+DROP FUNCTION IS_POSITIVE_INTEGER;
+
+DROP FUNCTION IS_VALID_EMAIL;
+
+DROP FUNCTION IS_VALID_DNI;
+
+
+
+
+-- Triggers' common content
+
+DROP PROCEDURE BEFORE_MESSAGE;
+
+
+
+
+-- Triggers
+
+DROP TRIGGER BEFORE_INSERT_MESSAGE;
+
+DROP TRIGGER BEFORE_UPDATE_MESSAGE;
+
+DROP TRIGGER BEFORE_INSERT_DNI_ADMIN_USER;
+
+DROP TRIGGER BEFORE_UPDATE_DNI_ADMIN_USER;
