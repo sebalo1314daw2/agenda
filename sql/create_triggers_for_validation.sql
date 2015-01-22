@@ -136,6 +136,61 @@ CREATE FUNCTION IS_VALID_EMAIL( email VARCHAR(320) ) RETURNS INT(1)
 DELIMITER ;
 
 /**
+ * IS_VALID_IMAGE_EXTENSION()
+ * @description This function indicates if the specified image extension is valid or not. Valid image's 
+ * extensions: JPG, JPEG, PNG, GIF.
+ * @author Sergio Baena Lopez
+ * @version 15.3.1
+ * @param {VARCHAR(4)} extension the image's extension to validate
+ * @return {INT(1)} if the specified image extension is valid or not
+ */
+DELIMITER //
+CREATE FUNCTION IS_VALID_IMAGE_EXTENSION( extension VARCHAR(4) ) RETURNS INT(1)
+    BEGIN
+        RETURN extension REGEXP '^JPE?G$|^PNG$|^GIF$';
+    END
+//
+DELIMITER ;
+
+/**
+ * IS_SPECIAL_BOOLEAN()
+ * @description This function indicates if the specified integer is a special boolean or not. A special 
+ * boolean is an integer between -1 and 1.
+ * @author Sergio Baena Lopez
+ * @version 15.3.1
+ * @param {INT(1)} integer_to_check the integer to check
+ * @return {INT(1)} if the specified integer is a special boolean or not
+ */
+DELIMITER //
+CREATE FUNCTION IS_SPECIAL_BOOLEAN( integer_to_check INT(1) ) RETURNS INT(1)
+    BEGIN
+        RETURN integer_to_check BETWEEN -1 AND 1;
+    END
+//
+DELIMITER ;
+
+/**
+ * IS_VALID_DEADLINE()
+ * @description This function indicates if the specified deadline is valid or not. The deadline must be 
+ * specified after 5 days.
+ * @author Sergio Baena Lopez
+ * @version 15.3.1
+ * @param {DATETIME} deadline the deadline to check
+ * @return {INT(1)} f the specified deadline is valid or not
+ */
+DELIMITER //
+CREATE FUNCTION IS_VALID_DEADLINE( deadline DATETIME ) RETURNS INT(1)
+    BEGIN
+        DECLARE deadline_date DATE DEFAULT CAST(deadline AS DATE);
+        DECLARE today_date DATE DEFAULT CURDATE();
+        DECLARE right_deadline0 DATE DEFAULT DATE_ADD(today_date, INTERVAL 5 DAY);
+        DECLARE right_deadline1 DATE DEFAULT DATE_ADD(today_date, INTERVAL 4 DAY); -- possible gap        
+        RETURN deadline_date = right_deadline0 OR deadline_date = right_deadline1;
+    END
+//
+DELIMITER ;
+
+/**
  * IS_VALID_DNI()
  * @description This function indicates if the specified DNI is valid or not
  * @author Sergio Baena Lopez
@@ -195,6 +250,77 @@ CREATE PROCEDURE BEFORE_MESSAGE( new_issue VARCHAR(68), new_body VARCHAR(432), n
 // 
 DELIMITER ;
 
+/**
+ * BEFORE_IMAGE()
+ * @description This procedure validates all the data to insert/update in adb_image
+ * @author Sergio Baena Lopez
+ * @version 15.3.1
+ * @throw 10001 'Invalid image extension' if the image extension to insert/update is invalid
+ * @throw 10003 'Invalid special boolean' if the special boolean to insert/update is invalid
+ * @throw 10005 'Invalid deadline of validation' if the deadline of validation to insert/update is invalid
+ * @throw 10... '<error_list>' if there were several errors to insert/update. We show all the errors and 
+ * the error's number is going to be the sum of all those errors' number (last digit) 
+ * @param {INT(1)} is_updating if this procedure executes for an updating
+ * @param {INT(6)} id_image the image's id 
+ * @param {VARCHAR(4)} new_extension the new extension to insert/update
+ * @param {INT(1)} new_is_valid the new is_valid to insert/update
+ * @param {DATETIME} new_deadline_validation the new deadline of validation to insert/update
+ */
+DELIMITER //
+CREATE PROCEDURE BEFORE_IMAGE (
+    is_updating INT(1),
+    id_image INT(6),
+    new_extension VARCHAR(4), 
+    new_is_valid INT(1),
+    new_deadline_validation DATETIME 
+)
+    BEGIN
+        DECLARE there_is_error INT(1) DEFAULT 0;
+        DECLARE error_num INT(5) DEFAULT 10000;
+        DECLARE errorsList VARCHAR(200) DEFAULT '';
+        -- We look if are there any errors. We salve them.
+        IF !IS_VALID_IMAGE_EXTENSION(new_extension) THEN
+            SET there_is_error = 1;
+            SET error_num = error_num + 1;
+            SET errorsList = CONCAT(errorsList, '', 'Invalid image extension. ');
+        END IF;
+        IF !IS_SPECIAL_BOOLEAN(new_is_valid) THEN
+            SET there_is_error = 1;
+            SET error_num = error_num + 3;
+            SET errorsList = CONCAT(errorsList, '', 'Invalid special boolean. ');
+        END IF;
+        -- Is it updating?
+        IF is_updating THEN
+            -- We look if the deadline has been modified or not
+            IF new_deadline_validation != (
+                SELECT adb_image.deadline_validation
+                FROM adb_image
+                WHERE adb_image.id = id_image
+            ) THEN
+                -- The two deadline aren't equals --> there is some modification 
+                -- The deadline must give true in IS_VALID_DEADLINE
+                IF !IS_VALID_DEADLINE(new_deadline_validation) THEN
+                    SET there_is_error = 1;
+                    SET error_num = error_num + 5;
+                    SET errorsList = CONCAT(errorsList, '', 'Invalid deadline of validation. ');
+                END IF;
+            END IF;
+        ELSE 
+            -- is inserting
+            IF !IS_VALID_DEADLINE(new_deadline_validation) THEN
+                SET there_is_error = 1;
+                SET error_num = error_num + 5;
+                SET errorsList = CONCAT(errorsList, '', 'Invalid deadline of validation. ');
+            END IF;
+        END IF;
+        -- We throw an exception if there are some errors (we're going to indicate those errors). 
+        IF there_is_error THEN 
+            CALL THROW_EXCEPTION(error_num, errorsList);
+        END IF;
+    END
+// 
+DELIMITER ;
+
 
 
 
@@ -226,6 +352,44 @@ DELIMITER //
 CREATE TRIGGER BEFORE_UPDATE_MESSAGE BEFORE UPDATE ON adb_message FOR EACH ROW
     BEGIN
         CALL BEFORE_MESSAGE(NEW.issue, NEW.body, NEW.email);
+    END
+//
+DELIMITER ;
+
+/**
+ * BEFORE_INSERT_IMAGE()
+ * @description This trigger validates all the data to insert in adb_image
+ * @author Sergio Baena Lopez
+ * @version 15.3.1
+ * @throw 10001 'Invalid image extension' if the image extension to insert is invalid
+ * @throw 10003 'Invalid special boolean' if the special boolean to insert is invalid
+ * @throw 10005 'Invalid deadline of validation' if the deadline of validation to insert is invalid
+ * @throw 10... '<error_list>' if there were several errors to insert. We show all the errors and 
+ * the error's number is going to be the sum of all those errors' number (last digit) 
+ */
+DELIMITER //
+CREATE TRIGGER BEFORE_INSERT_IMAGE BEFORE INSERT ON adb_image FOR EACH ROW 
+    BEGIN
+        CALL BEFORE_IMAGE(0, NULL, NEW.extension, NEW.is_valid, NEW.deadline_validation);
+    END
+//
+DELIMITER ;
+
+/**
+ * BEFORE_UPDATE_IMAGE()
+ * @description This trigger validates all the data to update in adb_image
+ * @author Sergio Baena Lopez
+ * @version 15.3.1
+ * @throw 10001 'Invalid image extension' if the image extension to update is invalid
+ * @throw 10003 'Invalid special boolean' if the special boolean to update is invalid
+ * @throw 10005 'Invalid deadline of validation' if the deadline of validation to update is invalid
+ * @throw 10... '<error_list>' if there were several errors to update. We show all the errors and 
+ * the error's number is going to be the sum of all those errors' number (last digit) 
+ */
+DELIMITER //
+CREATE TRIGGER BEFORE_UPDATE_IMAGE BEFORE UPDATE ON adb_image FOR EACH ROW
+    BEGIN
+        CALL BEFORE_IMAGE(1,NEW.id, NEW.extension, NEW.is_valid, NEW.deadline_validation);
     END
 //
 DELIMITER ;
