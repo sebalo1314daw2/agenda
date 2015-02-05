@@ -2344,7 +2344,7 @@ INSERT INTO adb_web (
 	A <negreta>computer</negreta> is a general purpose <negreta>device that can be programmed
 	to carry out</negreta> a set operations can be readily changed, the computer can 
 	solve more than one kind of problem.
-    </parragaf>
+    </parragraf>
     <parragraf>
             Conventionally, a computer consists of at least one processing element, typically can change
             <negreta>the order of operations</negreta> in response to <negreta>result of 

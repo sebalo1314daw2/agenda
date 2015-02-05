@@ -145,3 +145,44 @@ function activateCalendar() {
         min : new Date()
     });
 }
+/**
+ * activateLoadAnimation()
+ * @description This procedure activates the load animation of the page
+ * @author Sergio Baena Lopez
+ * @version 16.0
+ */
+function activateLoadAnimation() {
+    var idList = new Array("logo", "menuLooper", "body", "menu", "footer", "loadAnimation");
+    // We've to add the "loading" class to several HTML tags
+    for(var i = 0; i < idList.length; i++) {
+        $( "#" + idList[i] ).addClass("loading");
+    }
+    // We've already added the "loading" class
+    // Now, we've to center the load animation in the browser
+    Utilities.centerElement( $("#loadAnimation") );
+    // Finally, we catch the resize event for center the load animation again (if it is the case)
+    $(window).resize(function(){
+        var id = parseInt( $("#idOfTheResizeProcess").html() );
+        clearTimeout(id);
+        id = setTimeout(function(){
+            Utilities.centerElement( $("#loadAnimation") );
+        }, 100);
+        $("#idOfTheResizeProcess").html(id);
+    });
+}
+/**
+ * deactivateLoadAnimation()
+ * @description This procedure deactivates the load animation of the page
+ * @author Sergio Baena Lopez
+ * @version 16.0
+ */
+function deactivateLoadAnimation() {
+    var idList = new Array("logo", "menuLooper", "body", "menu", "footer", "loadAnimation");
+    // We've to remove the "loading" class to several HTML tags
+    for(var i = 0; i < idList.length; i++) {
+        $( "#" + idList[i] ).removeClass("loading");
+    }
+    // We've already removed the "loading" class
+    // Finally, we've to remove the handler of the resize event
+     $(window).unbind("resize");
+}
