@@ -3,7 +3,7 @@ function UnsupportedLocalStorageException(param0) {
     this.childFullConstructor(param0);
 }
     /* ============================== Provoke inheritance ============================================ */
-    UnsupportedLocalStorageException.prototype = new Exception;
+    $.provokeInheritance("Exception", "UnsupportedLocalStorageException");
     /* ============================== Attributes ===================================================== */
     UnsupportedLocalStorageException.prototype.DATA_TYPE = "UnsupportedLocalStorageException";
     /* ============================== Constructors ===================================================== */

@@ -3,7 +3,7 @@ function ExpiredLocalDataException(param0) {
     this.childFullConstructor(param0);
 }
     /* ============================== Provoke inheritance ============================================ */
-    ExpiredLocalDataException.prototype = new Exception;
+    $.provokeInheritance("Exception", "ExpiredLocalDataException");
     /* ============================== Attributes ===================================================== */
     ExpiredLocalDataException.prototype.DATA_TYPE = "ExpiredLocalDataException";
     /* ============================== Constructors ===================================================== */

@@ -33,11 +33,25 @@
         <!-- Font Awasome -->
         <link rel="stylesheet" href="../../../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
         <!-- JavaScript -->
+        <!-- Fameworks: JQuery and JSON -->
         <script type="text/javascript" src="../../../../../js/jQuery/jQuery.js"></script>
         <script type="text/javascript" src="../../../../../js/jQuery/pluginJqueryChosen/chosen.jquery.js"></script>
-        <script type="text/javascript" src="../../../../../js/control/generalFunctions.js"></script>
-        <script type="text/javascript" src="../../../../../js/control/front_end/usuari_registrat/grups/a/grup.js"></script>   
-        <script type="text/javascript" src="../../../../../js/model/Utilities.js"></script>
+        <script type="text/javascript" src="../../../../../js/model/javascript_classes/jQuery.js"></script>
+        <!-- Object class -->
+        <script type="text/javascript" src="../../../../../js/model/ObjectApp.js"></script>
+        <!-- Primitive types -->
+        <!-- Constants -->
+        <!-- Exceptions -->
+        <script type="text/javascript" src="../../../../../js/model/exceptions/Exception.js"></script>
+        <script type="text/javascript" src="../../../../../js/model/exceptions/AbstractAttributeOrMethodException.js"></script>
+        <!-- Tables' item -->
+        <!-- View -->
+        <script type="text/javascript" src="../../../../../js/view/Page.js"></script>
+        <!-- Controllers -->
+        <script type="text/javascript" src="../../../../../js/control/Controller.js"></script>
+        <script type="text/javascript" src="../../../../../js/control/front_end/usuari_registrat/grups/a/GrupAController.js"></script>
+        <!-- Boot -->
+        <script type="text/javascript" src="../../../../../js/control/boots/front_end/usuari_registrat/grups/a/grup.js"></script>
     </head>
     <body>
         <div id="webContainer">
@@ -64,18 +78,18 @@
                                     <option>Marta Manzanar del Prado</option>
                                     <option>Frederico Garc&iacute;a Lorca</option>
                             </select>
-                            <a href="javascript:void(0)" onclick="Utilities.openPopup('../../../usuari_no_registrat/select.html')">Membres</a>
+                            <a href="javascript:void(0)" onclick="GrupAController.openPopup('../../../usuari_no_registrat/select.html')">Membres</a>
                             <div id="buttonPanel">
                                 <!-- The long format's buttons  -->
                                 <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>   
-                                <button class="seeProfileButton longFormat" onclick="Utilities.openPopup('perfil.html')">Veure perfil</button>
+                                <button class="seeProfileButton longFormat" onclick="GrupAController.openPopup('perfil.html')">Veure perfil</button>
                                 <button class="deleteButton longFormat">Eliminar</button>
                                 <button class="salveAndExitButton longFormat" onclick="window.close()">Guardar i sortir</button>
                                 <button class="exitWithoutSalveButton longFormat" onclick="window.close()">Sortir sense guardar</button>          
                                 <!-- The short format's buttons  -->
                                 <button class="upButton shortFormat fa fa-arrow-up" 
                                 onclick="window.location.href = '#webContainer';" title="Pujar"></button>
-                                <button class="seeProfileButton shortFormat fa fa-eye" title="Veure perfil" onclick="Utilities.openPopup('perfil.html')"></button>
+                                <button class="seeProfileButton shortFormat fa fa-eye" title="Veure perfil" onclick="GrupAController.openPopup('perfil.html')"></button>
                                 <button class="deleteButton shortFormat fa fa-trash-o" title="Eliminar"></button>                                
                                 <button class="salveAndExitButton shortFormat fa fa-floppy-o" title="Guardar i sortir" onclick="window.close()"></button>
                                 <button class="exitWithoutSalveButton shortFormat fa fa-times" title="Sortir sense guardar" onclick="window.close()"></button>

@@ -1,6 +1,6 @@
 function Constants(){}
     /* ============================== Provoke inheritance ============================================ */
-    Constants.prototype = new ObjectApp;
+    $.provokeInheritance("ObjectApp", "Constants");
     /* =========================== Static attributes ================================================ */
     Constants.PREFIX = "adb";
     Constants.DELIMITER = "_";

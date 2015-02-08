@@ -3,7 +3,7 @@ function AjaxException(param0) {
     this.childFullConstructor(param0);
 }
     /* ============================== Provoke inheritance ============================================ */
-    AjaxException.prototype = new Exception;
+    $.provokeInheritance("Exception", "AjaxException");
     /* ============================== Attributes ===================================================== */
     AjaxException.prototype.DATA_TYPE = "AjaxException";
     /* ============================== Constructors ===================================================== */

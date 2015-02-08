@@ -11,7 +11,7 @@ function Web(param0, param1, param2, param3, param4, param5, param6) {
     this.fullConstructor(param0, param1, param2, param3, param4, param5, param6);
 }
     /* ============================== Provoke inheritance ============================================ */
-    Web.prototype = new ObjectApp;
+    $.provokeInheritance("ObjectApp", "Web");
     /* ============================== Attributes ===================================================== */
     Web.prototype.DATA_TYPE = "Web";
     Web.NAME_LOCAL_STORAGE = Constants.getPREFIX() + Constants.getDELIMITER() + "web";
@@ -76,10 +76,12 @@ function Web(param0, param1, param2, param3, param4, param5, param6) {
                 web = Web.obtainFromDB(serverPath, beforeSendFunction, completeFunction, errMsg);
             }
         } catch(e) {
-            if(e.getDATA_TYPE() == "ExpiredLocalDataException") { // it throws ExpiredLocalDataException
+            if(e.getDATA_TYPE == undefined) {  // thrown  excepcion --> System exception
+                throw e;
+            } else if(e.getDATA_TYPE() == "ExpiredLocalDataException") { // it throws ExpiredLocalDataException
                 // we've to obtain the web object from database
                 web = Web.obtainFromDB(serverPath, beforeSendFunction, completeFunction, errMsg);
-            } else {
+            } else { // thrown exception --> a Exception object not expected 
                 throw e;
             }
         }
@@ -182,19 +184,28 @@ function Web(param0, param1, param2, param3, param4, param5, param6) {
     /**
      * toHTMLTags()
      * @description This procedure converts the "negreta" tags ("<negreta></negreta>") to HTML tags.
-     * Also, it converts the "<parragraf></parragraf>" tags. ("<span class='fastReading'></span>")
+     * Also, it converts the "<parragraf></parragraf>" tags.
      * @author Sergio Baena Lopez
-     * @version 16.0
+     * @version 17
+     * @param {String} negretaStartTagToReplace the HTML element which replaces <negreta>
+     * @param {String} negretaEndTagToReplace the HTML element which replaces </negreta>
+     * @param {String} parragrafStartTagToReplace the HTML element which replaces <parragraf>
+     * @param {String} parragrafEndTagToReplace the HTML element which replaces </parragraf>
      */
-    Web.prototype.toHTMLTags = function() {
+    Web.prototype.toHTMLTags = function (
+        negretaStartTagToReplace,
+        negretaEndTagToReplace,
+        parragrafStartTagToReplace, 
+        parragrafEndTagToReplace
+    ) {
         var attrList = new Array("generalInfo", "groupInfo", "groupAInfo", "groupBInfo", "footer");
         for(var i = 0; i < attrList.length; i++) {
-            eval("this." + attrList[i] + " = this." +  attrList[i] + ".replaceAll('<negreta>', '<span class=\"fastReading\">');");
-            eval("this." + attrList[i] + " = this." +  attrList[i] + ".replaceAll('</negreta>', '</span>');");
+            eval("this." + attrList[i] + " = this." +  attrList[i] + ".replaceAll('<negreta>', '" + negretaStartTagToReplace + "');");
+            eval("this." + attrList[i] + " = this." +  attrList[i] + ".replaceAll('</negreta>', '" + negretaEndTagToReplace + "');");
         }
         // Now, we convert the "<parragraf></parragraf>" tags to "<p></p>" in general information 
-        eval("this." + attrList[0] + " = this." +  attrList[0] + ".replaceAll('<parragraf>', '<p>');");
-        eval("this." + attrList[0] + " = this." +  attrList[0] + ".replaceAll('</parragraf>', '</p>');");
+        eval("this." + attrList[0] + " = this." +  attrList[0] + ".replaceAll('<parragraf>', '" + parragrafStartTagToReplace + "');");
+        eval("this." + attrList[0] + " = this." +  attrList[0] + ".replaceAll('</parragraf>', '" + parragrafEndTagToReplace + "');");
     }
     /**
      * storeInLocalStorage()

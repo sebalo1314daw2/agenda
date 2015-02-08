@@ -33,10 +33,24 @@
         <!-- Font Awasome -->
         <link rel="stylesheet" href="../../../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
         <!-- JavaScript -->
+        <!-- Fameworks: JQuery and JSON -->
         <script type="text/javascript" src="../../../../../js/jQuery/jQuery.js"></script>
-        <script type="text/javascript" src="../../../../../js/control/generalFunctions.js"></script>
-        <script type="text/javascript" src="../../../../../js/control/front_end/usuari_registrat/grups/b/index.js"></script>   
-        <script type="text/javascript" src="../../../../../js/model/Utilities.js"></script>
+        <script type="text/javascript" src="../../../../../js/model/javascript_classes/jQuery.js"></script>
+        <!-- Object class -->
+        <script type="text/javascript" src="../../../../../js/model/ObjectApp.js"></script>
+        <!-- Primitive types -->
+        <!-- Constants -->
+        <!-- Exceptions -->
+        <script type="text/javascript" src="../../../../../js/model/exceptions/Exception.js"></script>
+        <script type="text/javascript" src="../../../../../js/model/exceptions/AbstractAttributeOrMethodException.js"></script>
+        <!-- Tables' item -->
+        <!-- View -->
+        <script type="text/javascript" src="../../../../../js/view/Page.js"></script>
+        <!-- Controllers -->
+        <script type="text/javascript" src="../../../../../js/control/Controller.js"></script>
+        <script type="text/javascript" src="../../../../../js/control/front_end/usuari_registrat/grups/b/IndexGrupsBController.js"></script>
+        <!-- Boot -->
+        <script type="text/javascript" src="../../../../../js/control/boots/front_end/usuari_registrat/grups/b/index.js"></script>
     </head>
     <body>
         <div id="webContainer">
@@ -75,15 +89,15 @@
                             <div id="buttonPanel">
                                 <!-- The long format's buttons  -->
                                 <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>
-                                <button class="addButton longFormat" onclick="Utilities.openPopup('grup.html')">Afegir</button>
-                                <button class="modifyButton longFormat" onclick="Utilities.openPopup('edicio.html')">Editar</button>
-                                <button class="aggregateDisaggregateButton longFormat" onclick="Utilities.openPopup('busqueda_per_agregacio_o_desagregacio.html')">Agregar/Desagregar</button>
+                                <button class="addButton longFormat" onclick="IndexGrupsBController.openPopup('grup.html')">Afegir</button>
+                                <button class="modifyButton longFormat" onclick="IndexGrupsBController.openPopup('edicio.html')">Editar</button>
+                                <button class="aggregateDisaggregateButton longFormat" onclick="IndexGrupsBController.openPopup('busqueda_per_agregacio_o_desagregacio.html')">Agregar/Desagregar</button>
                                 <button class="exitButton longFormat" onclick="window.close()">Sortir</button>
                                 <!-- The short format's buttons  -->
                                 <button class="upButton shortFormat fa fa-arrow-up" title="Pujar" onclick="window.location.href = '#webContainer';"></button>
-                                <button class="addButton shortFormat fa fa-plus" title="Afegir" onclick="Utilities.openPopup('grup.html')"></button>
-                                <button class="modifyButton shortFormat fa fa-pencil-square-o" title="Editar" onclick="Utilities.openPopup('edicio.html')"></button>
-                                <button class="aggregateDisaggregateButton shortFormat fa fa-heart" title="Agregar/Desagregar" onclick="Utilities.openPopup('busqueda_per_agregacio_o_desagregacio.html')"></button>
+                                <button class="addButton shortFormat fa fa-plus" title="Afegir" onclick="IndexGrupsBController.openPopup('grup.html')"></button>
+                                <button class="modifyButton shortFormat fa fa-pencil-square-o" title="Editar" onclick="IndexGrupsBController.openPopup('edicio.html')"></button>
+                                <button class="aggregateDisaggregateButton shortFormat fa fa-heart" title="Agregar/Desagregar" onclick="IndexGrupsBController.openPopup('busqueda_per_agregacio_o_desagregacio.html')"></button>
                                 <button class="exitButton shortFormat fa fa-times" title="Sortir" onclick="window.close()"></button>
                             </div>
                         </form>

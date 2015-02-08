@@ -5,7 +5,7 @@ function Exception(param0) {
     this.fullConstructor(param0);
 }
     /* ============================== Provoke inheritance ============================================ */
-    Exception.prototype = new ObjectApp;
+    $.provokeInheritance("ObjectApp", "Exception");
     /* ============================== Attributes ===================================================== */
     Exception.prototype.DATA_TYPE = "Exception";
     /* ============================== Constructors ===================================================== */

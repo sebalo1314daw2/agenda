@@ -33,11 +33,25 @@
         <!-- Font Awasome -->
         <link rel="stylesheet" href="../../../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
         <!-- JavaScript -->
+        <!-- Fameworks: JQuery and JSON -->
         <script type="text/javascript" src="../../../../../js/jQuery/jQuery.js"></script>
         <script type="text/javascript" src="../../../../../js/jQuery/pluginJqueryChosen/chosen.jquery.js"></script>
-        <script type="text/javascript" src="../../../../../js/control/generalFunctions.js"></script>
-        <script type="text/javascript" src="../../../../../js/control/front_end/usuari_registrat/grups/b/gestio_de_membres.js"></script>   
-        <script type="text/javascript" src="../../../../../js/model/Utilities.js"></script>
+        <script type="text/javascript" src="../../../../../js/model/javascript_classes/jQuery.js"></script>
+        <!-- Object class -->
+        <script type="text/javascript" src="../../../../../js/model/ObjectApp.js"></script>
+        <!-- Primitive types -->
+        <!-- Constants -->
+        <!-- Exceptions -->
+        <script type="text/javascript" src="../../../../../js/model/exceptions/Exception.js"></script>
+        <script type="text/javascript" src="../../../../../js/model/exceptions/AbstractAttributeOrMethodException.js"></script>
+        <!-- Tables' item -->
+        <!-- View -->
+        <script type="text/javascript" src="../../../../../js/view/Page.js"></script>
+        <!-- Controllers -->
+        <script type="text/javascript" src="../../../../../js/control/Controller.js"></script>
+        <script type="text/javascript" src="../../../../../js/control/front_end/usuari_registrat/grups/b/GestioDeMembresController.js"></script>
+        <!-- Boot -->
+        <script type="text/javascript" src="../../../../../js/control/boots/front_end/usuari_registrat/grups/b/gestio_de_membres.js"></script>
     </head>
     <body>
         <div id="webContainer">
@@ -61,16 +75,16 @@
                                     <option>Vols que siguin membres aquests</option>
                                     <option>Volen ser membres aquests</option>
                             </select>
-                            <a href="javascript:void(0)" onclick="Utilities.openPopup('../../../usuari_no_registrat/select.html')">Llista</a>
+                            <a href="javascript:void(0)" onclick="GestioDeMembresController.openPopup('../../../usuari_no_registrat/select.html')">Llista</a>
                             <div id="buttonPanel">
                                 <!-- The long format's buttons  -->
                                 <button class="upButton longFormat" onclick="window.location.href = '#webContainer';">Pujar</button>   
-                                <button class="searchButton longFormat" onclick="Utilities.openPopup('llista_de_tipus_de_usuaris.html')">Buscar</button>
+                                <button class="searchButton longFormat" onclick="GestioDeMembresController.openPopup('llista_de_tipus_de_usuaris.html')">Buscar</button>
                                 <button class="exitButton longFormat" onclick="window.close()">Sortir</button>
                                 <!-- The short format's buttons  -->
                                 <button class="upButton shortFormat fa fa-arrow-up" 
                                 onclick="window.location.href = '#webContainer';" title="Pujar"></button>
-                                <button class="searchButton shortFormat fa fa-search" title="Buscar" onclick="Utilities.openPopup('llista_de_tipus_de_usuaris.html')"></button>
+                                <button class="searchButton shortFormat fa fa-search" title="Buscar" onclick="GestioDeMembresController.openPopup('llista_de_tipus_de_usuaris.html')"></button>
                                 <button class="exitButton shortFormat fa fa-times" title="Sortir" onclick="window.close()"></button>
                             </div>
                         </form>

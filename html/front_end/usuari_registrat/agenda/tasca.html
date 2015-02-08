@@ -36,14 +36,28 @@
         <!-- Font Awasome -->
         <link rel="stylesheet" href="../../../../css/fontAwesome/css/font-awesome.css" type="text/css" />
         <!-- JavaScript -->
+        <!-- Fameworks: JQuery and JSON -->
         <script type="text/javascript" src="../../../../js/jQuery/jQuery.js"></script>
         <script type="text/javascript" src="../../../../js/jQuery/pluginJqueryChosen/chosen.jquery.js"></script>
         <script type="text/javascript" src="../../../../js/jQuery/pluginJqueryPickadate/lib/picker.js"></script>
         <script type="text/javascript" src="../../../../js/jQuery/pluginJqueryPickadate/lib/picker.date.js"></script>
         <script type="text/javascript" src="../../../../js/jQuery/pluginJqueryPickadate/lib/translations/ca_ES.js"></script>
-        <script type="text/javascript" src="../../../../js/control/generalFunctions.js"></script>
-        <script type="text/javascript" src="../../../../js/control/front_end/usuari_registrat/agenda/tasca.js"></script>   
-        <script type="text/javascript" src="../../../../js/model/Utilities.js"></script>
+        <script type="text/javascript" src="../../../../js/model/javascript_classes/jQuery.js"></script>
+        <!-- Object class -->
+        <script type="text/javascript" src="../../../../js/model/ObjectApp.js"></script>
+        <!-- Primitive types -->
+        <!-- Constants -->
+        <!-- Exceptions -->
+        <script type="text/javascript" src="../../../../js/model/exceptions/Exception.js"></script>
+        <script type="text/javascript" src="../../../../js/model/exceptions/AbstractAttributeOrMethodException.js"></script>
+        <!-- Tables' item -->
+        <!-- View -->
+        <script type="text/javascript" src="../../../../js/view/Page.js"></script>
+        <!-- Controllers -->
+        <script type="text/javascript" src="../../../../js/control/Controller.js"></script>
+        <script type="text/javascript" src="../../../../js/control/front_end/usuari_registrat/agenda/TascaController.js"></script>
+        <!-- Boot -->
+        <script type="text/javascript" src="../../../../js/control/boots/front_end/usuari_registrat/agenda/tasca.js"></script>
     </head>
     <body>
         <div id="webContainer">
@@ -71,7 +85,7 @@
                                     <option>Ana Teclado Letra</option>
                                     <option>Francisco N&uacute;mero Pi</option>
                             </select>
-                            <a href="javascript:void(0)" onclick="Utilities.openPopup('../../usuari_no_registrat/select.html')">Propietari</a>
+                            <a href="javascript:void(0)" onclick="TascaController.openPopup('../../usuari_no_registrat/select.html')">Propietari</a>
                             <select data-placeholder="Compartir amb usuaris" multiple="multiple" id="users">
                                     <option>Pepe Rodrigo Villalba</option>
                                     <option>Marta Manzanar Peral</option>
@@ -80,7 +94,7 @@
                                     <option>Ana Teclado Letra</option>
                                     <option>Francisco N&uacute;mero Pi</option>
                             </select>
-                            <a href="javascript:void(0)" onclick="Utilities.openPopup('../../usuari_no_registrat/select_multiple.html')">Compartir amb usuaris</a>
+                            <a href="javascript:void(0)" onclick="TascaController.openPopup('../../usuari_no_registrat/select_multiple.html')">Compartir amb usuaris</a>
                             <select data-placeholder="Compartir amb grups" multiple="multiple" id="groups">
                                     <option>Grupo A</option>
                                     <option>Los mejores del mundial mundial</option>
@@ -89,7 +103,7 @@
                                     <option>Grupo B</option>
                                     <option>Las zanahorias</option>
                             </select>
-                            <a href="javascript:void(0)" onclick="Utilities.openPopup('../../usuari_no_registrat/select_multiple.html')">Compartir amb grups</a>
+                            <a href="javascript:void(0)" onclick="TascaController.openPopup('../../usuari_no_registrat/select_multiple.html')">Compartir amb grups</a>
                             <div class="comment" id="firstComment">
                                 <h2 class="user">Marta</h2>
                                 <span class="content">Hola!</span>
@@ -113,7 +127,7 @@
                                 <a href="javascript:void(0)">Seg&uuml;ent</a>
                             </div>
                             <textarea placeholder="Nou comentari"></textarea>
-                            <a href="javascript:void(0)" class="clickableImg" onclick="Utilities.openPopup('comparticio.html')">
+                            <a href="javascript:void(0)" class="clickableImg" onclick="TascaController.openPopup('comparticio.html')">
                                 <span class="fa fa-share-alt"></span>
                             </a>
                             <a href="#firstComment" class="clickableImg">
