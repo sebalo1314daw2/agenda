@@ -20,7 +20,6 @@ SobreLaWebController.generateCommonContent = function() {
     );
     Page.generateMenuLooper();
     Page.generateMenu();
-    Page.generateFooter();
 }
 /**
  * atTheStartOfPage()
@@ -48,7 +47,7 @@ SobreLaWebController.atTheStartOfPage = function() {
  * generateDynamicContent()
  * This procedure generates the dynamic content of the page
  * @author Sergio Baena Lopez
- * @version 17
+ * @version 18.0
  * @throws {AjaxException} if Ajax causes an error 
  * @throws {UnsupportedLocalStorageException} if the local storage isn't sopported for browser
  */
@@ -65,6 +64,7 @@ SobreLaWebController.generateDynamicContent = function() {
         Page.getPARAGRAPH_TAG("start"),
         Page.getPARAGRAPH_TAG("end")
     ); 
-    Page.inputText( web.getGeneralInfo() ); 
+    Page.generateText( web.getGeneralInfo() ); 
+    Page.generateFooter( web.getFooter() );
     web.storeIfItIsRequired();
 }

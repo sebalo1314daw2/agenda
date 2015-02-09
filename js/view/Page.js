@@ -158,17 +158,12 @@ Page.generateMenu = function() {
  * generateFooter()
  * @description Procedure that is intended to generate the footer of the web.
  * @author Sergio Baena López
- * @version 17
+ * @version 18.0
+ * @param {String} content the footer's content 
  */
-Page.generateFooter = function() {
-    var footer =    '<p>';
-    footer     +=           'Servei gratu&iuml;t que ofereix el Sergio Baena L&oacute;pez per a tothom ';
-    footer     +=           'que hi vulgui.';
-    footer     +=   '</p>';                 
-    $("#footer").append
-    (
-            $(footer)
-    );              
+Page.generateFooter = function(content) {
+    var footer =    Page.PARAGRAPH_TAG["start"] + content + Page.PARAGRAPH_TAG["end"];                 
+    $("#footer").append( $(footer) );              
 }
 /**
  * generateRegisteredUserMenu()
@@ -282,12 +277,12 @@ Page.showErrorForDeveloper = function(exception) {
     console.error(exception);
 }
 /**
- * inputText()
+ * generateText()
  * @description This procedure inputs the specified text in the page (id=text)
  * @author Sergio Baena Lopez
- * @version 17
- * @param {String} text the text to input
+ * @version 18.0
+ * @param {String} content the text to input
  */
-Page.inputText = function(text) {
-    $("#text").html(text);
+Page.generateText = function(content) {
+    $("#text").html(content);
 }
