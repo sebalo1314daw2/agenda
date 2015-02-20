@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    ComparticioController.atTheStartOfPage();  
-});
+Page.addReadyEvent(ComparticioController.atTheStartOfPage);

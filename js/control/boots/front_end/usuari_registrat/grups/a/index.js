@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    IndexGrupsAController.atTheStartOfPage();  
-});
+Page.addReadyEvent(IndexGrupsAController.atTheStartOfPage);

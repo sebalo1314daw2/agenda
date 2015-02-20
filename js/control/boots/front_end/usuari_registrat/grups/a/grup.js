@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    GrupAController.atTheStartOfPage();  
-});
+Page.addReadyEvent(GrupAController.atTheStartOfPage);

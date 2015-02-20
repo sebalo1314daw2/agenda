@@ -193,7 +193,21 @@
 #loadAnimation.loading {
     display: block;
 }
-#logo.loading, #menuLooper.loading, #body.loading, #menu.loading, #footer.loading {
+#logo.loading                   ,
+#menuLooper.loading             ,
+#title.loading                  ,
+#alert.loading                   ,
+#text.loading                   ,
+#menu.loading                   ,
+#footer.loading                 ,
+#img.loading                    ,
+#logo.alerting                  ,
+#menuLooper.alerting            ,       
+#title.alerting                 ,
+#text.alerting                  ,
+#menu.alerting                  ,
+#footer.alerting                ,
+#img.alerting {
     opacity: 0.2;
 }
 /**

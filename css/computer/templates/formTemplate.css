@@ -46,6 +46,15 @@
    #form .pagesOfTheList > a {
         width: 70px; /* is fixed */
    }
+   #form #alert {
+       padding: 0.48828125%;  /* 5px/1024px */
+       /*width: 96%;*/  /* 1014px/1024px */
+       width: 500px; /* it's fixed */
+       /*max-width: 1014px;*/
+   }
+   #form #alert.scrolling {
+       top: -105px !important;
+   }
    #form button
    {
        border-width: 1px; /* Is fixed */ 

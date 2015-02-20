@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    SobreLaWebController.atTheStartOfPage();  
-});
+Page.addReadyEvent(SobreLaWebController.atTheStartOfPage);

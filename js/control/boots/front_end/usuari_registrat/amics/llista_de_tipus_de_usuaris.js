@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    LlistaDeTipusDeUsuarisController.atTheStartOfPage();  
-});
+Page.addReadyEvent(LlistaDeTipusDeUsuarisController.atTheStartOfPage);

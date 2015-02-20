@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    IndexAmicsController.atTheStartOfPage();  
-});
+Page.addReadyEvent(IndexAmicsController.atTheStartOfPage);

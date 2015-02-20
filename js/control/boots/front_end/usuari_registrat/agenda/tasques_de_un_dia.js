@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    TasquesDeUnDiaController.atTheStartOfPage();  
-});
+Page.addReadyEvent(TasquesDeUnDiaController.atTheStartOfPage);

@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    LoginController.atTheStartOfPage();  
-});
+Page.addReadyEvent(LoginController.atTheStartOfPage);

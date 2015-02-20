@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    SelectController.atTheStartOfPage();  
-});
+Page.addReadyEvent(SelectController.atTheStartOfPage);

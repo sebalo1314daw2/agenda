@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    EdicioGrupsBController.atTheStartOfPage();  
-});
+Page.addReadyEvent(EdicioGrupsBController.atTheStartOfPage);

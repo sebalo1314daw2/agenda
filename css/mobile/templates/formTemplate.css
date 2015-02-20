@@ -40,6 +40,27 @@
 #form a.clickableImg + a.clickableImg {
      margin-right: 0;
 }
+#form #alert {
+    display: none;
+    position: fixed;
+    background-color: #fff;
+    z-index: 1;
+    width: 88.695652174%; /* 204px/230px */ 
+    border: double #0080ff;
+    border-width: 3px; 
+    border-radius: 3px; /* it is fixed */
+    padding: 2.173913043%; /* 5px/230px */
+}
+#form #alert #msgButton {
+    margin-top: 20px;
+}
+#form #alert.alerting {
+    display: block;
+}
+#form #alert.scrolling {
+    position: absolute;
+    top: 0 !important;
+}
 #form button
 {
     width: 100%; /* 220px/220px */

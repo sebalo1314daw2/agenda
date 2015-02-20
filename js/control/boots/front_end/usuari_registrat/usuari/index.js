@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    IndexUsuariController.atTheStartOfPage();  
-});
+Page.addReadyEvent(IndexUsuariController.atTheStartOfPage);

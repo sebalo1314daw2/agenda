@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    LlistaDeTipusDeGrupsController.atTheStartOfPage();  
-});
+Page.addReadyEvent(LlistaDeTipusDeGrupsController.atTheStartOfPage);

@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    EliminacioGrupsAController.atTheStartOfPage();  
-});
+Page.addReadyEvent(EliminacioGrupsAController.atTheStartOfPage);

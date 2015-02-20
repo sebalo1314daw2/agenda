@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    BusquedaPerAgregacioODesagregacioController.atTheStartOfPage();  
-});
+Page.addReadyEvent(BusquedaPerAgregacioODesagregacioController.atTheStartOfPage);

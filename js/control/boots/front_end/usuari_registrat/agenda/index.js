@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    IndexAgendaController.atTheStartOfPage();  
-});
+Page.addReadyEvent(IndexAgendaController.atTheStartOfPage);

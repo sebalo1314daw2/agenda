@@ -25,17 +25,18 @@ SobreLaWebController.generateCommonContent = function() {
  * atTheStartOfPage()
  * @description Procedure aims load the page with all the common content.
  * @author Sergio Baena López
- * @version 17
+ * @version 18.1
  */
 SobreLaWebController.atTheStartOfPage = function() {
     try {
        SobreLaWebController.generateCommonContent();
        SobreLaWebController.generateDynamicContent();
+       Page.addResizeEvent(SobreLaWebController.centerPositionedElements);
     } catch(e) {
         if(e.getDATA_TYPE == undefined) {  // thrown  excepcion --> System exception
             Page.showErrorForDeveloper(e);
         } else if(e.getDATA_TYPE() == "AjaxException") { // thrown  excepcion --> AjaxException
-            Page.showErrorForUser(e);
+            Page.alert( new Array(e) );
         } else if(e.getDATA_TYPE() == "UnsupportedLocalStorageException") { // thrown  excepcion --> UnsupportedLocalStorageException
             // We don't do anything
         } else { // thrown exception --> a Exception object not expected 

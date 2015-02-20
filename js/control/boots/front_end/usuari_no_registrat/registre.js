@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    RegistreController.atTheStartOfPage();  
-});
+Page.addReadyEvent(RegistreController.atTheStartOfPage);

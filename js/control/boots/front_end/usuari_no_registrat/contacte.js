@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    ContacteController.atTheStartOfPage();  
-});
+Page.addReadyEvent(ContacteController.atTheStartOfPage);

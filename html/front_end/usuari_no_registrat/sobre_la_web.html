@@ -17,9 +17,11 @@
         <link rel="stylesheet" href="../../../css/reset.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/mobile/own_styles_of_the_web.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/mobile/templates/template.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/mobile/templates/formTemplate.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/computer/own_styles_of_the_web.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/computer/templates/template.css" type="text/css" />   
         <link rel="stylesheet" href="../../../css/computer/templates/textTemplate.css" type="text/css" />
+        <link rel="stylesheet" href="../../../css/computer/templates/formTemplate.css" type="text/css" />
         <link rel="stylesheet" href="../../../css/computer/pages/front_end/usuari_no_registrat/sobre_la_web.css" type="text/css" />
         <!-- Google fonts -->
         <link rel="stylesheet" href="../../../css/googleFonts/lilyScriptOne/liliScriptOne.css" type="text/css" />
@@ -48,6 +50,7 @@
         <!-- Tables' item -->
         <script type="text/javascript" src="../../../js/model/tables_item/Web.js"></script>
         <!-- View -->
+        <script type="text/javascript" src="../../../js/view/ViewUtilities.js"></script>
         <script type="text/javascript" src="../../../js/view/Page.js"></script>
         <!-- Controllers -->
         <script type="text/javascript" src="../../../js/control/Controller.js"></script>
@@ -68,6 +71,16 @@
                         <h1>Informaci&oacute;</h1>
                     </div>
                     <div id="text"></div> 
+                    <div id="form">
+                        <form action="javascript:void(0)">
+                            <div id="alert">
+                                <div id="msgList"></div>    
+                                <div id="msgButton">
+                                    <button onclick="SobreLaWebController.closeAlert()">Acceptar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                    <div id="img" class="fa fa-info-circle"></div>
                 </div>
                 <div id="menu"></div>
@@ -76,7 +89,7 @@
             </div>
         </div>
         <div id="hiddenData">
-            <div id="idOfTheResizeProcess"></div>
+            <div id="idOfTheCenteredProcess"></div>
         </div>
     </body>
 </html>

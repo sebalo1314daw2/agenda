@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    GestioDeMembresController.atTheStartOfPage();  
-});
+Page.addReadyEvent(GestioDeMembresController.atTheStartOfPage);

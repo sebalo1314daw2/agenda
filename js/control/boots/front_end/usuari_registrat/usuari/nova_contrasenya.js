@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    NovaContrasenyaController.atTheStartOfPage();  
-});
+Page.addReadyEvent(NovaContrasenyaController.atTheStartOfPage);

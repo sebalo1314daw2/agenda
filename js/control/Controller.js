@@ -52,3 +52,28 @@ Controller.generateCommonContent = function() {
 Controller.openPopup = function(path) {
     Page.openPopup(path);
 }
+/**
+ * centerPositionedElements()
+ * @description This procedure centers all the positioned elements
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ */
+Controller.centerPositionedElements = function() {
+    var id = Page.obtainIdOfTheCenteredProcess();
+    clearTimeout(id);
+    id = setTimeout(function() {
+        Page.centerLoadAnimation();
+        Page.centerAlert();
+        Page.centerConfirm();
+    }, 100);
+    Page.storeIdOfTheCenteredProcess(id);
+}
+/**
+ * closeAlert()
+ * @description This procedure closes the alert of the web
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ */
+Controller.closeAlert = function() {
+    Page.closeAlert();
+}

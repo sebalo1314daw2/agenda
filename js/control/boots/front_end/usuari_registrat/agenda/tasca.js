@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    TascaController.atTheStartOfPage();  
-});
+Page.addReadyEvent(TascaController.atTheStartOfPage);

@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    SelectMultipleController.atTheStartOfPage();  
-});
+Page.addReadyEvent(SelectMultipleController.atTheStartOfPage);

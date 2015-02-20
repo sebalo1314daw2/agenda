@@ -1,3 +1,1 @@
-$(document).ready(function() {
-    PerfilGrupsBController.atTheStartOfPage();  
-});
+Page.addReadyEvent(PerfilGrupsBController.atTheStartOfPage);

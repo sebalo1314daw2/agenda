@@ -10,6 +10,20 @@
         /*height: 415px;*/
     }
    /**
+    * Form
+    * The alert's form
+    * @author Sergio Baena Lopez
+    */
+    #form {
+        /*height: 380px;*/
+    }
+    #text + #form {
+        clear: none;
+    }
+    #form button {
+        width: 82px; /*the width of button is fixed for computer */
+    }
+   /**
     * Img
     * The image of the web
     * @author Sergio Baena López

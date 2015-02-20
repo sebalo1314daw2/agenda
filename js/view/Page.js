@@ -48,7 +48,7 @@ Page.openPopup = function(url) {
  * centerElement()
  * This procedure centers the specified element in the web
  * @author Sergio Baena Lopez
- * @version 17
+ * @version 18.1
  * @param {HTML object} element the element to center
  */
 Page.centerElement = function(element) {
@@ -57,7 +57,7 @@ Page.centerElement = function(element) {
     var widthElement;
     var heightElement;
     // We calculates the width and the height of the browser
-    if(navigator.appVersion.indexOf("MSIE") != -1) {
+    if( ViewUtilities.isIE() ) {
         // The browser is IE
         widthBrowser = document.body.offsetWidth;
         heightBrowser = document.body.offsetHeight;
@@ -78,14 +78,66 @@ Page.centerElement = function(element) {
     });
 }
 /**
- * showErrorForUser()
- * This procedure shows the thrown exception to the user 
+ * alert()
+ * This procedure shows a message to the user ( it calls the "toString()" method ) 
  * @author Sergio Baena Lopez
- * @version 17
- * @param {thrown element} exception the exception to show
+ * @version 18.1
+ * @param {Object []} msgList the messages to show
  */
-Page.showErrorForUser = function(exception) {
-    alert(exception);
+Page.alert = function(msgList) {
+   // We add the specified messages to the alert
+   var divMsgList = $("#msgList");
+   for(var i = 0; i < msgList.length; i++) {
+       var pMsg = "<p class='msg'>" + msgList[i] + "</p>";
+       $(divMsgList).append( $(pMsg) );
+   } // We've already added all the  specified messages
+   // We add the "alerting" classes
+   var idList = new Array (
+        "logo",
+        "menuLooper",
+        "title",
+        "text",
+        "menu",
+        "footer", 
+        "img",
+        "alert"
+    );
+    for(i = 0; i < idList.length; i++) {
+        $("#" + idList[i]).addClass("alerting");
+    }
+    // Finally, we center the alert
+    Page.centerAlert();
+}
+/**
+ * centerElementByWidthWithRespectToWebContainer()
+ * This procedure centers the specified element by the width with respect to web container 
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ * @param {HTML object} element the element to center by the width with respect to web container 
+ */
+Page.centerElementByWidthWithRespectToWebContainer = function(element) {
+    var widthBrowser;
+    var widthWebContainer;
+    var widthElement;
+    // We calculates the width of the browser
+    if( ViewUtilities.isIE() ) {
+        // The browser is IE
+        widthBrowser = document.body.offsetWidth;
+    } else {
+        // The browser isn't IE
+        widthBrowser = window.innerWidth;
+    }
+    // We check if the web container's width corresponds the browser's width
+    if(widthBrowser > 1024) {
+        widthWebContainer = 1024;
+    } else {
+        widthWebContainer = widthBrowser;
+    } // We've already calculated the width of the web container
+    // Now, we calculates the width of the specified element
+    widthElement = $(element).outerWidth();
+    // The width of the element already is calculated
+    // We calculates the left property and then we set it
+    $(element).css("left", Math.round( (widthWebContainer/2 - widthElement/2) ) + "px");
 }
 /**
  * generateLogo()
@@ -229,35 +281,46 @@ Page.activateCalendar = function() {
  * activateLoadAnimation()
  * @description This procedure activates the load animation of the page
  * @author Sergio Baena Lopez
- * @version 17
+ * @version 18.1
  */
 Page.activateLoadAnimation = function() {
-    var idList = new Array("logo", "menuLooper", "body", "menu", "footer", "loadAnimation");
+    var idList = new Array (
+        "logo",
+        "menuLooper",
+        "title",
+        "alert",
+        "text",
+        "menu",
+        "footer", 
+        "img",
+        "loadAnimation"
+    );
     // We've to add the "loading" class to several HTML tags
     for(var i = 0; i < idList.length; i++) {
         $( "#" + idList[i] ).addClass("loading");
     }
     // We've already added the "loading" class
     // Now, we've to center the load animation in the browser
-    Page.centerElement( $("#loadAnimation") );
-    // Finally, we catch the resize event for center the load animation again (if it is the case)
-    $(window).resize(function(){
-        var id = parseInt( $("#idOfTheResizeProcess").html() );
-        clearTimeout(id);
-        id = setTimeout(function(){
-            Page.centerElement( $("#loadAnimation") );
-        }, 100);
-        $("#idOfTheResizeProcess").html(id);
-    });
+    Page.centerLoadAnimation();
 }
 /**
  * deactivateLoadAnimation()
  * @description This procedure deactivates the load animation of the page
  * @author Sergio Baena Lopez
- * @version 17
+ * @version 18.1
  */
 Page.deactivateLoadAnimation = function() {
-    var idList = new Array("logo", "menuLooper", "body", "menu", "footer", "loadAnimation");
+    var idList = new Array (
+        "logo",
+        "menuLooper",
+        "title",
+        "alert",
+        "text",
+        "menu",
+        "footer", 
+        "img",
+        "loadAnimation"
+    );
     // We've to remove the "loading" class to several HTML tags
     for(var i = 0; i < idList.length; i++) {
         $( "#" + idList[i] ).removeClass("loading");
@@ -285,4 +348,120 @@ Page.showErrorForDeveloper = function(exception) {
  */
 Page.generateText = function(content) {
     $("#text").html(content);
+}
+/**
+ * centerLoadAnimation()
+ * @description This procedure centers the load animation in the page. After, it checks if the load 
+ * animation is activated.
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ */
+Page.centerLoadAnimation = function() {
+    // We check if #loadAnimation has the "loading" class
+    var divLoadAnimation = $("#loadAnimation");
+    if( $(divLoadAnimation).hasClass("loading") ) { // We center the load animation
+        Page.centerElement( $(divLoadAnimation) );
+    }
+}
+/**
+ * centerAlert()
+ * @description This procedure centers the alert in the page. After, it checks if the alert is activated.
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ */
+Page.centerAlert = function() { 
+    // We check if #alert has the "alerting" class
+    var divAlert = $("#alert");
+    if( $(divAlert).hasClass("alerting") ) { // We center the alert
+        // We check if the alert must be scrolling or not
+        if( ViewUtilities.isHigherThanBrowser( $(divAlert) ) ) {
+            // The alert is higher than browser --> the alert must be scrolling
+            // We add the "scrolling" class to the alert
+            $(divAlert).addClass("scrolling");
+            // We center the alert by the width with respect to web container
+            Page.centerElementByWidthWithRespectToWebContainer(divAlert);
+        } else {
+            // The browser is higher than the alert --> the alert is normal
+            // We must remove the "scrolling" class 
+            $(divAlert).removeClass("scrolling");
+            // We center the alert normally
+            Page.centerElement(divAlert);
+        }
+    }
+}
+/**
+ * centerConfirm()
+ * @description This procedure centers the confirm in the page. After, it checks if the confirm is 
+ * activated.
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ */
+Page.centerConfirm = function() { 
+    // TODO
+}
+/**
+ * obtainIdOfTheCenteredProcess()
+ * @description This function obtains the id of the centered process (it's written in hidden data)
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ * @return {Number} the id of the centered process
+ */
+Page.obtainIdOfTheCenteredProcess = function() {
+    return parseInt( $("#idOfTheCenteredProcess").html() );
+}
+/**
+ * storeIdOfTheCenteredProcess()
+ * @description This procedure stores the id of the centered process (it's in hidden data)
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ * @param {Number} id the id of the centered process to store
+ */
+Page.storeIdOfTheCenteredProcess = function(id) {
+    $("#idOfTheCenteredProcess").html(id);
+}
+/**
+ * addResizeEvent()
+ * @description This procedure adds the resize event which is associated to the page
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ * @param {Function} handler the handler of the resize event
+ */
+Page.addResizeEvent = function(handler) {
+    $(window).resize(handler);
+}
+/**
+ * addReadyEvent()
+ * @description This procedure adds the ready event which is associated to the page
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ * @param {Function} handler the handler of the ready event
+ */
+Page.addReadyEvent = function(handler) {
+    $(document).ready(handler);
+}
+/**
+ * closeAlert()
+ * @description This procedure closes the alert of the page
+ * @author Sergio Baena Lopez
+ * @version 18.1
+ */
+Page.closeAlert = function() {
+    // We remove the alerting class
+    var idList = new Array (
+        "logo",
+        "menuLooper",
+        "title",
+        "text",
+        "menu",
+        "footer", 
+        "img",
+        "alert"
+    );
+    for(var i = 0; i < idList.length; i++) {
+        $("#" + idList[i]).removeClass("alerting");
+    }
+    // We remove the scrolling class
+    $("#alert").removeClass("scrolling");
+    // We remove the list of messages
+    $("#msgList").empty();
 }
