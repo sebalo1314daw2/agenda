@@ -26,11 +26,12 @@
             if( isset( $this->params["action"] ) ) { // the action param is set
                 switch( $this->params["action"] ) {
                     case "0":
-                        echo $this->obtainWeb();
+                        echo self::obtainWeb();
                         break;
                 }
             }
         }
+        /* ====================== Static methods ==================================================== */
         /**
          * obtainWeb()
          * This function obtains the web object stored in the database
@@ -38,7 +39,7 @@
          * @version 16.0
          * @return {String} web object (encoded to JSON)
          */
-        private function obtainWeb() {
+        private static function obtainWeb() {
             // get the web
             $web = WebTable::obtain();
             return json_encode( $web->toAssociativeArray() );
