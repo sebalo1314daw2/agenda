@@ -11,33 +11,57 @@ ContacteController.URL_SERVER = "../../../php/control/call_controller.php";
  * atTheStartOfPage()
  * @description Procedure aims load the page with all the common content.
  * @author Sergio Baena López
- * @version 17
+ * @version 19.1
  */
 ContacteController.atTheStartOfPage = function() {
     ContacteController.generateCommonContent();
+    ContacteController.generateDynamicContent();
     ContactForm.addResizeEvent(ContacteController.centerPositionedElements);
 }
 /**
  * generateCommonContent()
  * This procedure generates the common content of the page
  * @author Sergio Baena Lopez
- * @version 17
+ * @version 19.1
  */
 ContacteController.generateCommonContent = function() {
-    Page.generateLogo (
+    ContactForm.generateLogo (
         ContacteController.URL_WHERE_THE_LOGO_REDIRECTS, 
         ContacteController.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS
     );
-    Page.generateMenuLooper();
-    Page.generateMenu();
-    Page.generateFooter();
+    ContactForm.generateMenuLooper();
+    ContactForm.generateMenu();
+}
+/**
+ * generateDynamicContent()
+ * This procedure generates the dynamic content of the page
+ * @author Sergio Baena Lopez
+ * @version 19.1
+ * @throws {AjaxException} if Ajax causes an error 
+ * @throws {UnsupportedLocalStorageException} if the local storage isn't sopported for browser
+ */
+ContacteController.generateDynamicContent = function() {
+    var web = Web.obtain (
+        ContacteController.URL_SERVER, 
+        ContactForm.activateLoadAnimation, 
+        ContactForm.deactivateLoadAnimation,
+        ContactForm.getAJAX_ERR()
+    );
+    web.toHTMLTags ( 
+        ContactForm.getBOLD_TAG("start"),
+        ContactForm.getBOLD_TAG("end"),
+        ContactForm.getPARAGRAPH_TAG("start"),
+        ContactForm.getPARAGRAPH_TAG("end")
+    );  
+    ContactForm.generateFooter( web.getFooter() );
+    web.storeIfItIsRequired();
 }
 /**
  * sendMsg()
  * @description This procedure sends the message which the user inputed to the database. After, the form
  * is going to be validated.
  * @author Sergio Baena Lopez
- * @version 19.0
+ * @version 19.1
  */
 ContacteController.sendMsg = function() {
     var e;
@@ -78,7 +102,7 @@ ContacteController.sendMsg = function() {
         ) { 
             ContactForm.alert( new Array(e) );
         } else { // thrown exception --> a Exception object not expected 
-            Page.showErrorForDeveloper(e);
+            ContactForm.showErrorForDeveloper(e);
         }
     }
 }

@@ -41,6 +41,18 @@ Controller.generateCommonContent = function() {
     var err = "Error. Controller.generateCommonContent() is an abstract method.";
     throw new AbstractAttributeOrMethodException(err);
 }
+/**
+ * generateDynamicContent()
+ * This procedure generates the dynamic content of the page
+ * @author Sergio Baena Lopez
+ * @version 19.1
+ * @throws {AjaxException} if Ajax causes an error 
+ * @throws {UnsupportedLocalStorageException} if the local storage isn't sopported for browser
+ */
+Controller.generateDynamicContent = function() {
+    var err = "Error. Controller.generateDynamicContent() is an abstract method.";
+    throw new AbstractAttributeOrMethodException(err);
+}
 /* ============================== Methods ================================================= */
 /**
  * openPopup()
