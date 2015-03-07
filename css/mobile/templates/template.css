@@ -196,18 +196,26 @@
 #logo.loading                   ,
 #menuLooper.loading             ,
 #title.loading                  ,
-#alert.loading                   ,
+#alert.loading                  ,
 #text.loading                   ,
 #menu.loading                   ,
 #footer.loading                 ,
 #img.loading                    ,
+#issue.loading                  ,
+#message.loading                   ,
+#email.loading                  ,
+#button.loading                 ,
 #logo.alerting                  ,
 #menuLooper.alerting            ,       
 #title.alerting                 ,
 #text.alerting                  ,
 #menu.alerting                  ,
 #footer.alerting                ,
-#img.alerting {
+#img.alerting                   ,
+#issue.alerting                 ,
+#message.alerting                  ,
+#email.alerting                 ,
+#button.alerting {
     opacity: 0.2;
 }
 /**

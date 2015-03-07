@@ -25,9 +25,10 @@ SobreLaWebController.generateCommonContent = function() {
  * atTheStartOfPage()
  * @description Procedure aims load the page with all the common content.
  * @author Sergio Baena López
- * @version 18.1
+ * @version 19.0
  */
 SobreLaWebController.atTheStartOfPage = function() {
+    var e;
     try {
        SobreLaWebController.generateCommonContent();
        SobreLaWebController.generateDynamicContent();

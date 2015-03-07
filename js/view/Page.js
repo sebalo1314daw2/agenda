@@ -7,6 +7,7 @@ Page.AJAX_ERR =     "Hi ha un problema amb el servidor. Comprova que tens connex
                     "a Internet. Si no &eacute;s aix&iacute; es tracta d'un problema nostre "   +
                     "i, per tant, prova a conectar-te una "                                     +
                     "mica m&eacute;s tard i, disculpa les mol&egrave;sties.";
+Page.HACKERS_WARNING = "El servidor valida qualsevol entrada de dades. No fagis tonteries.";
 Page.BOLD_TAG = new Array();
 Page.BOLD_TAG["start"] = "<span class=\"fastReading\">";
 Page.BOLD_TAG["end"] = "</span>";
@@ -15,6 +16,7 @@ Page.PARAGRAPH_TAG["start"] = "<p>";
 Page.PARAGRAPH_TAG["end"] = "</p>";
 /* ============================== Accessors ===================================================== */
 Page.getAJAX_ERR = function(){ return Page.AJAX_ERR; }
+Page.getHACKERS_WARNING = function(){ return Page.HACKERS_WARNING; }
 Page.getBOLD_TAG = function(key){ return Page.BOLD_TAG[key]; }
 Page.getPARAGRAPH_TAG = function(key){ return Page.PARAGRAPH_TAG[key]; }
 /* ============================== Static methods ================================================= */
@@ -81,7 +83,7 @@ Page.centerElement = function(element) {
  * alert()
  * This procedure shows a message to the user ( it calls the "toString()" method ) 
  * @author Sergio Baena Lopez
- * @version 18.1
+ * @version 19.0
  * @param {Object []} msgList the messages to show
  */
 Page.alert = function(msgList) {
@@ -100,13 +102,29 @@ Page.alert = function(msgList) {
         "menu",
         "footer", 
         "img",
-        "alert"
+        "alert",
+        "img",
+        "issue",
+        "message",
+        "email",
+        "button"
     );
     for(i = 0; i < idList.length; i++) {
         $("#" + idList[i]).addClass("alerting");
     }
     // Finally, we center the alert
     Page.centerAlert();
+}
+/**
+ * isAlertActive()
+ * @description This function indicates if the alert is active or not. The alert is active when #alert
+ * has the "alerting" class
+ * @author Sergio Baena Lopez
+ * @version 19.0
+ * @return {boolean} if the alert is active or not
+ */
+Page.isAlertActive = function() {
+    return $("#alert").hasClass("alerting");
 }
 /**
  * centerElementByWidthWithRespectToWebContainer()
@@ -281,7 +299,7 @@ Page.activateCalendar = function() {
  * activateLoadAnimation()
  * @description This procedure activates the load animation of the page
  * @author Sergio Baena Lopez
- * @version 18.1
+ * @version 19.0
  */
 Page.activateLoadAnimation = function() {
     var idList = new Array (
@@ -293,7 +311,11 @@ Page.activateLoadAnimation = function() {
         "menu",
         "footer", 
         "img",
-        "loadAnimation"
+        "loadAnimation",
+        "issue",
+        "message",
+        "email",
+        "button"
     );
     // We've to add the "loading" class to several HTML tags
     for(var i = 0; i < idList.length; i++) {
@@ -307,7 +329,7 @@ Page.activateLoadAnimation = function() {
  * deactivateLoadAnimation()
  * @description This procedure deactivates the load animation of the page
  * @author Sergio Baena Lopez
- * @version 18.1
+ * @version 19.0
  */
 Page.deactivateLoadAnimation = function() {
     var idList = new Array (
@@ -319,7 +341,11 @@ Page.deactivateLoadAnimation = function() {
         "menu",
         "footer", 
         "img",
-        "loadAnimation"
+        "loadAnimation",
+        "issue",
+        "message",
+        "email",
+        "button"
     );
     // We've to remove the "loading" class to several HTML tags
     for(var i = 0; i < idList.length; i++) {
@@ -423,11 +449,11 @@ Page.storeIdOfTheCenteredProcess = function(id) {
  * addResizeEvent()
  * @description This procedure adds the resize event which is associated to the page
  * @author Sergio Baena Lopez
- * @version 18.1
+ * @version 19.0
  * @param {Function} handler the handler of the resize event
  */
 Page.addResizeEvent = function(handler) {
-    $(window).resize(handler);
+      window.onresize = handler;
 }
 /**
  * addReadyEvent()
@@ -443,19 +469,24 @@ Page.addReadyEvent = function(handler) {
  * closeAlert()
  * @description This procedure closes the alert of the page
  * @author Sergio Baena Lopez
- * @version 18.1
+ * @version 19.0
  */
 Page.closeAlert = function() {
     // We remove the alerting class
     var idList = new Array (
-        "logo",
+       "logo",
         "menuLooper",
         "title",
         "text",
         "menu",
         "footer", 
         "img",
-        "alert"
+        "alert",
+        "img",
+        "issue",
+        "message",
+        "email",
+        "button"
     );
     for(var i = 0; i < idList.length; i++) {
         $("#" + idList[i]).removeClass("alerting");

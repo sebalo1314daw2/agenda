@@ -12,6 +12,9 @@
     #form button {
         width: 64px; /*the width of button is fixed for computer */
     }
+    #form #alert button {
+        width: 87px;
+    }
    /**
     * Img
     * The image of the web

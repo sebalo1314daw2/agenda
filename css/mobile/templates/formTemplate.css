@@ -61,6 +61,11 @@
     position: absolute;
     top: 0 !important;
 }
+#form .invalidField { 
+    background-image: url("../../../img/err_form/error.png") !important;
+    background-position: right center;
+    background-repeat: no-repeat;
+}
 #form button
 {
     width: 100%; /* 220px/220px */

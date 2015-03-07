@@ -1,6 +1,8 @@
 <?php
     require_once '../model/tables/WebTable.php';
     require_once '../model/tables_item/Web.php'; 
+    require_once '../model/tables_item/Message.php'; 
+    require_once '../model/tables/MessageTable.php'; 
     class Controller {
         /* ============================== Attributes ===================================================== */
         private $params; // parameters sent from the client (associative array)
@@ -28,6 +30,9 @@
                     case "0":
                         echo self::obtainWeb();
                         break;
+                    case "1":
+                        echo self::addNewMsg($this->params["msg"]);
+                        break;
                 }
             }
         }
@@ -43,6 +48,27 @@
             // get the web
             $web = WebTable::obtain();
             return json_encode( $web->toAssociativeArray() );
+        }
+        /**
+         * addNewMsg()
+         * This function adds the specified message in the database
+         * @author Sergio Baena Lopez
+         * @version 19.0
+         * @param String $msgJSONEncode the message to add (JSON format)
+         * @return String a boolean which indicates if the specified message was stored or not 
+         * (encoded to JSON)
+         */
+        private static function addNewMsg($msgJSONEncode) {
+            $wasStored = false;
+            $msg = Message::obtainFromJSON($msgJSONEncode);
+            
+            if( $msg->isValid() ) { // the message is valid --> we do the conversion and the insertion
+                $msg->convert();
+                MessageTable::insert($msg);
+                $wasStored = true;
+            }
+            
+            return json_encode($wasStored);
         }
     }
 ?>

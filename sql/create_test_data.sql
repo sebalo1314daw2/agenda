@@ -7,7 +7,7 @@
 
 INSERT INTO adb_message (
     issue,
-    body,
+    message,
     email
 ) VALUES (
     'Una duda que tengo',
@@ -17,7 +17,7 @@ INSERT INTO adb_message (
 
 INSERT INTO adb_message (
     issue,
-    body,
+    message,
     email
 ) VALUES (
     'Otra duda que tengo',
@@ -27,7 +27,7 @@ INSERT INTO adb_message (
 
 INSERT INTO adb_message (
     issue,
-    body,
+    message,
     email
 ) VALUES (
     'Hola!!',

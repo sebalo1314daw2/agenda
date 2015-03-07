@@ -12,7 +12,7 @@ CREATE TABLE adb_web (
 CREATE TABLE adb_message (
 	id                      INT(6)                              PRIMARY KEY         AUTO_INCREMENT  ,
 	issue                   VARCHAR(68)         NOT NULL                                            ,
-        body                    VARCHAR(432)        NOT NULL                                            ,
+        message                 VARCHAR(432)        NOT NULL                                            ,
         email                   VARCHAR(320)        NOT NULL                                            
 ) ENGINE = MyISAM;
 

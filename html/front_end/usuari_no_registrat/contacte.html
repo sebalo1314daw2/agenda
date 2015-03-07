@@ -37,12 +37,23 @@
         <script type="text/javascript" src="../../../js/model/ObjectApp.js"></script>
         <!-- Primitive types -->
         <!-- Constants -->
+        <script type="text/javascript" src="../../../js/model/Constants.js"></script>
         <!-- Exceptions -->
         <script type="text/javascript" src="../../../js/model/exceptions/Exception.js"></script>
         <script type="text/javascript" src="../../../js/model/exceptions/AbstractAttributeOrMethodException.js"></script>
+        <script type="text/javascript" src="../../../js/model/exceptions/AjaxException.js"></script>
+        <script type="text/javascript" src="../../../js/model/exceptions/HackerAttackException.js"></script>
+        <!-- Utilities -->
+        <script type="text/javascript" src="../../../js/model/Utilities.js"></script>
         <!-- Tables' item -->
+        <script type="text/javascript" src="../../../js/model/tables_item/Message.js"></script>
+        <script type="text/javascript" src="../../../js/model/tables_item/Web.js"></script>
+        <!-- View utilities -->
+        <script type="text/javascript" src="../../../js/view/ViewUtilities.js"></script>
         <!-- View -->
         <script type="text/javascript" src="../../../js/view/Page.js"></script>
+        <script type="text/javascript" src="../../../js/view/form/Form.js"></script>
+        <script type="text/javascript" src="../../../js/view/form/ContactForm.js"></script>
         <!-- Controllers -->
         <script type="text/javascript" src="../../../js/control/Controller.js"></script>
         <script type="text/javascript" src="../../../js/control/front_end/usuari_no_registrat/ContacteController.js"></script>
@@ -63,17 +74,28 @@
                     </div>
                     <div id="form">
                        <form action="javascript:void(0)">
-                           <input type="text" placeholder="Assumpte" />
-                           <textarea placeholder="Missatge"></textarea>
-                           <input type="text" placeholder="Correu electr&ograve;nic" />
-                           <button>Enviar</button>
+                           <input type="text" placeholder="Assumpte" id="issue" />
+                           <textarea placeholder="Missatge" id="message"></textarea>
+                           <input type="text" placeholder="Correu electr&ograve;nic" id="email" />
+                           <button id="button" onclick="ContacteController.sendMsg()">Enviar</button>
+                           <!-- Alert -->
+                           <div id="alert">
+                                <div id="msgList"></div>    
+                                <div id="msgButton">
+                                    <button onclick="ContacteController.closeAlert()">Acceptar</button>
+                                </div>
+                            </div>
                        </form>
                    </div>
                    <div id="img" class="fa fa-envelope"></div>
                 </div>
                 <div id="menu"></div>
                 <div id="footer"></div>
+                <div id="loadAnimation"></div>
             </div>
+        </div>
+        <div id="hiddenData">
+            <div id="idOfTheCenteredProcess"></div>
         </div>
     </body>
 </html>
