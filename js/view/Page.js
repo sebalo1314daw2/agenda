@@ -273,29 +273,6 @@ Page.generateRegisteredUserMenu = function() {
     );              
 }
 /**
- * activateChosen()
- * @description This procedure activates the chosen in the page
- * @author Sergio Baena López
- * @version 17
- */
-Page.activateChosen = function() {
-    $("select").chosen({
-        search_contains : true,
-        no_results_text : "No hi ha resultats que concideixen amb "
-    });
-}
-/**
- * activateCalendar()
- * @description This procedure activates the calendar (pickadate) in the page
- * @author Sergio Baena López
- * @version 17
- */
-Page.activateCalendar = function() {
-    $(".calendar").pickadate({
-        min : new Date()
-    });
-}
-/**
  * activateLoadAnimation()
  * @description This procedure activates the load animation of the page
  * @author Sergio Baena Lopez

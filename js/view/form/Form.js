@@ -64,3 +64,26 @@ Form.clearErrors = function() {
 Form.reset = function() {
     $("form")[0].reset();
 }
+/**
+ * activateChosen()
+ * @description This procedure activates the chosen in the page
+ * @author Sergio Baena López
+ * @version 17
+ */
+Form.activateChosen = function() {
+    $("select").chosen({
+        search_contains : true,
+        no_results_text : "No hi ha resultats que concideixen amb "
+    });
+}
+/**
+ * activateCalendar()
+ * @description This procedure activates the calendar (pickadate) in the page
+ * @author Sergio Baena López
+ * @version 17
+ */
+Form.activateCalendar = function() {
+    $(".calendar").pickadate({
+        min : new Date()
+    });
+}
