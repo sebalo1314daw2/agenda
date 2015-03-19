@@ -11,12 +11,17 @@ ContacteController.URL_SERVER = "../../../php/control/call_controller.php";
  * atTheStartOfPage()
  * @description Procedure aims load the page with all the common content.
  * @author Sergio Baena López
- * @version 19.1
+ * @version 20.3
  */
 ContacteController.atTheStartOfPage = function() {
-    ContacteController.generateCommonContent();
-    ContacteController.generateDynamicContent();
-    ContactForm.addResizeEvent(ContacteController.centerPositionedElements);
+    var e;
+    try {
+        ContacteController.generateCommonContent();
+        ContacteController.generateDynamicContent();
+        ContactForm.addResizeEvent(ContacteController.centerPositionedElements);
+    } catch(e) {
+        ContactForm.showErrorForDeveloper(e);
+    }
 }
 /**
  * generateCommonContent()

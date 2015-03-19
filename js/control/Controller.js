@@ -68,24 +68,34 @@ Controller.openPopup = function(path) {
  * centerPositionedElements()
  * @description This procedure centers all the positioned elements
  * @author Sergio Baena Lopez
- * @version 18.1
+ * @version 20.3
  */
 Controller.centerPositionedElements = function() {
-    var id = Page.obtainIdOfTheCenteredProcess();
-    clearTimeout(id);
-    id = setTimeout(function() {
-        Page.centerLoadAnimation();
-        Page.centerAlert();
-        Page.centerConfirm();
-    }, 100);
-    Page.storeIdOfTheCenteredProcess(id);
+    var e;
+    try {
+        var id = Page.obtainIdOfTheCenteredProcess();
+        clearTimeout(id);
+        id = setTimeout(function() {
+            Page.centerLoadAnimation();
+            Page.centerAlert();
+            Page.centerConfirm();
+        }, 100);
+        Page.storeIdOfTheCenteredProcess(id);
+    } catch(e) {
+        Page.showErrorForDeveloper(e);
+    }
 }
 /**
  * closeAlert()
  * @description This procedure closes the alert of the web
  * @author Sergio Baena Lopez
- * @version 18.1
+ * @version 20.3
  */
 Controller.closeAlert = function() {
-    Page.closeAlert();
+    var e;
+    try {
+        Page.closeAlert();
+    } catch(e) {
+        Page.showErrorForDeveloper(e);
+    }
 }
