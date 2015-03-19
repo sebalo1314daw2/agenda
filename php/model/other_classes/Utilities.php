@@ -50,5 +50,21 @@
       public static function convertText($text) {
           return htmlentities( self::removeDoubleSpaces($text) );
       }
+      /**
+       * toJSON()
+       * This function encodes the specified value to JSON
+       * @author Sergio Baena Lopez
+       * @version 20.2
+       * @param Mixed $value the value to encode to JSON
+       * @return String the encoded value to JSON
+       */
+      public static function toJSON($value) {
+          if( is_object($value) ) { // the $value is object
+              $encodedValue = json_encode( $value->toAssociativeArray() );
+          } else {
+              $encodedValue = json_encode($value);
+          }
+          return $encodedValue;
+      }
     }
 ?>

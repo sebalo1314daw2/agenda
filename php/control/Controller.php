@@ -3,6 +3,7 @@
     require_once '../model/tables_item/Web.php'; 
     require_once '../model/tables_item/Message.php'; 
     require_once '../model/tables/MessageTable.php'; 
+    require_once '../model/other_classes/Utilities.php'; 
     class Controller {
         /* ============================== Attributes ===================================================== */
         private $params; // parameters sent from the client (associative array)
@@ -41,19 +42,19 @@
          * obtainWeb()
          * This function obtains the web object stored in the database
          * @author Sergio Baena Lopez
-         * @version 16.0
+         * @version 20.2
          * @return {String} web object (encoded to JSON)
          */
         private static function obtainWeb() {
             // get the web
             $web = WebTable::obtain();
-            return json_encode( $web->toAssociativeArray() );
+            return Utilities::toJSON($web);
         }
         /**
          * addNewMsg()
          * This function adds the specified message in the database
          * @author Sergio Baena Lopez
-         * @version 19.0
+         * @version 20.2
          * @param String $msgJSONEncode the message to add (JSON format)
          * @return String a boolean which indicates if the specified message was stored or not 
          * (encoded to JSON)
@@ -68,7 +69,7 @@
                 $wasStored = true;
             }
             
-            return json_encode($wasStored);
+            return Utilities::toJSON($wasStored);
         }
     }
 ?>
