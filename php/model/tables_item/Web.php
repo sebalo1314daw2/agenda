@@ -8,8 +8,19 @@
         private $groupAInfo;                // String
         private $groupBInfo;                // String
         private $footer;                    // String
-        /* ============================== Constructor =================================================== */
-        function __construct($id, $generalInfo, $groupInfo, $groupAInfo, $groupBInfo, $footer) {
+        /* ============================== Constructors =================================================== */
+        public function __construct (
+            $param0 = null,
+            $param1 = null, 
+            $param2 = null,
+            $param3 = null, 
+            $param4 = null, 
+            $param5 = null
+        ) {
+            $this->fullConstructor($param0, $param1, $param2, $param3, $param4, $param5);
+        }
+        
+        private function fullConstructor($id, $generalInfo, $groupInfo, $groupAInfo, $groupBInfo, $footer) {
             $this->id = $id;
             $this->generalInfo = $generalInfo;
             $this->groupInfo = $groupInfo;
