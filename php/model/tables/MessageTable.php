@@ -2,29 +2,30 @@
     // test
 //    require_once '../other_classes/PocketScheduleDB.php';
 //    require_once '../tables_item/Message.php';
-    class MessageTable {
+    require_once '../model/tables/Table.php';
+    class MessageTable extends Table {
         /* ============================== Attributes ===================================================== */
-        private static $NAME = "adb_message";
-        private static $COL_ID = "id";
-        private static $COL_ISSUE = "issue";
-        private static $COL_MESSAGE = "message";
-        private static $COL_EMAIL = "email";
+        const NAME = "message";
+        const COL_ID = "id";
+        const COL_ISSUE = "issue";
+        const COL_MESSAGE = "message";
+        const COL_EMAIL = "email";
         /* ============================== Methods ===================================================== */
         /**
          * insert()
          * This procedure inserts the specified message to this table
          * @author Sergio Baena Lopez
-         * @version 19.0
+         * @version 20.4
          * @param Message $msg the message to insert
          */
         public static function insert($msg) {
             // open connection
             $db = new PocketScheduleDB();
             // prepare query
-            $sql = "INSERT INTO " . self::$NAME . " (" .
-                    self::$COL_ISSUE    . ", " .
-                    self::$COL_MESSAGE  . ", " .
-                    self::$COL_EMAIL    . 
+            $sql = "INSERT INTO " . self::PREFIX . self::DELIMITER . self::NAME . " (" .
+                    self::COL_ISSUE    . ", " .
+                    self::COL_MESSAGE  . ", " .
+                    self::COL_EMAIL    . 
                    ") VALUES ( 
                        ?,
                        ?,

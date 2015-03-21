@@ -1,18 +1,19 @@
 <?php
     require_once '../model/other_classes/PocketScheduleDB.php';
     require_once '../model/tables_item/Web.php';
+    require_once '../model/tables/Table.php';
     // Testing requires
 //    require_once '../other_classes/PocketScheduleDB.php';
 //    require_once '../tables_item/Web.php';
-    class WebTable {
+    class WebTable extends Table {
         /* ============================== Attributes ===================================================== */
-        private static $NAME = "adb_web";
-        private static $COL_ID = "id";
-        private static $COL_GENERAL_INFO = "general_info";
-        private static $COL_GROUP_INFO = "group_info";
-        private static $COL_GROUP_A_INFO = "group_a_info";
-        private static $COL_GROUP_B_INFO = "group_b_info";
-        private static $COL_FOOTER = "footer";
+        const NAME = "web";
+        const COL_ID = "id";
+        const COL_GENERAL_INFO = "general_info";
+        const COL_GROUP_INFO = "group_info";
+        const COL_GROUP_A_INFO = "group_a_info";
+        const COL_GROUP_B_INFO = "group_b_info";
+        const COL_FOOTER = "footer";
         /* ============================== Methods ===================================================== */
         /**
          * obtain()
@@ -26,8 +27,8 @@
             $db = new PocketScheduleDB();
             // prepare query
             $sql = "SELECT *
-                    FROM " . self::$NAME . 
-                  " WHERE " . self::$NAME . "." . self::$COL_ID . " = 1;";
+                    FROM " . self::PREFIX . self::DELIMITER . self::NAME . 
+                  " WHERE " . self::PREFIX . self::DELIMITER . self::NAME . "." . self::COL_ID . " = 1;";
             $stmt = $db->prepare($sql);
             // execute query
             $stmt->execute();
@@ -41,6 +42,10 @@
             $db->close();
             // return the web object
             return $web;
+        }
+        public static function insert($web) {
+            $errMsg = "Error. The method WebTable::insert() hasn't been implemented yet";
+            throw new MethodNotImplementedException($errMsg);
         }
     }
     // Testeo
