@@ -15,7 +15,10 @@ function Web(param0, param1, param2, param3, param4, param5, param6) {
     /* ============================== Attributes ===================================================== */
     Web.prototype.DATA_TYPE = "Web";
     Web.NAME_LOCAL_STORAGE = Constants.getPREFIX() + Constants.getDELIMITER() + "web";
-    /* ============================== Constructors ================================================== */
+    Web.ORIGIN_DB = 0;
+    Web.ORIGIN_LOCAL_STORAGE = 1;
+    Web.ORIGIN_OTHERS = 2;
+/* ============================== Constructors ================================================== */
     Web.prototype.fullConstructor = function (
         id,
         generalInfo,
@@ -236,7 +239,7 @@ function Web(param0, param1, param2, param3, param4, param5, param6) {
      */
     Web.prototype.storeIfItIsRequired = function() {
         // We check if the web object comes from DB
-        if(this.obtainingOrigin == 0) { // the web object comes from DB --> we store this object
+        if(this.obtainingOrigin == Web.ORIGIN_DB) { // the web object comes from DB --> we store this object
             this.storeInLocalStorage();
         }
     }
