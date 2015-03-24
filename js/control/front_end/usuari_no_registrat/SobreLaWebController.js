@@ -11,15 +11,10 @@ SobreLaWebController.URL_SERVER = "../../../php/control/call_controller.php";
  * generateCommonContent()
  * This procedure generates the common content of the page
  * @author Sergio Baena Lopez
- * @version 17
+ * @version 20.6
  */
 SobreLaWebController.generateCommonContent = function() {
-    Page.generateLogo (
-        SobreLaWebController.URL_WHERE_THE_LOGO_REDIRECTS, 
-        SobreLaWebController.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS
-    );
-    Page.generateMenuLooper();
-    Page.generateMenu();
+    this.generateCommonContentForNotRegisteredUsers();
 }
 /**
  * atTheStartOfPage()
@@ -46,27 +41,12 @@ SobreLaWebController.atTheStartOfPage = function() {
     }
 }
 /**
- * generateDynamicContent()
- * This procedure generates the dynamic content of the page
+ * generateWeb()
+ * @description This procedure generates the web
  * @author Sergio Baena Lopez
- * @version 18.0
- * @throws {AjaxException} if Ajax causes an error 
- * @throws {UnsupportedLocalStorageException} if the local storage isn't sopported for browser
+ * @version 20.6
+ * @param {Web} web the necessary information to generate the web
  */
-SobreLaWebController.generateDynamicContent = function() {
-    var web = Web.obtain (
-        SobreLaWebController.URL_SERVER, 
-        Page.activateLoadAnimation, 
-        Page.deactivateLoadAnimation,
-        Page.getAJAX_ERR()
-    );
-    web.toHTMLTags ( 
-        Page.getBOLD_TAG("start"),
-        Page.getBOLD_TAG("end"),
-        Page.getPARAGRAPH_TAG("start"),
-        Page.getPARAGRAPH_TAG("end")
-    ); 
+SobreLaWebController.generateWeb = function(web) {
     Page.generateText( web.getGeneralInfo() ); 
-    Page.generateFooter( web.getFooter() );
-    web.storeIfItIsRequired();
 }

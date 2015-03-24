@@ -15,11 +15,11 @@ Controller.URL_SERVER = function() {
     throw new AbstractAttributeOrMethodException(err); 
 }
 /* ============================== Accessors ====================================================== */
-Controller.getURL_WHERE_THE_LOGO_REDIRECTS = function(){ return Controller.URL_WHERE_THE_LOGO_REDIRECTS; }
+Controller.getURL_WHERE_THE_LOGO_REDIRECTS = function(){ return this.URL_WHERE_THE_LOGO_REDIRECTS; }
 Controller.getURL_WHERE_THE_IMAGE_OF_THE_LOGO_IS = function() {
-    return Controller.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS; 
+    return this.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS; 
 }
-Controller.getURL_SERVER = function(){ return Controller.URL_SERVER; }
+Controller.getURL_SERVER = function(){ return this.URL_SERVER; }
 /* ============================== Abstract methods ================================================= */
 /**
  * atTheStartOfPage()
@@ -42,15 +42,14 @@ Controller.generateCommonContent = function() {
     throw new AbstractAttributeOrMethodException(err);
 }
 /**
- * generateDynamicContent()
- * This procedure generates the dynamic content of the page
+ * generateWeb()
+ * @description This procedure generates the web
  * @author Sergio Baena Lopez
- * @version 19.1
- * @throws {AjaxException} if Ajax causes an error 
- * @throws {UnsupportedLocalStorageException} if the local storage isn't sopported for browser
+ * @version 20.6
+ * @param {Web} web the necessary information to generate the web
  */
-Controller.generateDynamicContent = function() {
-    var err = "Error. Controller.generateDynamicContent() is an abstract method.";
+Controller.generateWeb = function(web) {
+    var err = "Error. Controller.generateWeb() is an abstract method.";
     throw new AbstractAttributeOrMethodException(err);
 }
 /* ============================== Methods ================================================= */
@@ -98,4 +97,43 @@ Controller.closeAlert = function() {
     } catch(e) {
         Page.showErrorForDeveloper(e);
     }
+}
+/**
+ * generateCommonContentForNotRegisteredUsers()
+ * This procedure generates the common content of the page for not registered users
+ * @author Sergio Baena Lopez
+ * @version 20.6 
+ */
+Controller.generateCommonContentForNotRegisteredUsers = function() {
+   Page.generateLogo (
+        this.URL_WHERE_THE_LOGO_REDIRECTS, 
+        this.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS
+    );
+    Page.generateMenuLooper();
+    Page.generateMenu(); 
+} 
+/**
+ * generateDynamicContent()
+ * This procedure generates the dynamic content of the page
+ * @author Sergio Baena Lopez
+ * @version 20.6
+ * @throws {AjaxException} if Ajax causes an error 
+ * @throws {UnsupportedLocalStorageException} if the local storage isn't sopported for browser
+ */
+Controller.generateDynamicContent = function() {
+    var web = Web.obtain (
+        this.URL_SERVER, 
+        Page.activateLoadAnimation, 
+        Page.deactivateLoadAnimation,
+        Page.getAJAX_ERR()
+    );
+    web.toHTMLTags ( 
+        Page.getBOLD_TAG("start"),
+        Page.getBOLD_TAG("end"),
+        Page.getPARAGRAPH_TAG("start"),
+        Page.getPARAGRAPH_TAG("end")
+    ); 
+    this.generateWeb(web);
+    Page.generateFooter( web.getFooter() );
+    web.storeIfItIsRequired();
 }

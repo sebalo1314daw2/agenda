@@ -27,39 +27,10 @@ ContacteController.atTheStartOfPage = function() {
  * generateCommonContent()
  * This procedure generates the common content of the page
  * @author Sergio Baena Lopez
- * @version 19.1
+ * @version 20.6
  */
 ContacteController.generateCommonContent = function() {
-    ContactForm.generateLogo (
-        ContacteController.URL_WHERE_THE_LOGO_REDIRECTS, 
-        ContacteController.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS
-    );
-    ContactForm.generateMenuLooper();
-    ContactForm.generateMenu();
-}
-/**
- * generateDynamicContent()
- * This procedure generates the dynamic content of the page
- * @author Sergio Baena Lopez
- * @version 19.1
- * @throws {AjaxException} if Ajax causes an error 
- * @throws {UnsupportedLocalStorageException} if the local storage isn't sopported for browser
- */
-ContacteController.generateDynamicContent = function() {
-    var web = Web.obtain (
-        ContacteController.URL_SERVER, 
-        ContactForm.activateLoadAnimation, 
-        ContactForm.deactivateLoadAnimation,
-        ContactForm.getAJAX_ERR()
-    );
-    web.toHTMLTags ( 
-        ContactForm.getBOLD_TAG("start"),
-        ContactForm.getBOLD_TAG("end"),
-        ContactForm.getPARAGRAPH_TAG("start"),
-        ContactForm.getPARAGRAPH_TAG("end")
-    );  
-    ContactForm.generateFooter( web.getFooter() );
-    web.storeIfItIsRequired();
+    this.generateCommonContentForNotRegisteredUsers();
 }
 /**
  * sendMsg()
@@ -111,3 +82,11 @@ ContacteController.sendMsg = function() {
         }
     }
 }
+/**
+ * generateWeb()
+ * @description This procedure generates the web
+ * @author Sergio Baena Lopez
+ * @version 20.6
+ * @param {Web} web the necessary information to generate the web
+ */
+ContacteController.generateWeb = function(web) {}
