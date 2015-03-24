@@ -11,16 +11,24 @@ ContacteController.URL_SERVER = "../../../php/control/call_controller.php";
  * atTheStartOfPage()
  * @description Procedure aims load the page with all the common content.
  * @author Sergio Baena López
- * @version 20.3
+ * @version 20.7
  */
 ContacteController.atTheStartOfPage = function() {
     var e;
     try {
+        ContactForm.addResizeEvent(ContacteController.centerPositionedElements);
         ContacteController.generateCommonContent();
         ContacteController.generateDynamicContent();
-        ContactForm.addResizeEvent(ContacteController.centerPositionedElements);
     } catch(e) {
-        ContactForm.showErrorForDeveloper(e);
+        if(e.getDATA_TYPE == undefined) {  // thrown  excepcion --> System exception
+            Page.showErrorForDeveloper(e);
+        } else if(e.getDATA_TYPE() == "AjaxException") { // thrown  excepcion --> AjaxException
+            Page.alert( new Array(e) );
+        } else if(e.getDATA_TYPE() == "UnsupportedLocalStorageException") { // thrown  excepcion --> UnsupportedLocalStorageException
+            // We don't do anything
+        } else { // thrown exception --> a Exception object not expected 
+            Page.showErrorForDeveloper(e);
+        }
     }
 }
 /**

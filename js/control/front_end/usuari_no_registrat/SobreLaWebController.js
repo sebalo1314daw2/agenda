@@ -20,14 +20,14 @@ SobreLaWebController.generateCommonContent = function() {
  * atTheStartOfPage()
  * @description Procedure aims load the page with all the common content.
  * @author Sergio Baena López
- * @version 19.0
+ * @version 20.7
  */
 SobreLaWebController.atTheStartOfPage = function() {
     var e;
     try {
+       Page.addResizeEvent(SobreLaWebController.centerPositionedElements);
        SobreLaWebController.generateCommonContent();
        SobreLaWebController.generateDynamicContent();
-       Page.addResizeEvent(SobreLaWebController.centerPositionedElements);
     } catch(e) {
         if(e.getDATA_TYPE == undefined) {  // thrown  excepcion --> System exception
             Page.showErrorForDeveloper(e);
