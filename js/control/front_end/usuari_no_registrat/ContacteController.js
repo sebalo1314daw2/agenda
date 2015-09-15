@@ -6,6 +6,7 @@ ContacteController.prototype.DATA_TYPE = "ContacteController";
 ContacteController.URL_WHERE_THE_LOGO_REDIRECTS = "login.html";
 ContacteController.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS = "../../../img/logo/logo.png";
 ContacteController.URL_SERVER = "../../../php/control/call_controller.php";
+ContacteController.EQUIVALENCES_ATTR_LIST_TO_FIELD_LIST = undefined;
 /* ============================== Static methods ================================================= */
 /**
  * atTheStartOfPage()
@@ -20,7 +21,7 @@ ContacteController.atTheStartOfPage = function() {
         ContacteController.generateCommonContent();
         ContacteController.generateDynamicContent();
     } catch(e) {
-        if(e.getDATA_TYPE == undefined) {  // thrown  excepcion --> System exception
+        if(e.getDATA_TYPE == undefined) {  // thrown  exception --> System exception
             Page.showErrorForDeveloper(e);
         } else if(e.getDATA_TYPE() == "AjaxException") { // thrown  excepcion --> AjaxException
             Page.alert( new Array(e) );

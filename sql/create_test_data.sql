@@ -514,180 +514,210 @@ INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     1,
     'sergio@gmail.com',
     1,
-    '2008-10-29 11:49:59'
+    '2008-10-29 11:49:59',
+    'kKjH87g43DfJiKmNH97HbGjlopJH65kKjH87g43DfJiKmNH97HbGjlopJH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     2,
     'marta@gmail.com',
     0,
-    '2020-10-29 11:49:59'
+    '2020-10-29 11:49:59',
+    'kKjH87g43Df888mNH97HbGjlopJH65kKjH87g43DfJiKmNH97HbGjlopJH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     3,
     'pedro@gmail.com',
     1,
-    '2020-11-29 11:49:59'
+    '2020-11-29 11:49:59',
+    'kKjH87g43Df888mNH97HbGjlopJH65kKjH87g43DfJiKmNH97HbGjlPpJH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     4,
     'segismunda@gmail.com',
     0,
-    '2015-06-02 11:49:59'
+    '2015-06-02 11:49:59',
+    'kKjH87g43Df888mNH97HbGjlopJH65kKjH87g43DfJiKmNH97HbGjlPpJH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     5,
     'berta@gmail.com',
     1,
-    '2015-10-02 02:49:59'
+    '2015-10-02 02:49:59',
+    'kKjH87g43Df888mNH97HbGjlopJH65kKjH87g43DfJiKmNH97HbGjlPpJH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     6,
     'juan@gmail.com',
     0,
-    '2015-10-02 02:49:59'
+    '2015-10-02 02:49:59',
+    'kKjH87g43Df888mNH97HbGjlopJH65kKjH87g43DfJiKmNH97HbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     7,
     'ana@gmail.com',
     1,
-    '2015-10-02 02:49:59'
+    '2015-10-02 02:49:59',
+    'kKjH87g43Df888mNH97HbGjlopJH65kKjH87g43DfJiKmNH97HbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user ( 
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     8,
     'rodolfo@gmail.com',
     0,
-    '2015-11-02 02:49:59'
+    '2015-11-02 02:49:59',
+    'kKjH87g4NnN888mNH97HbGjlopJH65kKjH87g43DfJiKmNH97HbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     9,
     'natalia@gmail.com',
     0,
-    '2014-10-02 02:49:59'
+    '2014-10-02 02:49:59',
+    'kKjH87g4NnN888mNH97HbGjlo8JH65kKjH87g43DfJiKmNH97HbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     10,
     'zanahoria@gmail.com',
     1,
-    '2000-10-02 02:49:59'
+    '2000-10-02 02:49:59',
+    'kKjH87g4NnN888mNH97HbGjloLL987kKjH87g43DfJiKmNH97HbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     11,
     'lorena@gmail.com',
     1,
-    '0000-00-00 00:00:00'
+    '0000-00-00 00:00:00',
+    '6KjH87g4NnN888mNH97HbGjloLL987kKjH87g43DfJiKmNH97HbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     12,
     'patricia@gmail.com',
     1,
-    '0000-00-00 00:00:00'
+    '0000-00-00 00:00:00',
+    '6KjH87g4NnN888mNH97HbGjloLL987kKjH87g43DfJiKmNH97HbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     13,
     'mariano@gmail.com',
     1,
-    '0000-00-00 00:00:00'
+    '0000-00-00 00:00:00',
+    '6KjH87g4NnN888mNH97HbGjloLL987kKjH87g43DfJiKmNH97HbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     14,
     'amapola@gmail.com',
     1,
-    '0000-00-00 00:00:00'
+    '0000-00-00 00:00:00',
+    '6KjH87g4NnN888mNH97HbGjloLL987kKjH87g43DfJiKmNH9HHbGjlPpmH65'
 );
 
 INSERT INTO adb_email_user (
     id_user,
     value,
     is_valid,
-    deadline_validation
+    deadline_validation,
+    alpha_num_validation
 ) VALUES (
     15,
     'yasmina@gmail.com',
     1,
-    '0000-00-00 00:00:00'
+    '0000-00-00 00:00:00',
+    '6KjH87g4NnN888mNH97HSGjloLL987kKjH87g43DfJiKmNH9HHbGjlPpmH65'
 );
 
 
@@ -2381,4 +2411,36 @@ INSERT INTO adb_web (
     I, per conseg&uuml;ent, <negreta>el grup</negreta> "classe" <negreta>consta dels mateixos</negreta> alumnes
     <negreta>sempre</negreta>. ',
     'Servei gratu&iuml;t que ofereix el Sergio Baena L&oacute;pez per a tothom que hi vulgui.'
+);
+
+
+
+
+-- Table email_web
+
+INSERT INTO adb_email_web (
+    _type,
+    title,
+    content
+) VALUES (
+    0,
+    'Validaci&oacute;',
+    '<parragraf>Hola %USER_NAME%,</parragraf>
+    <parragraf>
+        Benvingut a la meva web. Ja ets part de l\'"Agenda de butxaca", l\'agenda
+        del futur.
+    </parragraf>
+    <parragraf>
+        Solament cal un petit detall per fer, molt f&agrave;cil. <negreta>Falta
+            que validis que aquest correu electr&ograve;nic &eacute;s teu</negreta>. 
+        Per aix&ograve;, simplement <b>fes clic en aquest 
+        <a href="http://localhost/Agenda_de_butxaca/html/front_end/usuari_registrat/usuari/index.html?codi=%ALPHA_NUMBER%">enlla&ccedil;</a></b>.
+    </parragraf>
+    <parragraf>
+        Recorda, que tens un termini de 7 dies per fer-ho. Una vegada s\'hagi
+        extingit aquest termini, jo estar&eacute; obligat a eliminar el teu compte.
+        Espero no tenir que arribar a aquest punt.
+    </parragraf>
+    <parragraf>Salutacions %USER_NAME%.</parragraf>
+    <parragraf>Sergio Baena L&oacute;pez</parragraf>'
 );

@@ -23,3 +23,4 @@ DROP TABLE adb_friendship_solicitude_from_group CASCADE;
 DROP TABLE adb_normal_user CASCADE;
 DROP TABLE adb_aggregation CASCADE;
 DROP TABLE adb_friendship_solicitude CASCADE;
+DROP TABLE adb_email_web CASCADE;

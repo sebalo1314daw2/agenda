@@ -87,3 +87,53 @@ Form.activateCalendar = function() {
         min : new Date()
     });
 }
+/**
+ * readImageProfileField()
+ * @description This function reads the image profile's field (input file).
+ * @author Sergio Baena Lopez
+ * @version 21.0
+ * @throws {UnsupportedFileToolsException} if the File object isn't sopported
+ * @return {File} the inputed image 
+ */
+Form.readImageProfileField = function() {
+    if(window.File == undefined) { // The File object isn't supported --> We throw an exception
+        throw new UnsupportedFileToolsException("Error. Your browser doesn't sopport the File object");
+    }
+    return document.getElementById("imageProfile").files[0];
+}
+/**
+ * obtainWidthImage()
+ * @description This function obtains the hidden data about the indicated image's width for the user
+ * @author Sergio Baena Lopez
+ * @version 21.0
+ * @return {Number} the hidden data about the indicated image's width for the user
+ */
+Form.obtainWidthImage = function() {
+    var width = $("#widthImage").html();
+    return parseInt(width);
+}
+/**
+ * generateLooseImageTag()
+ * @description This procedure generates a loose image's tag
+ * @author Sergio Baena Lopez
+ * @version 21.0
+ * @param {String} url the URL of the image to generate
+ * @param {Function} handler the function which will be executed when the image is loaded
+ */
+Form.generateLooseImageTag = function(url, handler) {
+    var img = $("<img />");
+    img.load(function() {
+        handler(this.width);
+    });
+    img.attr("src", url);
+}
+/**
+ * storeWidthImage()
+ * @description This procedure stores the specified image's width in this form (hidden data)
+ * @author Sergio Baena Lopez
+ * @version 21.0
+ * @param {Number} width the width to store
+ */
+Form.storeWidthImage = function(width) {
+    $("#widthImage").html(width);
+}

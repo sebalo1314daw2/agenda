@@ -83,7 +83,7 @@ Page.centerElement = function(element) {
  * alert()
  * This procedure shows a message to the user ( it calls the "toString()" method ) 
  * @author Sergio Baena Lopez
- * @version 19.0
+ * @version 21.0
  * @param {Object []} msgList the messages to show
  */
 Page.alert = function(msgList) {
@@ -107,6 +107,14 @@ Page.alert = function(msgList) {
         "issue",
         "message",
         "email",
+        "labelImageProfile",
+        "name",
+        "surnames",
+        "alias",
+        "password",
+        "confirmationPassword",
+        "labelCookieAccept",
+        "labelNoCloseSession",
         "button"
     );
     for(i = 0; i < idList.length; i++) {
@@ -276,7 +284,7 @@ Page.generateRegisteredUserMenu = function() {
  * activateLoadAnimation()
  * @description This procedure activates the load animation of the page
  * @author Sergio Baena Lopez
- * @version 19.0
+ * @version 21.0
  */
 Page.activateLoadAnimation = function() {
     var idList = new Array (
@@ -292,6 +300,14 @@ Page.activateLoadAnimation = function() {
         "issue",
         "message",
         "email",
+        "labelImageProfile",
+        "name",
+        "surnames",
+        "alias",
+        "password",
+        "confirmationPassword",
+        "labelCookieAccept",
+        "labelNoCloseSession",
         "button"
     );
     // We've to add the "loading" class to several HTML tags
@@ -322,6 +338,14 @@ Page.deactivateLoadAnimation = function() {
         "issue",
         "message",
         "email",
+        "labelImageProfile",
+        "name",
+        "surnames",
+        "alias",
+        "password",
+        "confirmationPassword",
+        "labelCookieAccept",
+        "labelNoCloseSession",
         "button"
     );
     // We've to remove the "loading" class to several HTML tags
@@ -446,7 +470,7 @@ Page.addReadyEvent = function(handler) {
  * closeAlert()
  * @description This procedure closes the alert of the page
  * @author Sergio Baena Lopez
- * @version 19.0
+ * @version 21.0
  */
 Page.closeAlert = function() {
     // We remove the alerting class
@@ -463,6 +487,14 @@ Page.closeAlert = function() {
         "issue",
         "message",
         "email",
+        "labelImageProfile",
+        "name",
+        "surnames",
+        "alias",
+        "password",
+        "confirmationPassword",
+        "labelCookieAccept",
+        "labelNoCloseSession",
         "button"
     );
     for(var i = 0; i < idList.length; i++) {

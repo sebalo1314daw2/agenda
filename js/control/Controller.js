@@ -14,6 +14,10 @@ Controller.URL_SERVER = function() {
     var err = "Error. Controller.URL_SERVER is an abstract attribute.";
     throw new AbstractAttributeOrMethodException(err); 
 }
+Controller.EQUIVALENCES_ATTR_LIST_TO_FIELD_LIST = function() { 
+    var err = "Error. Controller.EQUIVALENCES_ATTR_LIST_TO_FIELD_LIST is an abstract attribute.";
+    throw new AbstractAttributeOrMethodException(err); 
+}
 /* ============================== Accessors ====================================================== */
 Controller.getURL_WHERE_THE_LOGO_REDIRECTS = function(){ return this.URL_WHERE_THE_LOGO_REDIRECTS; }
 Controller.getURL_WHERE_THE_IMAGE_OF_THE_LOGO_IS = function() {
@@ -136,4 +140,35 @@ Controller.generateDynamicContent = function() {
     this.generateWeb(web);
     Page.generateFooter( web.getFooter() );
     web.storeIfItIsRequired();
+}
+/**
+ * generateWidthImageHiddenData()
+ * @description This procedure generates the hidden data about the image's width which the user indicated
+ * @author Sergio Baena Lopez
+ * @version 21.0
+ */
+Controller.generateWidthImageHiddenData = function() {
+    var imageSource = Form.readImageProfileField();
+    var image = new Image(imageSource);
+    image.obtainURLFromSource(Controller.generateLooseImageTag);
+}
+/**
+ * generateLooseImageTag()
+ * @description This procedure generates a loose image's tag to get its width and write it in the document
+ * @author Sergio Baena Lopez
+ * @version 21.0
+ * @param {String} url the URL of the image to generate
+ */
+Controller.generateLooseImageTag = function(url) {
+    Form.generateLooseImageTag(url, Controller.storeWidthImage);
+}
+/**
+ * storeWidthImage()
+ * @description This procedure stores the specified image's width in the document.
+ * @author Sergio Baena Lopez
+ * @version 21.0
+ * @param {Number} width the width to store
+ */
+Controller.storeWidthImage = function(width) {
+    Form.storeWidthImage(width);
 }

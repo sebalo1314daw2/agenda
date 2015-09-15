@@ -6,6 +6,7 @@ SobreLaWebController.prototype.DATA_TYPE = "SobreLaWebController";
 SobreLaWebController.URL_WHERE_THE_LOGO_REDIRECTS = "login.html";
 SobreLaWebController.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS = "../../../img/logo/logo.png";
 SobreLaWebController.URL_SERVER = "../../../php/control/call_controller.php";
+SobreLaWebController.EQUIVALENCES_ATTR_LIST_TO_FIELD_LIST = undefined;
 /* ============================== Static methods ================================================= */
 /**
  * generateCommonContent()

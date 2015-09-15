@@ -32,17 +32,41 @@
         <!-- JavaScript -->
         <!-- Fameworks: JQuery and JSON -->
         <script type="text/javascript" src="../../../js/jQuery/jQuery.js"></script>
+        <script type="text/javascript" src="../../../js/jQuery/pluginJqueryCookies/jquery.cookie.js"></script>
         <script type="text/javascript" src="../../../js/model/javascript_classes/jQuery.js"></script>
+        <script type="text/javascript" src="../../../js/json/json.js"></script>
+        <script type="text/javascript" src="../../../js/crypt_md5/md5-min.js"></script>
         <!-- Object class -->
         <script type="text/javascript" src="../../../js/model/ObjectApp.js"></script>
         <!-- Primitive types -->
         <!-- Constants -->
+        <script type="text/javascript" src="../../../js/model/Constants.js"></script>
         <!-- Exceptions -->
         <script type="text/javascript" src="../../../js/model/exceptions/Exception.js"></script>
         <script type="text/javascript" src="../../../js/model/exceptions/AbstractAttributeOrMethodException.js"></script>
+        <script type="text/javascript" src="../../../js/model/exceptions/UnsupportedFileToolsException.js"></script>
+        <script type="text/javascript" src="../../../js/model/exceptions/ImageReadingException.js"></script>
+        <script type="text/javascript" src="../../../js/model/exceptions/SourceIsNotImageException.js"></script>
+        <script type="text/javascript" src="../../../js/model/exceptions/HackerAttackException.js"></script>
+        <script type="text/javascript" src="../../../js/model/exceptions/AjaxException.js"></script>
+        <!-- Utilities -->
+        <script type="text/javascript" src="../../../js/model/Utilities.js"></script>
+        <!-- Session -->
+        <script type="text/javascript" src="../../../js/model/Session.js"></script>
+        <!-- Cookies -->
+        <script type="text/javascript" src="../../../js/model/cookies/Cookie.js"></script>
+        <script type="text/javascript" src="../../../js/model/cookies/AuthenticationCookie.js"></script>
         <!-- Tables' item -->
+        <script type="text/javascript" src="../../../js/model/tables_item/User.js"></script>
+        <script type="text/javascript" src="../../../js/model/tables_item/NormalUser.js"></script>
+        <script type="text/javascript" src="../../../js/model/tables_item/Image.js"></script>
+        <script type="text/javascript" src="../../../js/model/tables_item/EmailUser.js"></script>
+        <!-- View utilities -->
+        <script type="text/javascript" src="../../../js/view/ViewUtilities.js"></script>
         <!-- View -->
         <script type="text/javascript" src="../../../js/view/Page.js"></script>
+        <script type="text/javascript" src="../../../js/view/form/Form.js"></script>
+        <script type="text/javascript" src="../../../js/view/form/RegisterForm.js"></script>
         <!-- Controllers -->
         <script type="text/javascript" src="../../../js/control/Controller.js"></script>
         <script type="text/javascript" src="../../../js/control/front_end/usuari_no_registrat/RegistreController.js"></script>
@@ -63,29 +87,40 @@
                     </div>
                     <div id="form">
                        <form action="javascript:void(0)">
-                           <input type="file" id="imageProfile" />
-                           <label for="imageProfile">
+                           <input type="file" id="imageProfile" onchange="RegistreController.generateWidthImageHiddenData()" />
+                           <label for="imageProfile" id="labelImageProfile">
                                <span class="fa fa-upload"></span>
                                Una foto teva
                            </label>
-                           <input type="text" placeholder="Nom" />
-                           <input type="text" placeholder="Cognoms" />
-                           <input type="text" placeholder="Alies" />
-                           <input type="text" placeholder="Correu electr&ograve;nic" />
-                           <input type="password" placeholder="Contrasenya" />
-                           <input type="password" placeholder="Repeteix la contrasenya" />
+                           <input type="text" placeholder="Nom" id="name" />
+                           <input type="text" placeholder="Cognoms" id="surnames" />
+                           <input type="text" placeholder="Alies" id="alias" />
+                           <input type="text" placeholder="Correu electr&ograve;nic" id="email"/>
+                           <input type="password" placeholder="Contrasenya" id="password" />
+                           <input type="password" placeholder="Repeteix la contrasenya" id="confirmationPassword" />
                            <input type="checkbox" id="cookieAccept" checked="checked" />
-                           <label for="cookieAccept">Accepto les cookies</label>
+                           <label for="cookieAccept" id="labelCookieAccept">Accepto les cookies</label>
                            <input type="checkbox" id="noCloseSession" checked="checked" />
-                           <label for="noCloseSession">No tancar la sessi&oacute;</label>
-                           <button>Donar-se d'alta</button>
+                           <label for="noCloseSession" id="labelNoCloseSession">No tancar la sessi&oacute;</label>
+                           <button id="button" onclick="RegistreController.addNewNormalUser()">Donar-se d'alta</button>
+                           <div id="alert">
+                                <div id="msgList"></div>    
+                                <div id="msgButton">
+                                    <button onclick="RegistreController.closeAlert()">Acceptar</button>
+                                </div>
+                            </div>
                        </form>
                    </div>
                    <div id="img" class="fa fa-user"></div>
                 </div>
                 <div id="menu"></div>
                 <div id="footer"></div>
+                <div id="loadAnimation"></div>
             </div>
+        </div>
+        <div id="hiddenData">
+            <div id="idOfTheCenteredProcess"></div>
+            <div id="widthImage"></div>
         </div>
     </body>
 </html>

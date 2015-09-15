@@ -7,8 +7,14 @@ CREATE TABLE adb_web (
         group_b_info            VARCHAR(65536)      NOT NULL                                            ,
         footer                  VARCHAR(420)        NOT NULL
 ) ENGINE = MyISAM;
--- Create 'email_web' table
--- TODO
+
+CREATE TABLE adb_email_web (
+	id                      INT(2)                              PRIMARY KEY         AUTO_INCREMENT  ,
+	_type                   INT(2)              NOT NULL                    UNIQUE                  ,                                                               
+        title                   VARCHAR(100)        NOT NULL                                            ,                            
+        content                 VARCHAR(65536)      NOT NULL                                                                             
+) ENGINE = MyISAM;
+
 CREATE TABLE adb_message (
 	id                      INT(6)                              PRIMARY KEY         AUTO_INCREMENT  ,
 	issue                   VARCHAR(68)         NOT NULL                                            ,
@@ -39,6 +45,7 @@ CREATE TABLE adb_email_user (
         value                   VARCHAR(320)        NOT NULL                     UNIQUE                 ,
         is_valid                INT(1)              NOT NULL                                            ,
         deadline_validation     DATETIME            NOT NULL                                            ,
+        alpha_num_validation    VARCHAR(60)         NOT NULL                                            ,
         FOREIGN KEY(id_user) REFERENCES adb_user(id)
 ) ENGINE = MyISAM;
 
