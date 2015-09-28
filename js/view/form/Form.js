@@ -16,8 +16,10 @@ Form.SUCCESS_MSG = function() {
     var err = "Error. Form.SUCCESS_MSG is an abstract attribute.";
     throw new AbstractAttributeOrMethodException(err); 
 };
+Form.FILE_IS_NOT_IMAGE = "No &eacute;s una imatge.";
 /* ============================== Accessors ===================================================== */
 Form.getSUCCESS_MSG = function(){ return this.SUCCESS_MSG; }
+Form.getFILE_IS_NOT_IMAGE = function(){ return this.FILE_IS_NOT_IMAGE; }
 /* ============================== Static methods ================================================= */
 /**
  * showFormErrors()
@@ -136,4 +138,21 @@ Form.generateLooseImageTag = function(url, handler) {
  */
 Form.storeWidthImage = function(width) {
     $("#widthImage").html(width);
+}
+/**
+ * generateImageTag()
+ * @description This procedure generates the image tag from the specified URL.
+ * @author Sergio Baena Lopez
+ * @version 21.1
+ * @param {String} url the URL whose image we want to generate
+ */
+Form.generateImageTag = function(url) {
+    var label = $("label[for='imageProfile']");
+    var img = $("<img alt='Ha fallat la c&agrave;rrega de la imatge'>");
+    img.attr("src", url);
+    var txt = "\nCanvia la foto";
+    
+    label.empty();
+    label.append(img);
+    label.append(txt);
 }

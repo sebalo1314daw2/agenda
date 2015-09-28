@@ -172,3 +172,50 @@ Controller.generateLooseImageTag = function(url) {
 Controller.storeWidthImage = function(width) {
     Form.storeWidthImage(width);
 }
+/**
+ * generatePrevious()
+ * @description This procedure generates the previous of the image which the user want to upload
+ * @author Sergio Baena Lopez
+ * @version 21.1
+ */
+Controller.generatePrevious = function() {
+    Page.activateLoadAnimation();
+    var source = Form.readImageProfileField();
+    var image = new Image(source);
+    image.obtainURLFromSource(this.generateImageTag);
+}
+/**
+ * generateImageTag()
+ * @description This procedure generates the image tag from the specified URL.
+ * @author Sergio Baena Lopez
+ * @version 21.1
+ * @param {String} url the URL whose image we want to generate
+ */
+Controller.generateImageTag = function(url) {
+    Form.generateImageTag(url);
+    Page.deactivateLoadAnimation();
+}
+/**
+ * updateSelectedImage()
+ * @description This procedure updates the selected image, ie, it updates stored width and previous.
+ * @author Sergio Baena Lopez
+ * @version 21.1
+ */
+Controller.updateSelectedImage = function() {
+    var e;
+    try {
+        this.generatePrevious();
+        this.generateWidthImageHiddenData();
+    } catch(e) {
+        if(e.getDATA_TYPE == undefined) {  // thrown  exception --> System exception
+            Page.showErrorForDeveloper(e);
+        } else if(e.getDATA_TYPE() == "UnsupportedFileToolsException") { // thrown  excepcion --> UnsupportedFileToolsException
+            Page.alert( new Array( Page.getBROWSER_NOT_UPDATED_ERR() ) );
+        } else if(e.getDATA_TYPE() == "SourceIsNotImageException") { // thrown  excepcion --> SourceIsNotImageException
+            Page.alert( new Array( Form.getFILE_IS_NOT_IMAGE() ) );
+        } else { // thrown exception --> a Exception object not expected 
+            Page.showErrorForDeveloper(e);
+        }
+        Page.deactivateLoadAnimation();
+    }
+}

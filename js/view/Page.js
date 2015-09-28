@@ -7,6 +7,7 @@ Page.AJAX_ERR =     "Hi ha un problema amb el servidor. Comprova que tens connex
                     "a Internet. Si no &eacute;s aix&iacute; es tracta d'un problema nostre "   +
                     "i, per tant, prova a conectar-te una "                                     +
                     "mica m&eacute;s tard i, disculpa les mol&egrave;sties.";
+Page.BROWSER_NOT_UPDATED_ERR = "Navegador desactual&middot;litzat.";
 Page.HACKERS_WARNING = "El servidor valida qualsevol entrada de dades. No fagis tonteries.";
 Page.BOLD_TAG = new Array();
 Page.BOLD_TAG["start"] = "<span class=\"fastReading\">";
@@ -19,6 +20,7 @@ Page.getAJAX_ERR = function(){ return Page.AJAX_ERR; }
 Page.getHACKERS_WARNING = function(){ return Page.HACKERS_WARNING; }
 Page.getBOLD_TAG = function(key){ return Page.BOLD_TAG[key]; }
 Page.getPARAGRAPH_TAG = function(key){ return Page.PARAGRAPH_TAG[key]; }
+Page.getBROWSER_NOT_UPDATED_ERR = function(){ return Page.BROWSER_NOT_UPDATED_ERR; }
 /* ============================== Static methods ================================================= */
 /**
  * openPopup()
