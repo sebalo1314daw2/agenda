@@ -20,26 +20,34 @@ RegistreController.EQUIVALENCES_ATTR_LIST_TO_FIELD_LIST["value-uniqueness"] = "e
  * atTheStartOfPage()
  * @description Procedure aims load the page with all the common content.
  * @author Sergio Baena López
- * @version 21.0
+ * @version 21.2
  */
 RegistreController.atTheStartOfPage = function() {
-    RegisterForm.addResizeEvent(RegistreController.centerPositionedElements);
-    RegistreController.generateCommonContent();
+    var e;
+    try {
+        RegisterForm.addResizeEvent(RegistreController.centerPositionedElements);
+        RegistreController.generateCommonContent();
+        RegistreController.generateDynamicContent();
+    } catch(e) {
+        if(e.getDATA_TYPE == undefined) {  // thrown  exception --> System exception
+            Page.showErrorForDeveloper(e);
+        } else if(e.getDATA_TYPE() == "AjaxException") { // thrown  excepcion --> AjaxException
+            Page.alert( new Array(e) );
+        } else if(e.getDATA_TYPE() == "UnsupportedLocalStorageException") { // thrown  excepcion --> UnsupportedLocalStorageException
+            // We don't do anything
+        } else { // thrown exception --> a Exception object not expected 
+            Page.showErrorForDeveloper(e);
+        }
+    }
 }
 /**
  * generateCommonContent()
  * This procedure generates the common content of the page
  * @author Sergio Baena Lopez
- * @version 17
+ * @version 21.2
  */
 RegistreController.generateCommonContent = function() {
-    Page.generateLogo (
-        RegistreController.URL_WHERE_THE_LOGO_REDIRECTS, 
-        RegistreController.URL_WHERE_THE_IMAGE_OF_THE_LOGO_IS
-    );
-    Page.generateMenuLooper();
-    Page.generateMenu();
-    Page.generateFooter();
+    this.generateCommonContentForNotRegisteredUsers();
 }
 /**
  * addNewNormalUser()
@@ -134,3 +142,11 @@ RegistreController.addNewNormalUser = function() {
         }
     }
 }
+/**
+ * generateWeb()
+ * @description This procedure generates the web
+ * @author Sergio Baena Lopez
+ * @version 21.2
+ * @param {Web} web the necessary information to generate the web
+ */
+RegistreController.generateWeb = function(web) {}
