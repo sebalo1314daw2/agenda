@@ -11,7 +11,7 @@ function Web(param0, param1, param2, param3, param4, param5, param6) {
     this.fullConstructor(param0, param1, param2, param3, param4, param5, param6);
 }
     /* ============================== Provoke inheritance ============================================ */
-    $.provokeInheritance("ObjectApp", "Web");
+    $.provokeInheritance("TableItem", "Web");
     /* ============================== Attributes ===================================================== */
     Web.prototype.DATA_TYPE = "Web";
     Web.NAME_LOCAL_STORAGE = Constants.getPREFIX() + Constants.getDELIMITER() + "web";

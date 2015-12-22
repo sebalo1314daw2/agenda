@@ -11,7 +11,7 @@ function User(param0, param1, param2, param3, param4) {
     this.withoutIdNorRegisterDateConstructor(param0, param1, param2, param3, param4);
 }
     /* ============================== Provoke inheritance ============================================ */
-    $.provokeInheritance("ObjectApp", "User");
+    $.provokeInheritance("TableItem", "User");
     /* ============================== Attributes ===================================================== */
     User.prototype.DATA_TYPE = "User";
     /* ============================== Constructors ================================================== */

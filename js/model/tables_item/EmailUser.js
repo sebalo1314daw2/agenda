@@ -10,7 +10,7 @@ function EmailUser(param0, param1) {
     this.userAndValueConstructor(param0, param1); // new EmailUser(user, value)
 }
     /* ============================== Provoke inheritance ============================================ */
-    $.provokeInheritance("ObjectApp", "EmailUser");
+    $.provokeInheritance("TableItem", "EmailUser");
     /* ============================== Attributes ===================================================== */
     EmailUser.prototype.DATA_TYPE = "EmailUser";
     /* ============================== Constructors ================================================== */

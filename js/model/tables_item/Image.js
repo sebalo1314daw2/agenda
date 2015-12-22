@@ -14,7 +14,7 @@ function Image(param0, param1) {
     }
 }
     /* ============================== Provoke inheritance ============================================ */
-    $.provokeInheritance("ObjectApp", "Image");
+    $.provokeInheritance("TableItem", "Image");
     /* ============================== Attributes ===================================================== */
     Image.prototype.DATA_TYPE = "Image";
     /* ============================== Constructors ================================================== */

@@ -12,7 +12,7 @@ function Message(param0, param1, param2, param3) {
     }
 }
     /* ============================== Provoke inheritance ============================================ */
-    $.provokeInheritance("ObjectApp", "Message");
+    $.provokeInheritance("TableItem", "Message");
     /* ============================== Attributes ===================================================== */
     Message.prototype.DATA_TYPE = "Message";
     /* ============================== Constructors ================================================== */
