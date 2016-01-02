@@ -7,6 +7,10 @@
        private $issue;          // String
        private $message;        // String
        private $email;          // String
+       
+       const MAX_LENGTH_OF_ISSUE = 68;      // int
+       const MAX_LENGTH_OF_MESSAGE = 432;   // int
+       const MAX_LENGTH_OF_EMAIL = 320;     // int
        /* ============================== Constructor =================================================== */
        public function __construct($param0 = null, $param1 = null, $param2 = null) {
            $this->withoutIdConstructor($param0, $param1, $param2); 
@@ -82,13 +86,17 @@
          * isValid()
          * This function indicates if the message is valid or not
          * @author Sergio Baena Lopez
-         * @version 19.0
+         * @version 22.1
          * @return bool if the message is valid or not
          */
         public function isValid() {
             return Utilities::isValidText($this->issue)     &&
                    Utilities::isValidText($this->message)   &&
-                   Utilities::isValidEmail($this->email);
+                   Utilities::isValidEmail($this->email)    &&
+                   
+                   Utilities::hasRightLength($this->issue, self::MAX_LENGTH_OF_ISSUE)       &&
+                   Utilities::hasRightLength($this->message, self::MAX_LENGTH_OF_MESSAGE)   &&
+                   Utilities::hasRightLength($this->email, self::MAX_LENGTH_OF_EMAIL);
         }
         /**
          * convert()

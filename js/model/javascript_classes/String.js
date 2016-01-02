@@ -21,3 +21,14 @@ String.prototype.replaceAll = function(searchValue, newValue) {
     // We've already remplaced all
     return replacedString;
 }
+/**
+ * hasRightLength()
+ * This function checks if its current length doesn't lead to the specified maximum length
+ * @author Sergio Baena Lopez
+ * @version 22.1
+ * @param {Number} maxLeng the maximum length which this string can have
+ * @return {boolean} if its current length doesn't lead to the specified maximum length or yes
+ */
+String.prototype.hasRightLength = function(maxLeng) {
+    return this.length <= maxLeng;
+}

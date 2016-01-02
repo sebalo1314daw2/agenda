@@ -15,6 +15,10 @@ function Message(param0, param1, param2, param3) {
     $.provokeInheritance("TableItem", "Message");
     /* ============================== Attributes ===================================================== */
     Message.prototype.DATA_TYPE = "Message";
+    
+    Message.MAX_LENGTH_OF_ISSUE = 68;
+    Message.MAX_LENGTH_OF_MESSAGE = 432;
+    Message.MAX_LENGTH_OF_EMAIL = 320;
     /* ============================== Constructors ================================================== */
     Message.prototype.withoutIdConstructor = function(issue, message, email) {
         this.setIssue(issue);
@@ -44,7 +48,7 @@ function Message(param0, param1, param2, param3) {
      * @description This function indicates if the message is valid or not. If the message isn't valid,
      * it's going to indicate the invalid attributes.
      * @author Sergio Baena Lopez
-     * @version 19.0
+     * @version 22.1
      * @return {Object[]} 
      * ["isValid"] {boolean} if the message is valid or not
      * ["invalidAttributesList"] {String[]} the list of the invalid attributes 
@@ -54,17 +58,32 @@ function Message(param0, param1, param2, param3) {
         validationData["isValid"] = true; 
         validationData["invalidAttributesList"] = new Array();
         // Validation of the issue
-        if( !Utilities.isValidText(this.issue) ) { // issue is invalid
+        if ( 
+                ! ( 
+                    Utilities.isValidText(this.issue) &&
+                    this.issue.hasRightLength(Message.MAX_LENGTH_OF_ISSUE) 
+                )
+        ) { // issue is invalid
             validationData["isValid"] = false;
             validationData["invalidAttributesList"].push("issue");
         }
         // Validation of the message
-        if( !Utilities.isValidText(this.message) ) { // message is invalid
+        if ( 
+                ! ( 
+                    Utilities.isValidText(this.message) &&
+                    this.message.hasRightLength(Message.MAX_LENGTH_OF_MESSAGE)
+                )
+        ) { // message is invalid
             validationData["isValid"] = false;
             validationData["invalidAttributesList"].push("message");
         }
         // Validation of the email
-        if( !Utilities.isValidEmail(this.email) ) { // email is invalid
+        if ( 
+                ! (
+                    Utilities.isValidEmail(this.email) &&
+                    this.email.hasRightLength(Message.MAX_LENGTH_OF_EMAIL)
+                )
+        ) { // email is invalid
             validationData["isValid"] = false;
             validationData["invalidAttributesList"].push("email");
         } // The validation was finished

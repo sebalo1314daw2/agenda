@@ -6,13 +6,15 @@ function EmailUser(param0, param1) {
     this.isValid;                       // boolean
     this.deadlineValidation;            // Date
     this.alphaNumValidation;            // String
-    
+
     this.userAndValueConstructor(param0, param1); // new EmailUser(user, value)
 }
     /* ============================== Provoke inheritance ============================================ */
     $.provokeInheritance("TableItem", "EmailUser");
     /* ============================== Attributes ===================================================== */
     EmailUser.prototype.DATA_TYPE = "EmailUser";
+    
+    EmailUser.MAX_LENGTH_OF_VALUE = 320;
     /* ============================== Constructors ================================================== */
     EmailUser.prototype.userAndValueConstructor = function(user, value) {
         this.setUser(user);
@@ -42,7 +44,7 @@ function EmailUser(param0, param1) {
      * @description This function indicates if the email of the user is valid or not. If the email of the
      * user isn't valid, it's going to indicate the invalid attributes.
      * @author Sergio Baena Lopez
-     * @version 21.0
+     * @version 22.1
      * @return {Object[]} 
      * ["isValid"] {boolean} if the email of the user is valid or not
      * ["invalidAttributesList"] {String[]} the list of the invalid attributes 
@@ -51,11 +53,14 @@ function EmailUser(param0, param1) {
         var validationData = this.user.isValid();
        
         // Validation of the value (format) 
-        if( !Utilities.isValidEmail(this.value) ) { // value (format) is invalid
-            validationData["isValid"] = false;
-            validationData["invalidAttributesList"].push("value-format");
+        if( !( 
+                Utilities.isValidEmail(this.value) &&
+                this.value.hasRightLength(EmailUser.MAX_LENGTH_OF_VALUE) 
+            ) ) { // value (format) is invalid
+                    validationData["isValid"] = false;
+                    validationData["invalidAttributesList"].push("value-format");
         } 
-
+        
         return validationData; 
     }
     /**

@@ -2,6 +2,8 @@
     class NormalUser extends User {
         /* ============================== Attributes ===================================================== */
         private $alias;     // String
+        
+        const MAX_LENGTH_OF_ALIAS = 40;     // int
         /* ============================== Constructors ================================================== */
         public function __construct (
             $param0 = null,
@@ -53,7 +55,7 @@
          * doRevalidation()
          * This function does the revalidation of the normal user
          * @author Sergio Baena Lopez
-         * @version 21.0
+         * @version 22.1
          * @return bool if the normal user is good revalidated or not
          */
         protected function doRevalidation() {
@@ -61,7 +63,12 @@
             
             if($isValid) { // If this object is valid yet, we continue the validation
                 // Validation of the alias (format)
-                if( !Utilities::isValidAlias($this->alias) ) {
+                if (
+                        ! (
+                                Utilities::isValidAlias($this->alias) &&
+                                Utilities::hasRightLength($this->alias, self::MAX_LENGTH_OF_ALIAS)
+                        )
+                ) {
                     $isValid = false;
                 } 
             }

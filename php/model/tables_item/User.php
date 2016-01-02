@@ -7,6 +7,10 @@
         protected $surnames;        // String
         protected $password;        // String
         protected $registerDate;    // DateTime
+        
+        const MAX_LENGTH_OF_NAME = 40;
+        const MAX_LENGTH_OF_SURNAMES = 40;
+        const MAX_LENGTH_OF_PASSWORD = 300;
         /* ============================== Constructors ================================================== */
         public function __construct($param0 = null, $param1 = null, $param2 = null, $param3 = null) {
             $this->withoutIdNorRegisterDateConstructor($param0, $param1, $param2, $param3);
@@ -100,7 +104,7 @@
          * doRevalidation()
          * This function does the revalidation of the user
          * @author Sergio Baena Lopez
-         * @version 21.0
+         * @version 22.1
          * @return bool if the user is good revalidated or not
          */
         protected function doRevalidation() {
@@ -108,15 +112,30 @@
             
             if($isValid) { // If this object is valid yet, we continue the validation
                 // Validation of the name 
-                if( !Utilities::isValidSentence($this->name) ) {
+                if ( 
+                    ! (
+                        Utilities::isValidSentence($this->name) &&
+                        Utilities::hasRightLength($this->name, self::MAX_LENGTH_OF_NAME)
+                    )
+                ) {
                     $isValid = false;
                 } 
                 // Validation of the surnames 
-                else if( !Utilities::isValidSentence($this->surnames) ) {
+                else if (
+                    ! (
+                        Utilities::isValidSentence($this->surnames) &&
+                        Utilities::hasRightLength($this->surnames, self::MAX_LENGTH_OF_SURNAMES)
+                    )
+                ) {
                     $isValid = false;
                 } 
                 // Validation of the password 
-                else if( !Utilities::isValidPassword($this->password) ) {
+                else if (
+                    ! (
+                        Utilities::isValidPassword($this->password) &&
+                        Utilities::hasRightLength($this->password, self::MAX_LENGTH_OF_PASSWORD)
+                    )
+                ) {
                     $isValid = false;
                 } 
             }

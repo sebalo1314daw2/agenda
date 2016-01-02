@@ -14,6 +14,10 @@ function User(param0, param1, param2, param3, param4) {
     $.provokeInheritance("TableItem", "User");
     /* ============================== Attributes ===================================================== */
     User.prototype.DATA_TYPE = "User";
+    
+    User.MAX_LENGTH_OF_NAME = 40;
+    User.MAX_LENGTH_OF_SURNAMES = 40;
+    User.MAX_LENGTH_OF_PASSWORD = 300;
     /* ============================== Constructors ================================================== */
     User.prototype.withoutIdNorRegisterDateConstructor = function (
         image,
@@ -52,7 +56,7 @@ function User(param0, param1, param2, param3, param4) {
      * @description This function indicates if the user is valid or not. If the user isn't valid,
      * it's going to indicate the invalid attributes.
      * @author Sergio Baena Lopez
-     * @version 21.0
+     * @version 22.1
      * @return {Object[]} 
      * ["isValid"] {boolean} if the user is valid or not
      * ["invalidAttributesList"] {String[]} the list of the invalid attributes 
@@ -61,17 +65,32 @@ function User(param0, param1, param2, param3, param4) {
         var validationData = this.image.isValid();
         
         // Validation of the name  
-        if( !Utilities.isValidSentence(this.name) ) { // name is invalid
+        if ( 
+                ! (
+                    Utilities.isValidSentence(this.name) && 
+                    this.name.hasRightLength(User.MAX_LENGTH_OF_NAME)
+                )
+        ) { // name is invalid
             validationData["isValid"] = false;
             validationData["invalidAttributesList"].push("name");
         }
         // Validation of the surnames 
-        if( !Utilities.isValidSentence(this.surnames) ) { // surnames is invalid
+        if ( 
+                ! (
+                    Utilities.isValidSentence(this.surnames) &&
+                    this.surnames.hasRightLength(User.MAX_LENGTH_OF_SURNAMES)
+                )
+        ) { // surnames is invalid
             validationData["isValid"] = false;
             validationData["invalidAttributesList"].push("surnames");
         }
         // Validation of the password (format)
-        if( !Utilities.isValidPassword(this.password) ) { // password is invalid
+        if ( 
+                ! (
+                    Utilities.isValidPassword(this.password) &&
+                    this.password.hasRightLength(User.MAX_LENGTH_OF_PASSWORD)
+                )
+        ) { // password is invalid
             validationData["isValid"] = false;
             validationData["invalidAttributesList"].push("password-format");
         }

@@ -8,6 +8,8 @@ function NormalUser(param0, param1, param2, param3, param4, param5) {
     $.provokeInheritance("User", "NormalUser");
     /* ============================== Attributes ===================================================== */
     NormalUser.prototype.DATA_TYPE = "NormalUser";
+    
+    NormalUser.MAX_LENGTH_OF_ALIAS = 40;
     /* ============================== Constructors ================================================== */
     NormalUser.prototype.childWithoutIdNorRegisterDateConstructor = function (
         image,
@@ -41,7 +43,7 @@ function NormalUser(param0, param1, param2, param3, param4, param5) {
      * @description This function indicates if the normal user is valid or not. If the normal user
      * isn't valid, it's going to indicate the invalid attributes.
      * @author Sergio Baena Lopez
-     * @version 21.0
+     * @version 22.1
      * @return {Object[]} 
      * ["isValid"] {boolean} if the normal user is valid or not
      * ["invalidAttributesList"] {String[]} the list of the invalid attributes 
@@ -50,7 +52,12 @@ function NormalUser(param0, param1, param2, param3, param4, param5) {
         var validationData = this.parentIsValid();
         
         // Validation of the alias (format)
-        if( !Utilities.isValidAlias(this.alias) ) { // alias is invalid
+        if ( 
+                ! (
+                    Utilities.isValidAlias(this.alias) && 
+                    this.alias.hasRightLength(NormalUser.MAX_LENGTH_OF_ALIAS)
+                )
+        ) { // alias is invalid
             validationData["isValid"] = false;
             validationData["invalidAttributesList"].push("alias-format");
         }

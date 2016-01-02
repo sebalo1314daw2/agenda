@@ -4,9 +4,9 @@ $.provokeInheritance("Form", "ContactForm");
 /* ============================== Attributes ===================================================== */
 ContactForm.prototype.DATA_TYPE = "ContactForm";
 ContactForm.errMsg = new Array();
-ContactForm.errMsg["issue"] = "<span class='fastReading'>Assumpte:</span> No es pot deixar buit.";
-ContactForm.errMsg["message"] = "<span class='fastReading'>Missatge:</span> No es pot deixar buit.";
-ContactForm.errMsg["email"] = "<span class='fastReading'>Correu electr&ograve;nic:</span> No es correspon a cap correu v&agrave;lid (no pot estar-hi buit).";
+ContactForm.errMsg["issue"] = "<span class='fastReading'>Assumpte:</span> No es pot deixar buit ni ser massa llarg.";
+ContactForm.errMsg["message"] = "<span class='fastReading'>Missatge:</span> No es pot deixar buit ni ser massa llarg.";
+ContactForm.errMsg["email"] = "<span class='fastReading'>Correu electr&ograve;nic:</span> No es correspon a cap correu v&agrave;lid (no pot estar-hi buit  ni ser massa llarg).";
 ContactForm.fieldList = new Array("issue", "message", "email");
 ContactForm.SUCCESS_MSG = "El teu missatge s'ha enviat correctament. En breu, tindr&agrave;s la resposta al teu correu electr&ograve;nic.";
 /* ============================== Static methods ================================================= */

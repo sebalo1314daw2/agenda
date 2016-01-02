@@ -269,5 +269,19 @@
      public static function determinateUTF8Codification() {
          header('Content-Type: text/html; charset=UTF-8');
      }
+   /**
+    * hasRightLength()
+    * This function checks if the specified string's length doesn't lead to the specified maximum 
+    * length
+    * @author Sergio Baena Lopez
+    * @version 22.1
+    * @param string $str the string to check
+    * @param int $maxLeng the maximum length which the specified string can have
+    * @return bool if the specified string's length doesn't lead to the specified maximum 
+    * length or yes
+    */
+    public static function hasRightLength($str, $maxLeng) {
+        return strlen($str) <= $maxLeng;
+    }
    }
 ?>

@@ -8,6 +8,8 @@
         private $isValid;               // bool
         private $deadlineValidation;    // DateTime
         private $alphaNumValidation;    // String
+        
+        const MAX_LENGTH_OF_VALUE = 320;// int
         /* ============================== Constructors ================================================== */
         public function __construct($param0, $param1) {
             $this->userAndValueConstructor($param0, $param1);
@@ -120,7 +122,7 @@
          * doRevalidation()
          * This function does the revalidation of the email user
          * @author Sergio Baena Lopez
-         * @version 21.0
+         * @version 22.1
          * @return bool if the email user is good revalidated or not
          */
         private function doRevalidation() {
@@ -128,7 +130,11 @@
             
             if($isValid) { // If this object is valid yet, we continue the validation
                 // Validation of the value (format) 
-                if( !Utilities::isValidEmail($this->value) ) {
+                if( ! (
+                        Utilities::isValidEmail($this->value) && 
+                        Utilities::hasRightLength($this->value, self::MAX_LENGTH_OF_VALUE)
+                    )
+                ) {
                     $isValid = false;
                 } 
             }
