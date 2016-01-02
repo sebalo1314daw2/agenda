@@ -55,7 +55,7 @@ RegistreController.generateCommonContent = function() {
  * them and, if everything are right, stores them in the database, logs in and redirects to the main page of
  * the registered users. If a data is invalid, it shows an alert of errors.
  * @author Sergio Baena Lopez
- * @version 21.0
+ * @version 22.2
  */
 RegistreController.addNewNormalUser = function() {
     var e;
@@ -135,6 +135,8 @@ RegistreController.addNewNormalUser = function() {
             RegisterForm.showErrorForDeveloper(e);
         } else if(e.getDATA_TYPE() == "AjaxException") { // thrown  excepcion --> AjaxException
             RegisterForm.alert( new Array(e) );
+        } else if(e.getDATA_TYPE() == "UnsupportedFileToolsException") { // thrown  excepcion --> UnsupportedFileToolsException
+            RegisterForm.alert( new Array( RegisterForm.getBROWSER_NOT_UPDATED_ERR() ) );
         } else if(e.getDATA_TYPE() == "HackerAttackException") { // thrown  excepcion --> HackerAttackException
             RegisterForm.alert( new Array(e) );
         } else { // thrown exception --> a Exception object not expected 
